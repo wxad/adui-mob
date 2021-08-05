@@ -1,0 +1,136 @@
+<DemoBody>
+	<DemoHeader title="对话框 Dialog" desc="用作显示系统的重要信息，并请求用户进行操作反馈，eg：删除某个重要内容时，弹出 Modal 进行二次确认。" />
+	<DemoBlock title="基础样式">
+		<ad-button
+		 theme="light"
+		 class="button"
+		 intent="normal"
+		 bind:tap="open"
+		 data-num="{{6}}"
+		>单选
+		</ad-button>
+		<ad-button
+		 class="button"
+		 theme="light"
+		 intent="normal"
+		 bind:tap="open"
+		 data-num="{{1}}"
+		>双选
+		</ad-button>
+		<ad-button
+		 class="button"
+		 theme="light"
+		 intent="normal"
+		 bind:tap="open"
+		 data-num="{{2}}"
+		>多选
+		</ad-button>
+	</DemoBlock>
+	<DemoBlock title="组合样式">
+		<ad-button
+		 class="button"
+		 theme="light"
+		 intent="normal"
+		 bind:tap="open"
+		 data-num="{{3}}"
+		>输入数值
+		</ad-button>
+		<ad-button
+		 class="button"
+		 theme="light"
+		 intent="normal"
+		 bind:tap="open"
+		 data-num="{{4}}"
+		>输入用户名
+		</ad-button>
+		<ad-button
+		 class="button"
+		 theme="light"
+		 intent="normal"
+		 bind:tap="open"
+		 data-num="{{5}}"
+		>组合图片
+		</ad-button>
+	</DemoBlock>
+</DemoBody>
+<ad-dialog
+ visible="{{showDialog6}}"
+ title="欢迎"
+ data-num="{{6}}"
+ type="inform"
+ bind:onConfirm="close"
+ bind:onCancel="close"
+>
+	<view>
+		欢迎使用 AD UI 小程序
+	</view>
+</ad-dialog>
+<ad-dialog
+ visible="{{showDialog1}}"
+ title="欢迎"
+ data-num="{{1}}"
+ bind:onConfirm="close"
+ bind:onCancel="close"
+>
+	<view>
+		欢迎使用 AD UI 小程序
+	</view>
+</ad-dialog>
+<ad-dialog
+ visible="{{showDialog2}}"
+ title="欢迎"
+ data-num="{{2}}"
+ bind:onConfirm="close"
+ buttonList="{{buttonList}}"
+>
+	<view>
+		辅助说明文字辅助说明文字辅助说明文字辅助说明文字辅助说明文字
+	</view>
+</ad-dialog>
+<ad-dialog
+ visible="{{showDialog3}}"
+ title="输入数值"
+ data-num="{{3}}"
+ bind:onConfirm="close"
+ bind:onCancel="close"
+>
+	<view style="margin-bottom: 16px">
+		辅助说明文字辅助说明文字辅助说明文字辅助说明文字辅助说明文字
+	</view>
+	<ad-input
+	 align="left"
+	 type="number"
+	 customStyle="padding: 8px 7px; height: 38px; box-shadow: inset 0px 0px 0px 0.5px rgba(0, 0, 0, 0.16); border-radius: 4px;"
+	/>
+</ad-dialog>
+<ad-dialog
+ visible="{{showDialog4}}"
+ title="输入用户名"
+ data-num="{{4}}"
+ bind:onConfirm="close"
+ bind:onCancel="close"
+>
+	<view style="margin-bottom: 16px">
+		辅助说明文字辅助说明文字辅助说明文字辅助说明文字辅助说明文字
+	</view>
+	<ad-input align="left" customStyle="padding: 8px 7px; height: 38px; box-shadow: inset 0px 0px 0px 0.5px rgba(0, 0, 0, 0.16); border-radius: 4px;" />
+</ad-dialog>
+<ad-dialog
+ visible="{{showDialog5}}"
+ title="标题"
+ data-num="{{5}}"
+ bind:onConfirm="close"
+ bind:onCancel="close"
+>
+	<view>
+		辅助说明文字辅助说明文字辅助说明文字辅助说明文字辅助说明文字
+	</view>
+	<ad-picture
+	 src="https://wxa.wxs.qq.com/images/paki/adui-for-mobile/coffe.png"
+	 slot="main"
+	 style="margin-bottom: 20px;"
+	 round="{{false}}"
+	 customStyle="width: 100%; height: 192px;"
+	/>
+</ad-dialog>
+

@@ -1,0 +1,10 @@
+@import '../../../components/common/style/reset/common.scss';
+@import '../../../components/common/style/var.scss';
+@import '../../../components/common/style/theme.scss';
+@import '../../../components/common/style/mixin';
+
+$prefix: 'demo_body';
+
+.#{$prefix} {
+  padding-bottom: 47px;
+}

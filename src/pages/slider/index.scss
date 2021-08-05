@@ -1,0 +1,13 @@
+.video {
+  width: 100px;
+  height: 100px;
+}
+
+.slider {
+  display: block;
+  margin-bottom: 12px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

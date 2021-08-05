@@ -1,0 +1,44 @@
+---
+name: Avatar
+menu: 基础类
+index: 0
+---
+
+# Avatar
+
+用于表示用户身份的常用控件。
+
+### 常用示例
+
+#### 基本用法
+
+```javascript
+  // 默认是圆角矩形
+	<ad-avatar src="https://wxa.wxs.qq.com/images/paki/adui-for-mobile/avatar.png"/>
+  // 圆形
+  <ad-avatar round src="https://wxa.wxs.qq.com/images/paki/adui-for-mobile/avatar.png"/>
+```
+
+#### 不同尺寸
+
+```javascript
+  // small 28*28
+  <ad-avatar round size="small" src="https://wxa.wxs.qq.com/images/paki/adui-for-mobile/avatar.png"/>
+  // medium 34 * 34
+  <ad-avatar round size="medium" src="https://wxa.wxs.qq.com/images/paki/adui-for-mobile/avatar.png"/>
+  // large 42 * 42
+  <ad-avatar round size="large" src="https://wxa.wxs.qq.com/images/paki/adui-for-mobile/avatar.png"/>
+  // 某些情况下如果 size 的尺寸不能满足需求，可以使用 numSize 来自定义尺寸
+  <ad-avatar round numSize="{{40}}" src="https://wxa.wxs.qq.com/images/paki/adui-for-mobile/avatar.png"/>
+```
+
+#### 占位图
+
+```javascript
+  // 自定义占位的 icon，icon 的可选值为 icon 组件的值
+  <ad-avatar placeholderIcon="image-outlined" src=""/>
+  // 自定义占位的图片，当 icon 不满足需求的时候使用
+  <ad-avatar placeholderPicture="..." src=""/>
+```
+
+## Properties

@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ad-cell": "../cell/cell",
+    "ad-cell-group": "../cellGroup/cellGroup",
+    "ad-radio": "../radio/radio",
+    "ad-radio-group": "../radioGroup/radioGroup",
+    "ad-overlay": "../overlay/overlay"
+  }
+}

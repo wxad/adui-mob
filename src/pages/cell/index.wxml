@@ -1,0 +1,162 @@
+<DemoBody>
+	<DemoHeader title="列表 Cell" desc="单个连续模块垂直排列，显示当前内容、状态和可进行的操作。" />
+	<DemoBlock
+	 title="基础样式"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder noBottomBorder>
+			<ad-cell title="标题" />
+			<ad-cell title="标题" placeholder="描述文字右对齐" />
+			<ad-cell
+			 title="标题"
+			 placeholder="描述文字左对齐"
+			 rightStyle="justify-content: flex-start;"
+			/>
+		</ad-cell-group>
+	</DemoBlock>
+	<DemoBlock
+	 title="双标题"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder noBottomBorder>
+			<ad-cell
+			 title="标题"
+			 desc="副标题尽量保持一行"
+			/>
+			<ad-cell
+			 title="标题"
+			 desc="副标题尽量保持一行"
+			 rightDesc="10:15"
+			/>
+			<ad-cell
+			 title="标题"
+			 desc="副标题尽量保持一行"
+			 rightDesc="10:15"
+			 innerStyle="align-items: flex-start;"
+			/>
+		</ad-cell-group>
+	</DemoBlock>
+	<DemoBlock
+	 title="图片&图标"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder>
+			<ad-cell title="标题" avatar="https://wxa.wxs.qq.com/images/paki/adui-for-mobile/avatar.png" />
+			<ad-cell
+			 title="标题"
+			 avatar="https://wxa.wxs.qq.com/images/paki/adui-for-mobile/avatar.png"
+			 avatarRound
+			/>
+		</ad-cell-group>
+		<ad-cell-group noTopBorder noBottomBorder>
+			<ad-cell
+			 title="小程序助手"
+			 leftIcon="mini-program"
+			 leftIconColor="#7587DB"
+			 isLink
+			/>
+		</ad-cell-group>
+	</DemoBlock>
+	<!-- <DemoBlock
+	 title="右通栏带头像或图标"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder noBottomBorder>
+			<ad-cell
+			 title="标题"
+			 rightBanner
+			 leftIcon="node-tree-outlined"
+			 leftIconColor="#2b7bd6"
+			/>
+			<ad-cell
+			 title="小程序助手"
+			 leftIcon="mini-program"
+			 leftIconColor="#7587DB"
+			 rightBanner
+			/>
+		</ad-cell-group>
+	</DemoBlock> -->
+	<DemoBlock
+	 title="可操作样式"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder noBottomBorder>
+			<ad-cell title="标题" value="禁用态" isLink disabled="{{true}}"/>
+			<ad-cell
+			 title="标题"
+			 value="内容说明"
+			 isLink
+			/>
+			<ad-cell
+			 title="标题"
+			 value="内容说明"
+			 desc="标题辅助说明"
+			 isLink
+			/>
+			<ad-cell title="标题">
+				<ad-switch slot="rightElement" defaultChecked></ad-switch>
+			</ad-cell>
+			<ad-cell title="标题">
+				<ad-stepper slot="rightElement" value="{{30}}" />
+			</ad-cell>
+			<ad-cell
+			 title="标题"
+			 avatar="https://wxa.wxs.qq.com/images/paki/adui-for-mobile/avatar.png"
+			 isLink
+			/>
+		</ad-cell-group>
+	</DemoBlock>
+	<DemoBlock
+	 title="分割线样式"
+	 noPadding
+	 noShadow
+	 class="demo_spec"
+	>
+		<ad-cell-group
+		 noTopBorder
+		 noBottomBorder
+		 style="display: block; margin-bottom: 8px;"
+		>
+			<ad-cell title="默认" isLink />
+			<ad-cell title="默认" isLink />
+		</ad-cell-group>
+		<ad-cell-group
+		 noTopBorder
+		 noBottomBorder
+		 style="display: block; margin-bottom: 8px;"
+		>
+			<ad-cell
+			 rightBanner
+			 title="右通栏"
+			 isLink
+			/>
+			<ad-cell
+			 rightBanner
+			 title="右通栏"
+			 isLink
+			/>
+		</ad-cell-group>
+		<ad-cell-group
+		 noTopBorder
+		 noBottomBorder
+		 style="display: block; margin-bottom: 8px;"
+		>
+			<ad-cell
+			 banner
+			 title="通栏"
+			 isLink
+			/>
+			<ad-cell
+			 banner
+			 title="通栏"
+			 isLink
+			/>
+		</ad-cell-group>
+	</DemoBlock>
+</DemoBody>
+

@@ -1,0 +1,10 @@
+<view
+ class="{{prefix}} {{banner && 'ad_card_banner'}}"
+ hover-class="{{interactive && 'ad_card_hover'}}"
+ hover-start-time="20"
+ hover-stay-time="70"
+ style="{{customStyle}}"
+>
+	<slot/>
+</view>
+

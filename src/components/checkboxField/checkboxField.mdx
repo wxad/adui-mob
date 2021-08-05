@@ -1,0 +1,54 @@
+---
+name: CheckboxField
+menu: 基础类
+index: 6
+---
+
+import { Alert, Table } from 'adui'
+
+# CheckboxField
+
+在使用 checkbox 和 checkboxGroup 的时候，通常会将 checkbox 包在其他组件中使用，比如 cell，这个时候整个 cell 都是可点击区域，这种情况下经常需要开发者重新写一遍 checkbox 的逻辑，
+为了解决这个问题，开发了这个组件，这个组件起到一种中间传递消息的作用，将 checkbox 的消息传递给 checkboxGroup，以此扩大了 checkbox 的可点击区域。
+
+<Alert
+  title="组件间关系"
+  text="checkboxGroup 组件的子孙组件，checkbox 组件的祖先组件，需要搭配 checkboxGroup 和 checkbox 一起使用"
+/>
+
+### 常用示例
+
+#### 基本用法
+ 
+需要与 checkboxGroup、checkbox 搭配使用
+
+```javascript
+<ad-checkbox-group value="{{value2}}" bind:onChange="change">
+  <ad-cell-group noTopBorder>
+    <ad-checkbox-field>
+      <ad-cell interactive>
+        <ad-checkbox
+          selectable="{{false}}"
+          value="常态"
+          slot="leftElement"
+          desc="描述文字"
+        >
+          常态
+        </ad-checkbox>
+      </ad-cell>
+    </ad-checkbox-field>
+    <ad-checkbox-field>
+      <ad-cell interactive>
+        <ad-checkbox
+          selectable="{{false}}"
+          value="选中"
+          slot="leftElement"
+          desc="描述文字"
+        >
+          选中
+        </ad-checkbox>
+      </ad-cell>
+    </ad-checkbox-field>
+  </ad-cell-group>
+</ad-checkbox-group>
+```

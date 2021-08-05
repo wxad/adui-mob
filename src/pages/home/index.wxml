@@ -1,0 +1,162 @@
+<!-- <wxs module="common">
+	function judge (data, item) {
+    console.log(data.indexOf(item))
+    return data.indexOf(item)
+	}
+	module.exports.judge = judge
+</wxs> -->
+<view class="body">
+	<view class="header">
+		<image
+		 src="./logo.png"
+		 mode="widthFix"
+		 class="logo"
+		/>
+		<view class="header_title">AD UI Mob</view>
+		<view class="header_desc">小程序组件设计说明</view>
+	</view>
+	<view class="introduction">为微信广告生态推广产品所设计，根据小程序与微信广告 AD UI 特性，组件视觉风格基于简明、敏捷、可信赖的设计准则，为小程序制造优良视觉体验。</view>
+	<view class="main">
+		<ad-collapse
+		 bind:onChange="change"
+		 noTopBorder
+		 value="{{openItems}}"
+		>
+			<ad-collapse-item
+			 class="item"
+			 value="{{0}}"
+			 title="风格"
+			 noBorder
+			 noHeader
+			>
+				<view
+				 class="colla_header {{common.judge(openItems, 0) !== -1 ? 'colla_header_active' : ''}}"
+				 hover-class="colla_header_hover"
+				 hover-start-time="20"
+				 hover-stay-time="70"
+				 bind:tap="open"
+				 data-value="{{0}}"
+				 slot="header"
+        >
+					<view class="colla_header_inner">
+						<view class="colla_title">风格</view>
+						<view class="icon icon_style" />
+					</view>
+
+				</view>
+				<ad-cell-group noTopBorder noBottomBorder>
+					<ad-cell
+					 wx:for="{{list1}}"
+					 title="{{item.title}}"
+					 data-link="{{item.link}}"
+					 isLink
+					 bind:tap="click"
+           banner
+           wx:key="link"
+					/>
+				</ad-cell-group>
+			</ad-collapse-item>
+			<ad-collapse-item
+			 class="item"
+			 value="{{1}}"
+			 title="导航类"
+			 noBorder
+			 noHeader
+			>
+				<view
+				 class="colla_header {{common.judge(openItems, 1) !== -1 ? 'colla_header_active' : ''}}"
+				 hover-class="colla_header_hover"
+				 hover-start-time="20"
+				 hover-stay-time="70"
+				 bind:tap="open"
+				 data-value="{{1}}"
+				 slot="header"
+				>
+					<view class="colla_header_inner">
+						<view class="colla_title">导航类</view>
+						<view class="icon icon_nav" />
+					</view>
+
+				</view>
+				<ad-cell-group noTopBorder noBottomBorder>
+					<ad-cell
+					 wx:for="{{list2}}"
+					 title="{{item.title}}"
+					 data-link="{{item.link}}"
+					 isLink
+					 bind:tap="click"
+           banner
+           wx:key="link"
+					/>
+				</ad-cell-group>
+			</ad-collapse-item>
+			<ad-collapse-item
+			 class="item"
+			 value="{{2}}"
+			 title="基础类"
+			 noBorder
+			 noHeader
+			>
+				<view
+				 class="colla_header {{common.judge(openItems, 2) !== -1 ? 'colla_header_active' : ''}}"
+				 hover-class="colla_header_hover"
+				 hover-start-time="20"
+				 hover-stay-time="70"
+				 bind:tap="open"
+				 data-value="{{2}}"
+				 slot="header"
+				>
+					<view class="colla_header_inner">
+						<view class="colla_title">基础类</view>
+						<view class="icon icon_base" />
+					</view>
+
+				</view>
+				<ad-cell-group noTopBorder noBottomBorder>
+					<ad-cell
+					 wx:for="{{list3}}"
+					 title="{{item.title}}"
+					 data-link="{{item.link}}"
+					 isLink
+					 bind:tap="click"
+           banner
+           wx:key="link"
+					/>
+				</ad-cell-group>
+			</ad-collapse-item>
+			<ad-collapse-item
+			 class="item"
+			 value="{{3}}"
+			 noBorder
+			 noHeader
+			>
+				<view
+				 class="colla_header {{common.judge(openItems, 3) !== -1 ? 'colla_header_active' : ''}}"
+				 hover-class="colla_header_hover"
+				 hover-start-time="20"
+				 hover-stay-time="70"
+				 bind:tap="open"
+				 data-value="{{3}}"
+				 slot="header"
+				>
+					<view class="colla_header_inner">
+						<view class="colla_title">反馈类</view>
+						<view class="icon icon_section" />
+					</view>
+
+				</view>
+				<ad-cell-group noTopBorder noBottomBorder>
+					<ad-cell
+					 wx:for="{{list4}}"
+					 title="{{item.title}}"
+					 data-link="{{item.link}}"
+					 isLink
+					 bind:tap="click"
+           banner
+           wx:key="link"
+					/>
+				</ad-cell-group>
+			</ad-collapse-item>
+		</ad-collapse>
+	</view>
+</view>

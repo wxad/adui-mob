@@ -1,0 +1,11 @@
+<view class="{{prefix}} {{isFixed && 'ad_badge_fixed'}}" style="{{customStyle}}">
+	<view
+	 class="{{prefix}}_text"
+	 wx:if="{{!isDot}}"
+	 style="{{contentStyle}}"
+	>
+		<slot/>
+	</view>
+	<view class="{{prefix}}_dot" wx:if="{{isDot}}" />
+</view>
+

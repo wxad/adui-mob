@@ -1,0 +1,33 @@
+page {
+  --primary-color: #07c160;
+  --ad-green: #07c160;
+  --ad-blue: #2b7bd6;
+  --ad-orange: #EDA20C;
+  --ad-red: #d9514c;
+  --gray-50: #fafafa;
+  --gray-100: #f2f2f2;
+  --gray-200: #ebebeb;
+  --gray-300: #e6e6e6;
+  --gray-400: #e0e0e0;
+  --gray-500: #d6d6d6;
+  --gray-600: #c7c7c7;
+  --gray-700: #a3a3a3;
+  --gray-800: #6b6b6b;
+  --gray-900: #1f1f1f;
+  --transparent-gray-50: rgba(0, 0, 0, 0.02);
+  --transparent-gray-100: rgba(0, 0, 0, 0.06);
+  --transparent-gray-200: rgba(0, 0, 0, 0.08);
+  --transparent-gray-300: rgba(0, 0, 0, 0.1);
+  --transparent-gray-400: rgba(0, 0, 0, 0.12);
+  --transparent-gray-500: rgba(0, 0, 0, 0.16);
+  --transparent-gray-600: rgba(0, 0, 0, 0.22);
+  --transparent-gray-700: rgba(0, 0, 0, 0.36);
+  --transparent-gray-800: rgba(0, 0, 0, 0.58);
+  --transparent-gray-900: rgba(0, 0, 0, 0.88);
+
+  /* 安全间距 */
+  --con-bottom: constant(safe-area-inset-bottom);
+  --env-bottom: env(safe-area-inset-bottom);
+
+  background-color: var(--gray-100);
+}

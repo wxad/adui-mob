@@ -1,0 +1,50 @@
+---
+name: TabbarItem
+menu: 导航类
+index: 3
+---
+
+import { Alert, Table } from 'adui'
+
+# TabbarItem
+
+用于自定义页面的头部，一般情况下建议使用原生的头部，当需要自定义头部的时候才使用
+
+<Alert
+  title="组件间关系"
+  text="Tabbar 组件的子孙组件，需要搭配 Tabbar 使用，使用是需要配置 value 作为每个 TabbarItem 的唯一标识"
+/>
+
+## Slot
+
+export const slots = [
+  {
+    name: '',
+    desc: '默认 slot，自定义内容',
+  },
+  {
+    name: 'icon',
+    desc: '未选中项 icon 的 slot，自定义未选中 icon 内容',
+  },
+  {
+    name: 'iconActive',
+    desc: '选中项 icon 的 slot，自定义选中 icon 内容',
+  },
+]
+
+<Table
+  columnsResizable
+  dataSource={slots}
+  columns={[
+    {
+      dataIndex: 'name',
+      title: 'name',
+    },
+    {
+      dataIndex: 'desc',
+      title: '描述',
+    },
+  ]}
+/>
+
+## Properties

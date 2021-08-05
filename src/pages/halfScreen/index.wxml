@@ -1,0 +1,42 @@
+<DemoBody>
+	<DemoHeader title="半屏模态 Halfscreen" desc="静态地呈现一些信息" />
+	<DemoBlock title="基础样式">
+		<ad-button
+		 theme="light"
+		 intent="primary"
+		 banner
+		 bind:tap="open"
+		 data-num="{{1}}"
+		>基础样式
+		</ad-button>
+	</DemoBlock>
+	<DemoBlock title="单选样式">
+		<ad-button
+		 theme="light"
+		 intent="primary"
+		 banner
+		 style="display: block; margin-bottom: 16px;"
+		 bind:tap="open"
+		 data-num="{{3}}"
+		>从顶部唤起
+		</ad-button>
+		<ad-button
+		 theme="light"
+		 intent="primary"
+		 banner
+		 bind:tap="open"
+		 data-num="{{4}}"
+		>从底部唤起
+		</ad-button>
+	</DemoBlock>
+	<DemoBlock title="组合样式">
+		<ad-button
+		 theme="light"
+		 intent="primary"
+		 banner
+		 bind:tap="open"
+		 data-num="{{5}}"
+		>组合图片
+		</ad-button>
+	</DemoBlock>
+</DemoBody>

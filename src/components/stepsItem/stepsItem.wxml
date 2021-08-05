@@ -1,0 +1,30 @@
+<view class="{{prefix}} {{prefix}}_{{direction}} {{stepNumber === '' && icon === '' && 'ad_steps_item_pointer'}}" style="{{direction === 'horizontal' ? 'width: calc((1/' + stepCount + ') * 100%)' : ''}}">
+	<view class="{{prefix}}_header">
+		<view class="{{prefix}}_header_left {{isFirst && 'ad_steps_item_header_left_hidden'}}" />
+		<view
+		 wx:if="{{stepNumber === '' && icon === ''}}"
+		 class="{{prefix}}_header_pointer"
+		 style="background-color: {{active ? activeColor : ''}}"
+		/>
+		<view class="{{prefix}}_header_step" wx:if="{{stepNumber === '' && icon !== ''}}">
+			<ad-icon
+			 icon="{{icon}}"
+			 class="{{prefix}}_header_step"
+			 color="{{active ? activeColor : normalColor}}"
+			/>
+			<slot name="icon" />
+		</view>
+		<view class="{{prefix}}_header_step" wx:if="{{stepNumber !== '' && icon === ''}}">
+			<ad-badge contentStyle="background-color: {{active ? activeColor : normalColor}}" >{{stepNumber}}</ad-badge>
+			<slot name="badge"></slot>
+		</view>
+		<view class="{{prefix}}_header_right {{isLast && 'ad_steps_item_header_right_hidden'}}" />
+	</view>
+	<view class="{{prefix}}_body">
+		<view class="{{prefix}}_title">{{title}}</view>
+		<view class="{{prefix}}_desc">{{desc}}
+			<slot name="desc" />
+		</view>
+	</view>
+</view>
+

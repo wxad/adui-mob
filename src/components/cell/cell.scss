@@ -1,0 +1,159 @@
+@import "../common/style/reset/common.scss";
+@import "../common/style/var.scss";
+@import "../common/style/theme.scss";
+@import "../common/style/mixin";
+
+$prefix: "ad_cell";
+
+.#{$prefix} {
+  position: relative;
+  @include flex-center-center;
+  padding: 0 20px;
+  background-color: #ffffff;
+
+  &_active {
+
+    &::after {
+      @include hoverBg;
+    }
+  }
+
+  &_hover {
+
+    &::after {
+      @include hoverBg;
+    }
+  }
+
+  &_disabled {
+
+    .#{$prefix}_value, .#{$prefix}_placeholder {
+      color: theme(--transparent-gray-500, $--transparent-gray-500);
+    }
+  }
+
+  &_outer {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &_inner {
+    @include flex-start-center;
+    flex-direction: column;
+    position: relative;
+    padding: 14px 0;
+    min-height: 56px;
+    color: theme(--transparent-gray-900, $--transparent-gray-900);
+    @include font-large;
+  }
+
+  &_has_avatar {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  &_inner_content {
+    @include flex-center-between;
+    width: 100%;
+  }
+
+  &_slot {
+    width: 100%;
+  }
+  
+  &.#{$prefix}_banner {
+    padding: 0;
+
+    .#{$prefix}_inner {
+      padding: 14px 20px;
+    }
+  }
+
+  &.#{$prefix}_right_banner {
+    padding-right: 0;
+
+    .#{$prefix}_inner {
+      padding-right: 20px;
+    }
+  }
+
+  &_left {
+    @include flex-center-start;
+    margin-right: 16px;
+    min-width: 25%;
+    flex: none;
+    flex-wrap: wrap;
+
+    &.#{$prefix}_ellipsis {
+      @include ellipsis;
+      flex: 1;
+      flex-wrap: nowrap;
+    }
+  }
+
+  &_left_icon {
+    flex: none;
+    margin-right: 8px;
+  }
+
+  &_text {
+    min-width: 0;
+  }
+
+  &_error_icon {
+    margin-left: 8px;
+  }
+
+  // &_title, &_desc{
+  //   @include ellipsis;
+  // }
+
+  &_title {
+    @include ellipsis;
+  }
+
+  &_desc, &_right_desc {
+    @include font-small;
+    color: theme(--transparent-gray-700, $--transparent-gray-700);
+  }
+
+  &_avatar{
+    display: inline-block;
+    flex: none;
+    margin-right: 12px;
+  }
+
+  &_right {
+    @include flex-center-end;
+    flex: none;
+    min-width: 0;
+
+    &.#{$prefix}_ellipsis {
+      flex: 1;
+    }
+  }
+
+  &_right_icon {
+    flex: none;
+    margin-left: 8px;
+  }
+
+  &_value {
+    color: theme(--transparent-gray-800, $--transparent-gray-800);
+    text-align: right;
+    min-width: 0;
+  }
+
+  &_value_inner {
+    @include ellipsis;
+  }
+
+  &_placeholder {
+    color: theme(--transparent-gray-700, $--transparent-gray-700);
+  }
+
+  &_icon {
+    flex: none;
+    margin-left: 4px;
+  }
+}

@@ -1,0 +1,54 @@
+<view
+ class="{{prefix}} {{imgUrl !== '' && 'ad_upload_image_value'}} {{banner && 'ad_upload_image_banner'}} {{disabled && 'ad_upload_image_disabled'}}"
+ hover-class="{{!disabled && 'ad_upload_image_hover'}}"
+ hover-start-time="20"
+ hover-stay-time="70"
+ bind:tap="click"
+ style="{{customStyle}}"
+>
+	<image
+	 wx:if="{{imgUrl === '' && placeholder !== ''}}"
+	 class="{{prefix}}_placeholder"
+	 src="{{placeholder}}"
+	 mode="{{placeholderMode}}"
+	 style="{{placeholderStyle}}"
+	/>
+	<image
+	 wx:if="{{imgUrl === '' && placeholder == '' && placeholderType !== ''}}"
+	 class="{{prefix}}_placeholder"
+	 src="{{placeholderType}}.svg"
+	 mode="{{placeholderMode}}"
+	 style="{{placeholderStyle}}"
+	/>
+	<view class="{{prefix}}_inner">
+		<view class="{{prefix}}_empty" wx:if="{{imgUrl === ''}}">
+			<ad-icon
+			 icon="{{icon}}"
+			 size="{{iconSize}}"
+			 color="{{disabled ? 'var(--transparent-gray-500, rgba(0, 0, 0, 0.16))' : 'var(--transparent-gray-700, rgba(0, 0, 0, 0.36))'}}"
+			/>
+			<view class="{{prefix}}_desc">{{desc}}</view>
+		</view>
+		<image
+		 src="{{imgUrl}}"
+		 mode="{{imgMode}}"
+		 class="{{prefix}}_image"
+		 wx:if="{{imgUrl !== ''}}"
+		/>
+		<view class="{{prefix}}_change" wx:if="{{imgUrl !== ''}}">
+			更改
+		</view>
+	</view>
+</view>
+<ad-action-sheet
+ wx:if="{{deletable}}"
+ visible="{{isSheetVisible}}"
+ hasCancel
+ bind:onChange="changeImage"
+ bind:onCancel="closeSheet"
+ bind:onClose="closeSheet"
+>
+	<ad-action-sheet-item value="change" title="更换" />
+	<ad-action-sheet-item value="delete" title="删除" />
+</ad-action-sheet>
+

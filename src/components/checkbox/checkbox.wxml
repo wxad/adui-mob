@@ -1,0 +1,26 @@
+<view
+ class="{{prefix}} {{(parentDisabled || disabled) && 'ad_checkbox_disabled'}}"
+ bind:tap="{{selectable ? 'handleClick' : ''}}"
+ data-value="{{value}}"
+ style="{{customStyle}}"
+>
+	<view class="{{prefix}}_inner">
+		<view class="{{prefix}}_indicator_outer">
+			<view class="{{prefix}}_indicator {{active && 'ad_checkbox_indicator_active'}}">
+				<view class="{{prefix}}_indicator_bg" />
+				<ad-icon
+				 wx:if="{{active}}"
+				 icon="tick"
+				 color="#FFFFFF"
+				 size="{{14}}"
+				 class="{{prefix}}_indicator_icon"
+				/>
+			</view>
+		</view>
+		<view class="{{prefix}}_content">
+			<slot/>
+		</view>
+	</view>
+	<view class="{{prefix}}_desc" wx:if="{{desc !== ''}}">{{desc}}</view>
+</view>
+

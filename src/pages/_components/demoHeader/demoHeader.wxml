@@ -1,0 +1,4 @@
+<view class="{{prefix}}">
+  <view class="{{prefix}}_header">{{title}}</view>
+  <view class="{{prefix}}_desc">{{desc}}</view>
+</view>

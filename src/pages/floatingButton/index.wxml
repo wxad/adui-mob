@@ -1,0 +1,9 @@
+<DemoBody>
+	<DemoHeader title="图标 Icon" desc="后台系统的图标集合，分为导航、反馈、编辑、工具、图表和生活六种类型。" />
+	<DemoBlock title="基础样式">
+		<ad-floating-button
+		 text="创建广告"
+		/>
+	</DemoBlock>
+</DemoBody>
+

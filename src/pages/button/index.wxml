@@ -1,0 +1,90 @@
+<DemoBody>
+	<DemoHeader title="按钮 Button" desc="用于承载点击触发行为的控件，如跳转、选择等。" />
+	<DemoBlock title="基础样式">
+		<view class="item" wx:for="{{intent}}">
+			<ad-button intent="{{item.intent}}">{{item.name}}按钮</ad-button>
+		</view>
+		<view class="item">
+			<ad-button intent="success" loading>加载中
+			</ad-button>
+		</view>
+		<view class="item">
+			<ad-button intent="success" disabled>按钮禁用
+			</ad-button>
+		</view>
+	</DemoBlock>
+	<DemoBlock title="轻量样式">
+		<view class="item" wx:for="{{intent}}">
+			<ad-button intent="{{item.intent}}" theme="light">{{item.name}}按钮
+			</ad-button>
+		</view>
+		<view class="item">
+			<ad-button intent="normal" theme="light">轻量按钮
+			</ad-button>
+		</view>
+		<view class="item">
+			<ad-button
+			 intent="success"
+			 loading
+			 theme="light"
+			>加载中
+			</ad-button>
+		</view>
+		<view class="item">
+			<ad-button intent="success" disabled>按钮禁用
+			</ad-button>
+		</view>
+	</DemoBlock>
+	<DemoBlock title="文字样式">
+		<view class="item" wx:for="{{intent}}">
+			<ad-button intent="{{item.intent}}" theme="text">{{item.name}}按钮
+			</ad-button>
+		</view>
+		<view class="item">
+			<ad-button intent="normal" theme="text">文字按钮
+			</ad-button>
+		</view>
+		<view class="item">
+			<ad-button
+			 intent="success"
+			 loading
+			 theme="text"
+			>加载中
+			</ad-button>
+		</view>
+		<view class="item">
+			<ad-button
+			 intent="success"
+			 disabled
+			 theme="text"
+			>按钮禁用
+			</ad-button>
+		</view>
+	</DemoBlock>
+	<DemoBlock title="悬浮按钮">
+		<view class="item">
+			<ad-floating-button text="创建广告" />
+		</view>
+	</DemoBlock>
+	<DemoBlock title="组合图标">
+		<view class="item">
+			<ad-button intent="primary" leftIcon="add">左图标
+			</ad-button>
+		</view>
+		<view class="item">
+			<ad-button intent="primary" rightIcon="add">右图标
+			</ad-button>
+		</view>
+	</DemoBlock>
+	<DemoBlock title="按钮尺寸">
+		<view class="item">
+			<ad-button>默认尺寸
+			</ad-button>
+		</view>
+		<view class="item">
+			<ad-button size="small">小尺寸
+			</ad-button>
+		</view>
+	</DemoBlock>
+</DemoBody>
+

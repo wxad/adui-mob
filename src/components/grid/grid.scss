@@ -1,0 +1,13 @@
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+
+$prefix: 'ad_grid';
+
+.#{$prefix} {
+  clear: both;
+  overflow: hidden;
+
+  &_has_border {
+    border: 1px solid black;
+  }
+}

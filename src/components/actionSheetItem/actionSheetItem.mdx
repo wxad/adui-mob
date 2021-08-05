@@ -1,0 +1,45 @@
+---
+name: ActionSheetItem
+menu: 反馈类
+index: 20
+---
+
+import { Table } from 'adui'
+
+# ActionSheetItem
+
+ActionSheet 组件的子孙组件，具体使用方式请看 ActionSheet 示例
+
+## Slot
+
+export const slots = [
+  {
+    name: '',
+    desc: '默认 slot, 自定义整个组件内容时使用',
+  },
+  {
+    name: 'title',
+    desc: '自定义 title 时使用',
+  },
+  {
+    name: 'desc',
+    desc: '自定义 desc 时使用',
+  },
+]
+
+<Table
+  columnsResizable
+  dataSource={slots}
+  columns={[
+    {
+      dataIndex: 'name',
+      title: 'name',
+    },
+    {
+      dataIndex: 'desc',
+      title: '描述',
+    },
+  ]}
+/>
+
+## Properties

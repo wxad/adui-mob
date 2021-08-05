@@ -1,0 +1,159 @@
+<DemoBody class="main">
+	<DemoHeader title="标签 Tag" desc="用于标记、分类和选择的控件。" />
+	<DemoBlock title="基础样式">
+		<view class="list">
+			<ad-tag
+			 class="tag_item"
+			 wx:for="{{intents}}"
+			 intent="{{item.intent}}"
+			 banner
+			>{{item.name}}
+			</ad-tag>
+		</view>
+		<view class="list">
+			<ad-tag
+			 class="tag_item"
+			 wx:for="{{intents}}"
+			 intent="{{item.intent}}"
+			 theme="outlined"
+			>{{item.name}}
+			</ad-tag>
+		</view>
+		<view class="list">
+			<ad-tag
+			 class="tag_item"
+			 wx:for="{{intents}}"
+			 intent="{{item.intent}}"
+			 theme="standard"
+			>{{item.name}}
+			</ad-tag>
+		</view>
+	</DemoBlock>
+	<DemoBlock title="方形样式" class="spec">
+		<view class="list">
+			<ad-tag
+			 class="tag_item"
+			 wx:for="{{intents}}"
+			 intent="{{item.intent}}"
+			 round="{{false}}"
+			>{{item.name}}
+			</ad-tag>
+		</view>
+		<view class="list">
+			<ad-tag
+			 class="tag_item"
+			 wx:for="{{intents}}"
+			 intent="{{item.intent}}"
+			 theme="outlined"
+			 round="{{false}}"
+			>{{item.name}}
+			</ad-tag>
+		</view>
+		<view class="list">
+			<ad-tag
+			 class="tag_item"
+			 wx:for="{{intents}}"
+			 intent="{{item.intent}}"
+			 theme="standard"
+			 round="{{false}}"
+			>{{item.name}}
+			</ad-tag>
+		</view>
+	</DemoBlock>
+	<DemoBlock title="文字样式" class="spec">
+		<view class="list">
+			<ad-tag
+			 class="tag_item"
+			 wx:for="{{intents}}"
+			 theme="text"
+			 intent="{{item.intent}}"
+			 round="{{false}}"
+			>{{item.name}}
+			</ad-tag>
+		</view>
+	</DemoBlock>
+	<!-- <DemoBlock title="可关闭/可点击" class="spec">
+		<view class="list">
+			<ad-tag
+			 class="tag_item"
+			 wx:for="{{intents}}"
+			 closable
+			 theme="text"
+			 intent="{{item.intent}}"
+			>{{item.name}}
+			</ad-tag>
+			<ad-tag
+			 class="tag_item"
+			 theme="text"
+			 disabled
+			 closable
+			>禁用
+			</ad-tag>
+		</view>
+		<view class="list">
+			<ad-tag
+			 class="tag_item"
+			 wx:for="{{intents}}"
+			 closable
+			 intent="{{item.intent}}"
+			>{{item.name}}
+			</ad-tag>
+			<ad-tag
+			 class="tag_item"
+			 disabled
+			 closable
+			>禁用
+			</ad-tag>
+		</view>
+		<view class="list">
+			<ad-tag
+			 class="tag_item"
+			 wx:for="{{intents}}"
+			 closable
+			 intent="{{item.intent}}"
+			 round="{{false}}"
+			>{{item.name}}
+			</ad-tag>
+			<ad-tag
+			 class="tag_item"
+			 disabled
+			 closable
+			 round="{{false}}"
+			>禁用
+			</ad-tag>
+		</view>
+	</DemoBlock> -->
+	<DemoBlock title="组合图标" class="spec">
+		<view class="list">
+			<ad-tag
+			 theme="standard"
+			 intent="primary"
+			 class="tag_item"
+			 leftIcon="happy"
+			>左图标
+			</ad-tag>
+			<ad-tag
+			 theme="standard"
+			 intent="success"
+			 class="tag_item"
+			 rightIcon="tick-circle-outlined"
+			>右图标
+			</ad-tag>
+			<ad-tag
+			 theme="standard"
+			 intent="success"
+			 class="tag_item"
+			 closable
+			>可关闭
+			</ad-tag>
+			<ad-tag
+			 theme="standard"
+			 intent="normal"
+			 class="tag_item"
+			 disabled
+			>禁用
+			</ad-tag>
+		</view>
+	</DemoBlock>
+</DemoBody>
+

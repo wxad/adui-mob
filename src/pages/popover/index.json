@@ -1,0 +1,11 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "DemoHeader": "../_components/demoHeader/demoHeader",
+    "DemoBody": "../_components/demoBody/demoBody",
+    "DemoBlock": "../_components/demoBlock/demoBlock"
+  }
+}

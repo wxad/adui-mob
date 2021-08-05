@@ -1,0 +1,45 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+$prefix: 'ad_grid_item';
+
+.#{$prefix} {
+  @include flex-center-center;
+  @include font-small;
+  color: var(--transparent-gray-900);
+  flex-direction: column;
+  float: left;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  min-height: 72px;
+  border-radius: 4px;
+
+  &_hover {
+    background-color: var(--transparent-gray-100);
+  }
+
+  &_icon {
+    position: relative;
+  }
+
+  &_badge {
+    position: absolute;
+    z-index: 2;
+    bottom: calc(100% - 12px);
+    left: calc(100% - 9px);
+  }
+
+  &_text {
+    min-height: 30px;
+    text-align: center;
+  }
+
+  &_desc {
+    margin-top: 2px;
+    font-size: 8px;
+    line-height: 8px;
+    color: var(--transparent-gray-700);
+  }
+}

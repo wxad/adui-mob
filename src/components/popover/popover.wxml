@@ -1,0 +1,35 @@
+<view class="{{prefix}} {{hasMask && 'ad_popover_has_mask'}}">
+	<view
+	 class="{{prefix}}_content {{showPopContent && 'ad_popover_content_show'}} {{hasMask && 'ad_popover_has_mask'}}"
+	 style="{{position}} {{popStyle}}"
+	>
+		<view class="{{prefix}}_content_inner" style="background-color: {{backgroundColor}};">
+			<slot name="pop" />
+			<view wx:if="{{text !== ''}}" class="{{prefix}}_text">{{text}}</view>
+		</view>
+		<view class="{{prefix}}_arrow {{prefix}}_arrow_{{placement}}" style="background: linear-gradient(to top left, transparent 0%, transparent 50%, {{backgroundColor}} 50%, {{backgroundColor}} 100%); {{arrowStyle}}" />
+	</view>
+	<view
+	 class="{{prefix}}_trigger"
+	 data-action="{{showPop ? 'close' : 'open'}}"
+	 bind:tap="click"
+	>
+		<slot/>
+	</view>
+	<view
+	 wx:if="{{hasTransparentMask && showPopContent}}"
+	 class="{{prefix}}_mask"
+	 data-action="close"
+	 capture-catch:tap="click"
+	 capture-catch:touchstart="click"
+	/>
+</view>
+<ad-overlay
+ wx:if="{{hasMask}}"
+ show="{{showPop}}"
+ customStyle="z-index: 1070 "
+ data-action="close"
+ capture-catch:tap="click"
+ capture-catch:touchstart="click"
+/>
+

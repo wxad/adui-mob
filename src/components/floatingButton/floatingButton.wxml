@@ -1,0 +1,24 @@
+<view
+ class="{{prefix}} {{isFixed && 'ad_floating_button_fixed'}} {{disabled && 'ad_floating_button_disabled'}}"
+ style="{{customStyle}}"
+ hover-class="{{!disabled && 'ad_floating_button_hover'}}"
+ hover-start-time="20"
+ hover-stay-time="70"
+>
+	<view class="{{prefix}}_inner">
+		<ad-icon
+		 class="{{prefix}}_icon"
+		 icon="{{icon}}"
+		 size="{{iconSize}}"
+		 color="{{disabled ? iconDisabledColor : iconColor}}"
+		/>
+		<view
+		 class="{{prefix}}_text"
+		 style="{{textStyle}}"
+		>
+			<view class="{{prefix}}_text_inner">{{text}}</view>
+		</view>
+	</view>
+	<slot/>
+</view>
+

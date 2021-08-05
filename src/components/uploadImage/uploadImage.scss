@@ -1,0 +1,97 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+
+$prefix: 'ad_upload_image';
+
+// :host {
+//   flex: 0 1 calc(100% / 3);
+// }
+
+.#{$prefix} {
+  position: relative;
+  @include flex-center-center;
+  padding: 0 14px;
+  width: 100%;
+  height: 94px;
+  background-color: rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  border-radius: 4px;
+
+  &_banner {
+    padding-top: 12px;
+    height: 112px;
+
+    &.#{$prefix}_value {
+      padding-top: 0;
+    }
+
+    .#{$prefix}_placeholder {
+      max-width: 244px;
+    }
+  }
+
+  &_value {
+    padding: 0;
+    background-color: theme(--gray-900, $--gray-900);
+  }
+
+  &_hover::after {
+    @include hoverBg;
+  }
+
+  &_disabled {
+    color: theme(--transparent-gray-500, $--transparent-gray-500);
+  }
+
+  &_desc {
+    color: theme(--transparent-gray-700, $--transparent-gray-700);
+    @include font-small;
+    font-weight: bold;
+  }
+
+  &_inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include flex-center-center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  &_empty {
+    @include flex-col-center-center;
+  }
+
+  &_change {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    @include flex-center-center;
+    padding: 2px 6px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 14px;
+    z-index: 10;
+    background-color: theme(--transparent-gray-700, $--transparent-gray-700);
+    border-radius: 38px;
+    overflow: hidden;
+    // text-shadow: 0 0 4px theme(--transparent-gray-600, $--transparent-gray-600);
+  }
+
+  &_image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &_placeholder {
+    width: 100%;
+    height: 100%;
+    max-width: 132px;
+    z-index: 0;
+  }
+}

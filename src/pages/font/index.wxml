@@ -1,0 +1,66 @@
+<DemoBody>
+	<DemoHeader title="字体 Typography" desc="通过建立字体体系，可以提升设计一致性，避免大量字阶、字重等样式浪费。" />
+	<DemoBlock
+	 title="iOS系统"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder>
+			<ad-cell title="中文字体" placeholder="PingFang SC" />
+			<ad-cell title="English" placeholder="SF UI Pro Text/Display" />
+		</ad-cell-group>
+	</DemoBlock>
+	<DemoBlock
+	 title="Android系统"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder>
+			<ad-cell title="中文字体" placeholder="Source Han Sans" />
+			<ad-cell title="English" placeholder="Google Sans" />
+		</ad-cell-group>
+	</DemoBlock>
+	<DemoBlock
+	 title="文字大小"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder>
+			<ad-cell
+			 title="36pt"
+			 class="font font_one"
+			 placeholder="大标题1"
+			/>
+			<ad-cell
+			 title="30pt"
+			 class="font font_two"
+			 placeholder="大标题2"
+			/>
+			<ad-cell
+			 title="24pt"
+			 class="font font_three"
+			 placeholder="标题1"
+			/>
+			<ad-cell
+			 title="18pt"
+			 class="font font_four"
+			 placeholder="标题2"
+			/>
+			<ad-cell
+			 title="16pt"
+			 class="font font_five"
+			 placeholder="正文标题1"
+			/>
+			<ad-cell
+			 title="14pt"
+			 class="font font_six"
+			 placeholder="正文标题2"
+			/>
+			<ad-cell title="16pt" placeholder="正文1" />
+			<ad-cell title="14pt" placeholder="正文2" />
+			<ad-cell title="13pt" placeholder="辅助文字" />
+			<ad-cell title="12pt" placeholder="注释文字" />
+		</ad-cell-group>
+	</DemoBlock>
+</DemoBody>
+

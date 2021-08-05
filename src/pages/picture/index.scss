@@ -1,0 +1,31 @@
+
+.body {
+
+  .demo_block_body {
+    padding: 24px 12px;
+  } 
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.item_outer {
+  margin: 0 8px 20px 8px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 24px;
+  color:var(--transparent-gray-900);
+}
+
+.item {
+  width: calc((100vw - 72px) / 3);
+  height: calc((100vw - 72px) / 3);
+}
+
+.text {
+  margin-top: 8px;
+}

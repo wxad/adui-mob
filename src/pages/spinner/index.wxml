@@ -1,0 +1,71 @@
+<DemoBody>
+	<DemoHeader title="旋转加载 Spinner" desc="用于告知用户信息内容的加载状态，通常是即时、短时的。" />
+	<DemoBlock
+	 title="基础样式"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder noBottomBorder>
+			<ad-cell value="基础样式" bind:tap="show1">
+				<ad-spinner slot="leftElement" />
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+	<DemoBlock
+	 title="尺寸"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder noBottomBorder>
+			<ad-cell value="大尺寸" bind:tap="show2">
+				<ad-spinner slot="leftElement" size="large" />
+			</ad-cell>
+			<ad-cell value="中尺寸" bind:tap="show3">
+				<ad-spinner slot="leftElement" size="medium" />
+			</ad-cell>
+			<ad-cell value="小尺寸">
+				<ad-spinner slot="leftElement" size="small" />
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+	<DemoBlock
+	 title="带加载文案"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder noBottomBorder>
+			<ad-cell value="水平排列">
+				<ad-spinner slot="leftElement" text="加载中..." />
+			</ad-cell>
+			<ad-cell value="垂直排列">
+				<ad-spinner
+				 slot="leftElement"
+				 text="加载中..."
+				 direction="vertical"
+				/>
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+	<DemoBlock
+	 title="自定义颜色"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder noBottomBorder>
+			<ad-cell value="主题色">
+				<ad-spinner slot="leftElement" />
+			</ad-cell>
+			<ad-cell value="黑色">
+				<ad-spinner slot="leftElement" color="#1f1f1f"/>
+			</ad-cell>
+			<ad-cell
+			 value="白色"
+			 customStyle="background-color: var(--transparent-gray-800)"
+			 class="spinner_color"
+			>
+				<ad-spinner slot="leftElement" color="#fff" />
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+</DemoBody>
+

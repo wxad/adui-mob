@@ -1,0 +1,141 @@
+---
+name: SelectItem
+menu: 反馈类
+index: 20
+---
+
+import { Table, Alert } from 'adui'
+
+# selectItem
+
+用于承载较多当选择项内容，可展开与收起的组件。
+
+<Alert
+  text="select 的子孙组件，可与 select 搭配使用（具体使用方式可查看 select 使用实例），也可单独使用"
+  title="组件间关系"
+/>
+
+### 常用示例
+
+#### 基本用法
+
+单独使用时，通过 visible 来控制选择内容的展示和隐藏
+```javascript
+  const options1 = [
+  {
+    title: '选项一',
+    value: 0,
+  },
+  {
+    title: '选项二',
+    value: 1,
+  },
+  {
+    title: '选项三',
+    value: 2,
+  },
+  {
+    title: '选项四',
+    value: 3,
+  },
+]
+
+<ad-select-item
+  options="{{options1}}"
+  defaultValue="{{value1}}"
+  visible="{{isSelectVisible}}"
+/>
+```
+
+#### 自定义内容
+
+```javascript
+<view class="header" bind:tap="open">
+  <view class="header_item {{isSelectVisible && 'header_item_active'}}">自定义
+    <ad-icon
+      style="margin-left: 6px;"
+      icon="{{isSelectVisible ? 'triangle-up' : 'triangle-down'}}"
+      color="{{isSelectVisible ? 'var(--transparent-gray-900)': 'var(--transparent-gray-700)'}}"
+    />
+  </view>
+  <ad-divider style="width: 100%;" />
+</view>
+<ad-select-item
+  bind:onClose="hide"
+  visible="{{isSelectVisible}}"
+>
+  <view class="main">
+    <ad-cell-group noTopBorder>
+      <ad-cell title="广告状态">
+        <ad-switch slot="rightElement" />
+      </ad-cell>
+    </ad-cell-group>
+    <ad-button
+      class="button"
+      intent="primary"
+      bind:tap="hide"
+    >确定
+    </ad-button>
+  </view>
+</ad-select-item>
+```
+
+## Slot
+
+export const slots = [
+  {
+    name: '',
+    desc: '默认 slot，自定义 selectItem 展开的内容',
+  },
+]
+
+<Table
+  columnsResizable
+  dataSource={slots}
+  columns={[
+    {
+      dataIndex: 'name',
+      title: 'name',
+    },
+    {
+      dataIndex: 'desc',
+      title: '描述',
+    },
+  ]}
+/>
+
+<!-- ## Events
+
+export const events = [
+  {
+    name: 'onClose',
+    desc: 'selectItem 隐藏时触发',
+    value: '-',
+  },
+  {
+    name: 'onChange',
+    desc: 'selectItem 选中项改变时触发',
+    value: '{value: any}',
+  },
+]
+
+<Table
+  columnsResizable
+  dataSource={events}
+  columns={[
+    {
+      dataIndex: 'name',
+      title: 'name',
+    },
+    {
+      dataIndex: 'desc',
+      title: '描述',
+    },
+    {
+      dataIndex: 'value',
+      title: '返回值',
+    },
+  ]}
+/> -->
+
+## Properties

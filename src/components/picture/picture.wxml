@@ -1,0 +1,32 @@
+<view class="{{prefix}} {{noBorder && 'ad_picture_no_border'}} {{round && 'ad_picture_round'}}" style="width: {{width !== 0 ? width : ''}}px; height: {{height !== 0 ? height : ''}}px; {{customStyle}}">
+	<image
+	 wx:if="{{src !== '' && !loadingInner && !errorInner}}"
+	 src="{{src}}"
+	 class="{{prefix}}_pic"
+	 mode="{{mode}}"
+	 catch:tap="{{previewable ? 'preview' : ''}}"
+	 binderror="onError"
+	 bindload="onLoad"
+	/>
+	<ad-spinner
+	 wx:if="{{loadingInner}}"
+	 color="{{spinnerColor}}"
+	 size="{{spinnerSize}}"
+	/>
+	<ad-icon
+	 wx:if="{{src === '' && !errorInner && !loadingInner}}"
+	 icon="{{placeholderIcon}}"
+	 size="{{iconSize}}"
+	 color="{{iconColor}}"
+	/>
+	<ad-icon
+	 wx:if="{{errorInner && src !== '' && !loadingInner}}"
+	 icon="{{errorIcon}}"
+	 size="{{errorIconSize}}"
+	 color="{{iconColor}}"
+	/>
+	<view class="{{prefix}}_text" wx:if="{{errorInner}}">{{errorText}}</view>
+	<slot/>
+	<slot name="error" />
+</view>
+

@@ -1,0 +1,35 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+
+$prefix: 'ad_picture';
+
+:host {
+  display: block;
+}
+
+.#{$prefix} {
+  @include flex-center-center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: theme(--transparent-gray-100, $--transparent-gray-100);
+  overflow: hidden;
+  color: theme(--transparent-gray-700, $--transparent-gray-700);
+
+  &_round {
+    border-radius: 4px;
+  }
+
+  &_pic {
+    width: 100%;
+    height: 100%;
+  }
+
+  &_text {
+    @include font-medium;
+    margin-top: 4px;
+  }
+}

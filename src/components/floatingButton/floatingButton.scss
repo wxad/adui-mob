@@ -1,0 +1,57 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+
+$prefix: 'ad_floating_button';
+
+.#{$prefix} {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  padding: 14px 17px;
+  // min-width: 56px;
+  // min-height: 56px;
+  @include font-large;
+  background-color: theme(--primary-color, $--primary-color);
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 28px;
+  box-shadow: 0 0 8px theme(--transparent-gray-200, $--transparent-gray-200), 0 8px 12px theme(--transparent-gray-400, $--transparent-gray-400);
+  overflow: hidden;
+
+  &.#{$prefix}_hover::after {
+    @include hoverBg;
+  }
+
+  &_fixed {
+    position: fixed;
+    right: 30px;
+    bottom: 75px;
+  }
+
+  &_disabled {
+    background-color: theme(--gray-100, $--gray-100);
+  }
+
+  &_inner {
+    @include flex-center-center;
+  }
+
+  &_icon {
+    flex: none;
+  }
+
+  &_text {
+    transition: width .3s ease-in-out;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  &_text_inner {
+    padding-left: 6px;
+    padding-right: 4px;
+    width: fit-content;
+  }
+}

@@ -1,0 +1,181 @@
+@import "../common/style/reset/common.scss";
+@import "../common/style/var.scss";
+@import "../common/style/theme.scss";
+@import "../common/style/mixin";
+
+$prefix: 'ad_button';
+
+
+.#{$prefix} {
+  position: relative;
+  @include flex-center-center;
+  margin: 0 auto;
+  padding: 10px 8px;
+  min-height: 48px;
+  width: 198px;
+  @include font-large;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: #f8f8f8;
+  border-radius: theme(--border-radius-small, $--border-radius-small);
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  color: #000;
+  font-family: -apple-system-font, 'PingFang SC', 'Helvetica Neue', Helvetica, sans-serif;
+
+  &::after {
+    display: none;
+  }
+
+  // &[disabled]: not([type]) {
+  // }
+
+  &.#{$prefix}_hover::after {
+    @include hoverBg;
+    // content: '';
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    display: block;
+    // width: 100%;
+    // height: 100%;
+    // background-color: theme(--transparent-gray-900, $--transparent-gray-900);
+    // opacity: 0.06;
+    transform: none;
+    border: none;
+    border-radius: 0;
+    // z-index: 0;
+  }
+
+  &_standard {
+    color: #fff;
+  
+    &.#{$prefix}_primary {
+      background-color: theme(--primary-color, $--primary-color);
+    }
+
+    &.#{$prefix}_success {
+      background-color: theme(--ad-green, $--ad-green);
+    }
+
+    &.#{$prefix}_warning {
+      background-color: theme(--ad-orange, $--ad-orange);
+    }
+
+    &.#{$prefix}_danger {
+      background-color: theme(--ad-red, $--ad-red);
+    }
+  }
+
+  &_light{
+
+    background-color: theme(--transparent-gray-100, $--transparent-gray-100);
+
+    &.#{$prefix}_normal {
+      color: theme(--transparent-gray-900, $--transparent-gray-900);
+    }
+
+    &.#{$prefix}_primary {
+      color: theme(--primary-color, $--primary-color);
+    }
+
+    &.#{$prefix}_success {
+      color: theme(--ad-green, $--ad-green);
+    }
+
+    &.#{$prefix}_warning {
+      color: theme(--ad-orange, $--ad-orange);
+    }
+
+    &.#{$prefix}_danger {
+      color: theme(--ad-red, $--ad-red);
+    }
+  }
+
+  &_text {
+    background: none;
+
+    &.#{$prefix}_normal {
+      color: theme(--transparent-gray-900, $--transparent-gray-900);
+    }
+
+    &.#{$prefix}_primary {
+      color: theme(--primary-color, $--primary-color);
+    }
+
+    &.#{$prefix}_success {
+      color: theme(--ad-green, $--ad-green);
+    }
+
+    &.#{$prefix}_warning {
+      color: theme(--ad-orange, $--ad-orange);
+    }
+
+    &.#{$prefix}_danger {
+      color: theme(--ad-red, $--ad-red);
+    }
+  }
+
+  // &.#{$prefix}_medium {
+  //   width: 198px;
+  // }
+
+  &.#{$prefix}_small {
+    padding: 8px 12px;
+    min-height: 40px;
+    @include font-medium;
+  }
+
+  &.#{$prefix}_fit_content {
+    width: fit-content;
+  }
+
+  &.#{$prefix}_banner {
+    width: 100%;
+  }
+
+  &_title {
+    position: relative;
+    padding: 0 4px;
+
+    &:empty {
+      padding: 0;
+    }
+  }
+
+  &.#{$prefix}_disabled {
+
+    &.#{$prefix}_text {
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .#{$prefix}_title {
+      color: theme(--transparent-gray-500, $--transparent-gray-500);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: theme(--transparent-gray-900, $--transparent-gray-900);
+      opacity: 0.06;
+      transform: none;
+      border: none;
+      border-radius: 0;
+      z-index: 0;
+    }
+  }
+}
+
+button[disabled]:not([type]) {
+  background-color: transparent;
+  color: transparent;
+}

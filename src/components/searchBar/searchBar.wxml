@@ -1,0 +1,35 @@
+<view class="{{prefix}} {{isCard && 'ad_search_bar_card'}}" style="{{customStyle}}">
+	<view class="{{prefix}}_inner">
+		<ad-icon
+		 class="{{prefix}}_icon {{prefix}}_icon_left"
+		 icon="search"
+		 color="{{leftIconColor}}"
+		 size="{{leftIconSize}}"
+		/>
+		<input
+		 class="{{prefix}}_input"
+		 placeholder-class="{{prefix}}_input_placeholder"
+		 placeholder="{{placeholder}}"
+		 value="{{inputValue}}"
+		 focus="{{inputFocus}}"
+		 bindinput="onChange"
+		 bindfocus="onFocus"
+		 bindblur="onBlur"
+		 bindconfirm="onConfirm"
+		 bindkeyboardheightchange="onKeyboardHeightChange"
+		 style="{{inputStyle}}"
+		/>
+		<view
+		 class="{{prefix}}_icon {{prefix}}_icon_right"
+		 wx:if="{{hasRightIcon && inputValue !== ''}}"
+		 bind:tap="clear"
+		>
+			<ad-icon
+			 icon="cancel-circle"
+			 color="{{rightIconColor}}"
+			 size="{{rightIconSize}}"
+			/>
+		</view>
+	</view>
+</view>
+

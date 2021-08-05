@@ -1,0 +1,7 @@
+<view class="{{prefix}}" style="{{customStyle}}">
+	<view class="{{prefix}}_placeholder" wx:if="{{isFixed}}" />
+	<view class="{{prefix}}_inner {{isFixed && 'ad_tabbar_inner_fixed'}}">
+		<slot/>
+	</view>
+</view>
+

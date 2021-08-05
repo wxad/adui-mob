@@ -1,0 +1,34 @@
+<view class="{{prefix}} {{disabled && 'ad_textarea_disabled'}}" style="{{customStyle}}">
+	<textarea
+	 class="{{prefix}}_textarea"
+	 value="{{textareaValue}}"
+	 placeholder="{{placeholder}}"
+	 placeholder-class="{{placeholderClass}} {{disabled && 'ad_textarea_placeholder_disabled'}} {{error && 'ad_textarea_placeholder_error'}}"
+	 placeholder-style="{{placeholderStyle}}"
+	 disabled="{{disabled}}"
+	 maxlength="{{maxLength}}"
+	 focus="{{focus}}"
+	 autoHeight="{{autoHeight}}"
+	 fixed="{{fixed}}"
+	 cursor-spacing="{{cursorSpacing}}"
+	 cursor="{{cursor}}"
+	 show-confirm-bar="{{showConfirmBar}}"
+	 selection-start="{{selectionStart}}"
+	 selection-end="{{selectionEnd}}"
+	 adjust-position="{{adjustPosition}}"
+	 hold-keyboard="{{holdKeyboard}}"
+	 disable-default-padding="{{disableDefaultPadding}}"
+	 bindfocus="onFocus"
+	 bindblur="onBlur"
+	 bindlinechange="onLineChange"
+	 bindinput="onChange"
+	 bindconfirm="onConfirm"
+	 bindkeyboardheightchange="onKeyboardHeightChange"
+	 style="{{textareaStyle}}"
+	/>
+	<view class="{{prefix}}_counter" wx:if="{{counter !== 0}}">
+    	<view class="{{(valueLength !== null ? (valueLength > counter): (textareaValue.length > counter)) && 'ad_textarea_reminder'}}">{{valueLength === null ? textareaValue.length : valueLength}}</view>
+			/{{counter}}
+  </view>
+	</view>
+

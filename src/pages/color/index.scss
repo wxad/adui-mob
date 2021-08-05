@@ -1,0 +1,44 @@
+@import '../../components/common/style/reset/common.scss';
+@import '../../components/common/style/var.scss';
+@import '../../components/common/style/theme.scss';
+@import '../../components/common/style/mixin';
+
+page {
+  background-color: #fff;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+}
+
+.cell_color_block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 14px;
+  width: 42px;
+  height: 42px;
+  border-radius: 4px;
+}
+
+.cell_color_circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.cell_transparent {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='42' height='42' viewBox='0 0 42 42' fill='none' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E %3Crect width='42' height='42' rx='4' fill='url(%23pattern0)'/%3E %3Cdefs%3E %3Cpattern id='pattern0' patternContentUnits='objectBoundingBox' width='1' height='1'%3E %3Cuse xlink:href='%23image0' transform='scale(0.0238095)'/%3E %3C/pattern%3E %3Cimage id='image0' width='42' height='42' xlink:href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABzSURBVHgB7ZXBDcAgDMRC1SXYfzcYg3aA9GcVItlPuIelU3RtjLEiofeePcecM3bkryiCojSK0rT1kn3suu6vvNXTKEpTRvQ+7brd+r9QlMatp/NWT6MojVtP562eRlEat57OWz2NojRuPZ23ehpFacqIPrupVxsBQ9+LAAAAAElFTkSuQmCC'/%3E %3C/defs%3E %3C/svg%3E ");
+}
+
+.title {
+  @include font-large;
+}
+
+.desc {
+  @include font-mini;
+}

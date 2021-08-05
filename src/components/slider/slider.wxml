@@ -1,0 +1,41 @@
+<view class="{{prefix}} {{hasTip && 'ad_slider_has_tip'}}" style="{{customStyle}}">
+	<view class="{{prefix}}_inner" bind:tap="onClick">
+		<view class="{{prefix}}_bar" style="left: {{innerValue[0]}}%; width: {{innerValue[1] - innerValue[0]}}%;">
+			<view
+			 wx:if="{{range}}"
+			 class="{{prefix}}_button {{prefix}}_button_left"
+			 bind:touchstart="onTouchStart"
+			 bind:touchmove="onTouchMove"
+			 bind:touchend="onTouchEnd"
+			 data-type="start"
+			>
+				<view class="{{prefix}}_button_inner" />
+				<view wx:if="{{hasTip}}" class="{{prefix}}_tip">
+					<slot name="startTip" />
+				</view>
+			</view>
+			<view
+			 class="{{prefix}}_button {{prefix}}_button_right"
+			 bind:touchstart="onTouchStart"
+			 bind:touchmove="onTouchMove"
+			 bind:touchend="onTouchEnd"
+			 data-type="end"
+			>
+				<view class="{{prefix}}_button_inner" />
+				<view wx:if="{{hasTip}}" class="{{prefix}}_tip">
+					<slot name="endTip" />
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="{{prefix}}_marks" wx:if="{{marks.length !== 0}}">
+		<view
+		 class="{{prefix}}_mark {{item.position === 0 && 'ad_slider_mask_first'}} {{item.position === 100 && 'ad_slider_mask_last'}}"
+		 wx:for="{{marks}}"
+		 wx:key="value"
+		 style="left: {{item.position !== 100 ? item.position : ''}}%; {{item.position === 100 ? 'right: 0': ''}}"
+		>{{item.value}}
+		</view>
+	</view>
+</view>
+

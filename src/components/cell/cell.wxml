@@ -1,0 +1,99 @@
+<view
+ class="{{prefix}} {{banner && 'ad_cell_banner'}} {{rightBanner && 'ad_cell_right_banner'}} {{active && 'ad_cell_active'}} {{disabled && 'ad_cell_disabled'}}"
+ hover-class="{{ !disabled && (isLink || interactive) && 'ad_cell_hover'}}"
+ hover-start-time="20"
+ hover-stay-time="70"
+ style="{{customStyle}}"
+>
+	<ad-avatar
+	 wx:if="{{avatar && rightBanner}}"
+	 mode="{{avatarMode}}"
+	 size="{{avatarSize}}"
+	 src="{{avatar}}"
+	 round="{{avatarRound}}"
+	 class="{{prefix}}_avatar"
+	/>
+	<ad-icon
+	 wx:if="{{leftIcon && rightBanner}}"
+	 icon="{{leftIcon}}"
+	 class="{{prefix}}_left_icon"
+	 color="{{leftIconColor}}"
+	 size="{{leftIconSize}}"
+	/>
+	<view class="{{prefix}}_outer">
+		<ad-divider wx:if="{{!noTopBorder && !noBorder}}" />
+		<view class="{{prefix}}_inner {{(avatar !== '' && !rightBanner) && 'ad_cell_has_avatar'}} {{banner && 'ad_cell_banner'}}" style="{{innerOuterStyle}}">
+			<view class="{{prefix}}_inner_content" style="{{innerStyle}}">
+				<view class="{{prefix}}_left {{img && 'ad_cell_hasImg'}} {{leftEllipsis && 'ad_cell_ellipsis'}}" style="{{leftStyle}}">
+					<ad-avatar
+					 wx:if="{{avatar && !rightBanner}}"
+					 mode="{{avatarMode}}"
+					 size="{{avatarSize}}"
+					 src="{{avatar}}"
+					 round="{{avatarRound}}"
+					 class="{{prefix}}_avatar"
+					/>
+					<ad-icon
+					 wx:if="{{leftIcon && !rightBanner}}"
+					 icon="{{leftIcon}}"
+					 class="{{prefix}}_left_icon"
+					 color="{{leftIconColor}}"
+					 size="{{leftIconSize}}"
+					/>
+					<view class="{{prefix}}_text">
+						<view
+						 wx:if="{{title}}"
+						 class="{{prefix}}_title"
+						 style="{{titleStyle}}"
+						>{{title}}
+						</view>
+						<view wx:if="{{desc}}" class="{{prefix}}_desc">{{desc}}</view>
+					</view>
+					<ad-icon
+					 wx:if="{{error}}"
+					 icon="{{errorIcon}}"
+					 class="{{prefix}}_error_icon"
+					 color="var(--ad-red, #D9514C)"
+					/>
+					<slot name="leftElement" />
+				</view>
+				<view class="{{prefix}}_right {{rightEllipsis && 'ad_cell_ellipsis'}}" style="{{rightStyle}}">
+					<slot name="valueLeft"></slot>
+					<view wx:if="{{placeholder !== '' && value === ''}}" class="{{prefix}}_placeholder">{{placeholder}}</view>
+					<view wx:if="{{value !== ''}}" class="{{prefix}}_value">
+						<view class="{{prefix}}_value_inner">{{value}}</view>
+					</view>
+					<view wx:if="{{rightDesc !== ''}}" class="{{prefix}}_right_desc">{{rightDesc}}</view>
+					<ad-picture
+					 wx:if="{{rightPicture !== ''}}"
+					 src="{{rightPicture}}"
+					 mode="{{rightPictureMode}}"
+					 width="{{rightPictureWidth}}"
+					 height="{{rightPictureHeight}}"
+					/>
+					<slot name="rightElement" />
+					<ad-icon
+					 wx:if="{{rightIcon}}"
+					 icon="{{rightIcon}}"
+					 color="{{rightIconColor}}"
+					 size="{{rightIconSize}}"
+					 class="{{prefix}}_right_icon"
+					 style="{{rightIcon === 'arrow-right' ? 'margin-right: -4px' : ''}}"
+					/>
+					<ad-icon
+					 class="{{prefix}}_icon"
+					 wx:if="{{isLink}}"
+					 icon="arrow-right"
+					 color="{{disabled ? 'var(--transparent-gray-400, rgba(0, 0, 0, 0.12))' : 'var(--transparent-gray-600, rgba(0, 0, 0, 0.22))'}}"
+					 style="margin-right: -4px"
+					/>
+				</view>
+			</view>
+			<view class="{{prefix}}_slot">
+				<slot class="{{prefix}}_slot" />
+			</view>
+		</view>
+		<ad-divider wx:if="{{!noBottomBorder && !noBorder}}" />
+	</view>
+</view>
+

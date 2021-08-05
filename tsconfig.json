@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "module": "CommonJS",
+    "target": "ES5",
+    "allowJs": true,
+    "experimentalDecorators": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "alwaysStrict": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "removeComments": true,
+    "pretty": true,
+    "strictPropertyInitialization": true,
+    "allowSyntheticDefaultImports": true, // 兼容 commonjs 模块，检测导入的模块是否是 ES6 模块，如果不是，则查找模块中是否有 exports.default 导出
+    "typeRoots": [
+      "./types",
+      "./node_modules"
+    ],
+    "lib": [
+      "es5",
+      "es6",
+      "ES2017"
+    ],
+    "types": [
+      "miniprogram-api-typings",
+      "adui"
+    ],
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/component/icon/icon.ts",
+    "src/component/common/tool/classname.js",
+    "src/component/common/tool/classname.js",
+    "src/component/common/tool/classname.js",
+    "src/component/common/icon/icon-backgrounds.js"
+  ],
+  "exclude": [
+    "./node_modules"
+  ]
+}

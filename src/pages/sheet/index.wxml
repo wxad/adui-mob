@@ -1,0 +1,272 @@
+<DemoBody>
+	<DemoHeader title="面板 Sheet" desc="从底部弹出，用于辅助完成子任务、提醒重要信息等；启用面板后完成当前流程后才能返回主流程。" />
+	<DemoBlock title="基础样式">
+		<ad-button
+		 class="button_trigger"
+		 theme="light"
+		 intent="normal"
+		 bind:tap="open"
+		 data-num="{{1}}"
+		>单层样式
+		</ad-button>
+		<ad-button
+		 class="button_trigger"
+		 theme="light"
+		 intent="normal"
+		 bind:tap="open"
+		 data-num="{{2}}"
+		>多层样式
+		</ad-button>
+	</DemoBlock>
+	<DemoBlock title="组合样式">
+		<ad-button
+		 class="button_trigger"
+		 theme="light"
+		 intent="normal"
+		 bind:tap="open"
+		 data-num="{{5}}"
+		>组合图片
+		</ad-button>
+		<ad-button
+		 class="button_trigger"
+		 theme="light"
+		 intent="normal"
+		 bind:tap="open"
+		 data-num="{{4}}"
+		>组合输入框
+		</ad-button>
+		<ad-button
+		 class="button_trigger"
+		 theme="light"
+		 intent="normal"
+		 bind:tap="open"
+		 data-num="{{6}}"
+		>组合标签
+		</ad-button>
+	</DemoBlock>
+</DemoBody>
+<ad-sheet
+ defaultVisible="{{true}}"
+ visible="{{showDrawer1}}"
+ title="标题"
+ bind:onClose="close"
+ data-num="{{1}}"
+>
+	<view class="body1">
+		<view class="header1" />
+		<view class="button">
+			<ad-button
+			 banner
+			 bind:tap="close"
+			 data-num="{{1}}"
+			>我知道了
+			</ad-button>
+		</view>
+	</view>
+</ad-sheet>
+<ad-sheet
+ visible="{{showDrawer2}}"
+ headerStyle="box-shadow: none;"
+ bind:onClose="close"
+ data-num="{{2}}"
+ title="{{step1 === 1 ? '二级标题' : '一级标题'}}"
+ isTitleCenter="{{step1 === 1}}"
+>
+	<ad-icon
+	 icon="arrow-left"
+	 size="{{24}}"
+	 color="rgba(0, 0, 0, 0.22)"
+	 slot="headerLeft"
+	 wx:if="{{step1 === 1}}"
+	 bind:tap="resetStep"
+	/>
+	<view class="body2 {{step1 === 1 && 'move'}}">
+		<scroll-view
+		 class="body1 form"
+		 scroll-y="{{true}}"
+		 enable-flex
+		 catch:touchmove="noop"
+		>
+			<view class="header1" />
+			<view class="button">
+				<ad-button banner bind:tap="changeStep1">下一步</ad-button>
+			</view>
+		</scroll-view>
+		<scroll-view
+		 class="body1 form"
+		 scroll-y="{{true}}"
+		 enable-flex
+		 catch:touchmove="noop"
+		>
+			<view class="header1" />
+			<view class="button">
+				<ad-button
+				 banner
+				 bind:tap="close"
+				 data-num="{{2}}"
+				>我知道了
+				</ad-button>
+			</view>
+		</scroll-view>
+	</view>
+</ad-sheet>
+<ad-sheet
+ visible="{{showDrawer4}}"
+ headerStyle="box-shadow: none;"
+ bind:onClose="close"
+ data-num="{{4}}"
+>
+	<ad-icon
+	 icon="arrow-left"
+	 size="{{24}}"
+	 color="rgba(0, 0, 0, 0.22)"
+	 slot="headerLeft"
+	 wx:if="{{step === 1}}"
+	 bind:tap="resetStep"
+	/>
+	<view class="body2 {{step === 1 && 'move'}}">
+		<scroll-view
+		 class="body1 form"
+		 scroll-y="{{true}}"
+		 enable-flex
+		 catch:touchmove="noop"
+		>
+			<view class="header1">
+				<view class="main">
+					<view class="title">一级页面</view>
+					<view class="desc">辅助说明文字辅助说明文字辅助说明文字辅助说明文字辅助说明文字辅助说明文字</view>
+				</view>
+				<ad-cell-group>
+					<ad-cell title="标题" banner>
+						<ad-input
+						 align="left"
+						 placeholder="可输入文字"
+						 slot="rightElement"
+						/>
+					</ad-cell>
+				</ad-cell-group>
+			</view>
+			<view class="button">
+				<ad-button banner bind:tap="changeStep">下一步</ad-button>
+			</view>
+		</scroll-view>
+		<scroll-view
+		 class="body1 form"
+		 scroll-y="{{true}}"
+		 enable-flex
+		 catch:touchmove="noop"
+		>
+			<view class="header1">
+				<view class="main">
+					<view class="title">二级页面</view>
+					<view class="desc">辅助说明文字辅助说明文字辅助说明文字辅助说明文字辅助说明文字辅助说明文字</view>
+				</view>
+				<ad-cell-group>
+					<ad-cell title="标题" banner>
+						<ad-input
+						 align="left"
+						 placeholder="可输入文字"
+						 slot="rightElement"
+						/>
+					</ad-cell>
+				</ad-cell-group>
+			</view>
+			<view class="button">
+				<ad-button
+				 banner
+				 bind:tap="close"
+				 data-num="{{4}}"
+				>完成
+				</ad-button>
+			</view>
+		</scroll-view>
+	</view>
+</ad-sheet>
+<ad-sheet
+ visible="{{showDrawer5}}"
+ noHeader
+ isMaskClickable
+ bind:onClose="close"
+ data-num="{{5}}"
+>
+	<scroll-view
+	 scroll-y="{{true}}"
+	 enable-flex
+	 class="body1 body3"
+	 catch:touchmove="noop"
+	>
+
+		<view class="header1">
+			<view class="header">
+				<ad-icon
+				 icon="cancel"
+				 color="white"
+				 size="{{24}}"
+				 bind:tap="close"
+				 data-num="{{5}}"
+				/>
+			</view>
+			<image
+			 src="https://wxa.wxs.qq.com/images/paki/adui-for-mobile/drawer1.png"
+			 style="width: 100%;"
+			 mode="widthFix"
+			/>
+			<view class="main">
+				<view class="title">标题</view>
+				<view class="desc">辅助说明文字辅助说明文字辅助说明文字辅助说明文字辅助说明文字辅助说明文字</view>
+			</view>
+		</view>
+		<view class="button">
+			<ad-button
+			 banner
+			 bind:tap="close"
+			 data-num="{{5}}"
+			>我知道了
+			</ad-button>
+		</view>
+	</scroll-view>
+</ad-sheet>
+<ad-sheet
+ visible="{{showDrawer6}}"
+ bind:onClose="close"
+ data-num="{{6}}"
+ title="筛选条件"
+>
+	<scroll-view
+	 scroll-y="{{true}}"
+	 enable-flex
+	 class="body1 body4"
+	 catch:touchmove="noop"
+	>
+		<view class="subtitle">一级行业</view>
+		<view class="tag_list">
+			<ad-tag
+			 wx:for="{{industies}}"
+			 intent="{{chosenIndusty === index ? 'primary' : 'normal'}}"
+			 class="tag"
+			 round="{{false}}"
+			 customStyle="width: calc((100vw - 60px) / 3); padding: 8px 6px;"
+			 bind:tap="choseTag"
+			 data-tag="{{index}}"
+			>{{item}}
+			</ad-tag>
+		</view>
+	</scroll-view>
+	<view class="button" style="display: flex; padding-top: 8px; justify-content: flex-end;">
+		<ad-button
+		 theme="light"
+		 intent="normal"
+		 customStyle="width: 95px; height: 48px; margin-right: 12px;"
+		 bind:tap="close"
+		 data-num="{{6}}"
+		>清空
+		</ad-button>
+		<ad-button
+		 customStyle="width: 95px; height: 48px;"
+		 bind:tap="close"
+		 data-num="{{6}}"
+		>应用
+		</ad-button>
+	</view>
+</ad-sheet>
+

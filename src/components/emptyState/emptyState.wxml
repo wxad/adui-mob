@@ -1,0 +1,16 @@
+<view class="{{prefix}} {{prefix}}_{{type}}" style="{{customStyle}}">
+	<view
+	 class="{{prefix}}_icon {{prefix}}_icon_default"
+	 wx:if="{{icon === ''}}"
+	 style="color: {{iconColor}};"
+	/>
+	<image
+	 wx:if="{{icon !== ''}}"
+	 src="{{icon}}"
+	 mode="{{iconMode}}"
+	 style="{{iconStyle}}"
+	 class="{{prefix}}_icon"
+	/>
+	<view class="{{prefix}}_text" style="{{textStyle}}">{{text}}</view>
+</view>
+

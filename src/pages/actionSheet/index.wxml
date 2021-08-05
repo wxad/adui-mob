@@ -1,0 +1,112 @@
+<DemoBody>
+	<DemoHeader title="行动面板 ActionSheet" desc="从底部弹出，提供当前场景相关的 2 个以上的操作动作。主要采用文字按钮，重要敏感的操作一般会用主题颜色或红色显示。" />
+	<DemoBlock title="基础样式">
+		<ad-button
+		 theme="light"
+		 intent="normal"
+		 bind:tap="open"
+		 data-num="{{1}}"
+		 class="button"
+		>基础样式
+		</ad-button>
+		<ad-button
+		 theme="light"
+		 intent="normal"
+		 bind:tap="open"
+		 data-num="{{2}}"
+		 class="button"
+		>展示取消按钮
+		</ad-button>
+		<ad-button
+		 theme="light"
+		 intent="normal"
+		 bind:tap="open"
+		 data-num="{{3}}"
+		 class="button"
+		>展示描述信息
+		</ad-button>
+	</DemoBlock>
+	<DemoBlock title="选项状态">
+		<ad-button
+		 theme="light"
+		 intent="normal"
+		 bind:tap="open"
+		 data-num="{{4}}"
+		 class="button"
+		>选项状态
+		</ad-button>
+	</DemoBlock>
+</DemoBody>
+
+<ad-action-sheet
+ visible="{{showDrawer1}}"
+ bind:onChange="close"
+ bind:onCancel="close"
+ bind:onClose="close"
+ data-num="{{1}}"
+>
+	<ad-action-sheet-item title="选项一" value="{{1}}" />
+	<ad-action-sheet-item title="选项二" value="{{2}}" />
+	<ad-action-sheet-item title="选项三" value="{{3}}" />
+</ad-action-sheet>
+
+<ad-action-sheet
+ visible="{{showDrawer2}}"
+ bind:onChange="close"
+ bind:onCancel="close"
+ bind:onClose="close"
+ data-num="{{2}}"
+ hasCancel
+>
+	<ad-action-sheet-item title="选项一" value="{{1}}" />
+	<ad-action-sheet-item title="选项二" value="{{2}}" />
+	<ad-action-sheet-item title="选项三" value="{{3}}" />
+</ad-action-sheet>
+
+<ad-action-sheet
+ visible="{{showDrawer3}}"
+ bind:onChange="close"
+ bind:onCancel="close"
+ bind:onClose="close"
+ data-num="{{3}}"
+ hasCancel
+ desc="这是一段描述"
+>
+	<ad-action-sheet-item
+	 title="选项一"
+	 desc="描述信息"
+	 value="{{1}}"
+	/>
+	<ad-action-sheet-item
+	 title="选项二"
+	 desc="描述信息"
+	 value="{{2}}"
+	/>
+</ad-action-sheet>
+
+<ad-action-sheet
+ visible="{{showDrawer4}}"
+ bind:onChange="close"
+ bind:onCancel="close"
+ bind:onClose="close"
+ data-num="{{4}}"
+ hasCancel
+>
+	<ad-action-sheet-item
+	 title="着色选项"
+	 customStyle="color: var(--primary-color)"
+	 value="{{1}}"
+	/>
+	<ad-action-sheet-item
+	 title="选项二"
+	 disabled
+	 value="{{2}}"
+	/>
+	<ad-action-sheet-item
+	 title="选项二"
+	 loading
+	 loadingText="加载中..."
+	 value="{{3}}"
+	/>
+</ad-action-sheet>
+

@@ -1,0 +1,62 @@
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+
+$prefix: 'ad_half_screen';
+
+.#{$prefix} {
+  box-sizing: border-box;
+
+  &_down {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    max-height: 100vh;
+
+    &.#{$prefix}_round {
+      border-radius: 0 0 8px 8px;
+    }
+  }
+
+  &_up {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-height: 100vh;
+    background-color: white;
+
+    &.#{$prefix}_round {
+      overflow: hidden;
+      border-radius: 8px 8px 0 0;
+    }
+  }
+
+  &_left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    max-width: 100vw;
+    background-color: white;
+
+    &.#{$prefix}_round {
+      border-radius: 0 8px 8px 0;
+    }
+  }
+
+  &_right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    max-width: 100vw;
+    background-color: white;
+
+    &.#{$prefix}_round {
+      border-radius: 8px 0 0 8px;
+    }
+  }
+
+}

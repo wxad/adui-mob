@@ -1,0 +1,20 @@
+<view class="{{prefix}}" style="{{customStyle}}">
+	<view class="{{prefix}}_header">
+		<slot name="header" />
+	</view>
+	<view class="{{prefix}}_body {{showContent && 'ad_dropdown_body_show'}}">
+		<ad-divider wx:if="{{showContent}}" wx:if="{{!noShadow}}"/>
+		<view class="{{prefix}}_body_inner">
+			<slot name="body" />
+		</view>
+	</view>
+</view>
+<ad-overlay
+ wx:if="{{hasMask}}"
+ show="{{showContent}}"
+ bind:tap="close"
+ zIndex="{{maskZindex}}"
+ class="{{prefix}}_mask"
+ customStyle="top: {{maskTop}}px;"
+/>
+

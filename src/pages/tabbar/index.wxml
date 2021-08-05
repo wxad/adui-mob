@@ -1,0 +1,240 @@
+<DemoBody class="main">
+	<DemoHeader title="标签栏 Tabbar" desc="小程序的底部导航栏。" />
+	<DemoBlock title="基础样式" noPadding>
+		<ad-tabbar class="item" defaultValue="{{0}}">
+			<ad-tabbar-item value="{{0}}">
+				<image
+				 class="icon"
+				 slot="icon"
+				 src="../images/home.svg"
+				/>
+				<image
+				 class="icon"
+				 slot="iconActive"
+				 src="../images/home_selected.svg"
+				/>
+				首页
+			</ad-tabbar-item>
+			<ad-tabbar-item value="{{1}}">
+				<image
+				 class="icon"
+				 slot="icon"
+				 src="../images/manage.svg"
+				/>
+				<image
+				 class="icon"
+				 slot="iconActive"
+				 src="../images/manage_selected.svg"
+				/>
+				管理
+			</ad-tabbar-item>
+		</ad-tabbar>
+		<ad-tabbar class="item" defaultValue="{{0}}">
+			<ad-tabbar-item value="{{0}}">
+				<image
+				 class="icon"
+				 slot="icon"
+				 src="../images/home.svg"
+				/>
+				<image
+				 class="icon"
+				 slot="iconActive"
+				 src="../images/home_selected.svg"
+				/>
+				首页
+			</ad-tabbar-item>
+			<ad-tabbar-item value="{{1}}">
+				<image
+				 class="icon"
+				 slot="icon"
+				 src="../images/manage.svg"
+				/>
+				<image
+				 class="icon"
+				 slot="iconActive"
+				 src="../images/manage_selected.svg"
+				/>
+				管理
+			</ad-tabbar-item>
+			<ad-tabbar-item value="{{2}}">
+				<image
+				 class="icon"
+				 slot="icon"
+				 src="../images/message.svg"
+				/>
+				<image
+				 class="icon"
+				 slot="iconActive"
+				 src="../images/message_selected.svg"
+				/>
+				消息
+			</ad-tabbar-item>
+		</ad-tabbar>
+		<ad-tabbar class="item" defaultValue="{{0}}">
+			<ad-tabbar-item value="{{0}}">
+				<image
+				 class="icon"
+				 slot="icon"
+				 src="../images/home.svg"
+				/>
+				<image
+				 class="icon"
+				 slot="iconActive"
+				 src="../images/home_selected.svg"
+				/>
+				首页
+			</ad-tabbar-item>
+			<ad-tabbar-item value="{{1}}">
+				<image
+				 class="icon"
+				 slot="icon"
+				 src="../images/manage.svg"
+				/>
+				<image
+				 class="icon"
+				 slot="iconActive"
+				 src="../images/manage_selected.svg"
+				/>
+				管理
+			</ad-tabbar-item>
+			<ad-tabbar-item value="{{2}}">
+				<image
+				 class="icon"
+				 slot="icon"
+				 src="../images/message.svg"
+				/>
+				<image
+				 class="icon"
+				 slot="iconActive"
+				 src="../images/message_selected.svg"
+				/>
+				消息
+			</ad-tabbar-item>
+			<ad-tabbar-item value="{{3}}">
+				<image
+				 class="icon"
+				 slot="icon"
+				 src="../images/account.svg"
+				/>
+				<image
+				 class="icon"
+				 slot="iconActive"
+				 src="../images/account_selected.svg"
+				/>
+				账户
+			</ad-tabbar-item>
+		</ad-tabbar>
+	</DemoBlock>
+	<DemoBlock title="组合徽标" noPadding>
+		<ad-tabbar class="item" defaultValue="{{0}}">
+			<ad-tabbar-item value="{{0}}">
+				<image
+				 class="icon"
+				 slot="icon"
+				 src="../images/home.svg"
+				/>
+				<image
+				 class="icon"
+				 slot="iconActive"
+				 src="../images/home_selected.svg"
+				/>
+				首页
+			</ad-tabbar-item>
+			<ad-tabbar-item value="{{1}}">
+				<image
+				 class="icon"
+				 slot="icon"
+				 src="../images/manage.svg"
+				/>
+				<image
+				 class="icon"
+				 slot="iconActive"
+				 src="../images/manage_selected.svg"
+				/>
+				管理
+			</ad-tabbar-item>
+			<ad-tabbar-item value="{{2}}" isBadgeDot>
+				<image
+				 class="icon"
+				 slot="icon"
+				 src="../images/message.svg"
+				/>
+				<image
+				 class="icon"
+				 slot="iconActive"
+				 src="../images/message_selected.svg"
+				/>
+				消息
+			</ad-tabbar-item>
+			<ad-tabbar-item value="{{3}}">
+				<image
+				 class="icon"
+				 slot="icon"
+				 src="../images/account.svg"
+				/>
+				<image
+				 class="icon"
+				 slot="iconActive"
+				 src="../images/account_selected.svg"
+				/>
+				账户
+			</ad-tabbar-item>
+		</ad-tabbar>
+		<ad-tabbar class="item" defaultValue="{{0}}">
+			<ad-tabbar-item value="{{0}}">
+				<image
+				 class="icon"
+				 slot="icon"
+				 src="../images/home.svg"
+				/>
+				<image
+				 class="icon"
+				 slot="iconActive"
+				 src="../images/home_selected.svg"
+				/>
+				首页
+			</ad-tabbar-item>
+			<ad-tabbar-item value="{{1}}">
+				<image
+				 class="icon"
+				 slot="icon"
+				 src="../images/manage.svg"
+				/>
+				<image
+				 class="icon"
+				 slot="iconActive"
+				 src="../images/manage_selected.svg"
+				/>
+				管理
+			</ad-tabbar-item>
+			<ad-tabbar-item value="{{2}}" badgeContent="1">
+				<image
+				 class="icon"
+				 slot="icon"
+				 src="../images/message.svg"
+				/>
+				<image
+				 class="icon"
+				 slot="iconActive"
+				 src="../images/message_selected.svg"
+				/>
+				消息
+			</ad-tabbar-item>
+			<ad-tabbar-item value="{{3}}">
+				<image
+				 class="icon"
+				 slot="icon"
+				 src="../images/account.svg"
+				/>
+				<image
+				 class="icon"
+				 slot="iconActive"
+				 src="../images/account_selected.svg"
+				/>
+				账户
+			</ad-tabbar-item>
+		</ad-tabbar>
+	</DemoBlock>
+</DemoBody>
+<!-- <ad-dialog visible="{{showDialog}}" bind:onCancel="hideDialog" /> -->
+

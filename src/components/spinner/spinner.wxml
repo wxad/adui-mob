@@ -1,0 +1,12 @@
+<view class="{{prefix}} {{prefix}}_{{direction}} {{prefix}}_{{size}}" style="color: {{color}}; {{customStyle}}">
+	<view class="{{prefix}}_circle">
+		<view class="{{prefix}}_circle_inner" style="width: {{circleSize === null ? '' : circleSize}}px; height: {{circleSize === null ? '' : circleSize}}px;border-bottom-color: {{backgroundColor}}; border-left-color: {{backgroundColor}} {{circleStyle}}" />
+	</view>
+	<view
+	 class="{{prefix}}_text"
+	 wx:if="{{text !== ''}}"
+	 style="color: {{textColor}}"
+	>{{text}}
+	</view>
+</view>
+

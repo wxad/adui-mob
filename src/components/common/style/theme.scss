@@ -1,0 +1,4 @@
+
+@function theme($valName, $valarible) {
+  @return var(#{$valName}, $valarible);
+}

@@ -1,0 +1,66 @@
+<ad-overlay
+ show="{{finalVisible}}"
+ duration="{{duration}}"
+ customStyle="z-index: var(--z-index-dialog, 2000)"
+/>
+<ad-animation
+ show="{{finalVisible}}"
+ duration="{{duration}}"
+ catch:touchmove="noop"
+ style="display: block; z-index: calc(var(--z-index-dialog, 2000) + 1); position: relative"
+ customStyle="z-index: 2001"
+>
+	<view class="{{prefix}}" style="{{customStyle}}">
+		<view class="{{prefix}}_inner {{banner && 'ad_dialog_banner'}}">
+			<view class="{{prefix}}_body">
+				<view class="{{prefix}}_title">{{title}}</view>
+				<view class="{{prefix}}_main">
+					<slot/>
+				</view>
+				<slot name="main" />
+			</view>
+			<view class="{{prefix}}_footer" wx:if="{{!noButtons && buttonList.length === 0}}">
+				<view
+				 class="{{prefix}}_button {{prefix}}_cancel {{cancelClass}}"
+				 data-index="{{0}}"
+				 wx:if="{{type !== 'inform'}}"
+				 bind:tap="click"
+				>{{cancelTitle}}
+				</view>
+				<view
+				 class="{{prefix}}_button {{prefix}}_confirm {{confirmClass}}"
+				 data-index="{{1}}"
+				 bind:tap="click"
+				>{{confirmTitle}}
+				</view>
+			</view>
+			<view class="{{prefix}}_button_list" wx:if="{{buttonList.length > 1 && !noButtons}}">
+				<!-- <ad-cell-group noBottomBorder>
+					<ad-cell
+					 banner
+					 wx:for="{{buttonList}}"
+					 wx:key="value"
+           data-value="{{item.value}}"
+           interactive
+					 bind:tap="click"
+					>
+						<view>{{item.text}}</view>
+					</ad-cell>
+				</ad-cell-group> -->
+				<view
+				 class="{{prefix}}_button_list_item"
+				 wx:for="{{buttonList}}"
+				 wx:key="value"
+				 data-value="{{item.value}}"
+				 bind:tap="click"
+				>
+					<ad-divider/>
+					<view class="{{prefix}}_button_list_item_inner" style="color: {{buttonItemColor}}; {{buttonItemStyle}}">
+						{{item.text}}
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</ad-animation>
+

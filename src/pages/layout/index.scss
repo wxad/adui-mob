@@ -1,0 +1,24 @@
+@import '../../components/common/style/reset/common.scss';
+@import '../../components/common/style/var.scss';
+@import '../../components/common/style/theme.scss';
+@import '../../components/common/style/mixin';
+
+page {
+  background-color: #fff;
+}
+
+.content_outer {
+  padding: 0 20px;
+  text-align: center;
+}
+
+.content {
+  @include font-large;
+  color: var(--transparent-gray-800);
+  text-align: left;
+}
+
+.image {
+  margin-top: 16px;
+  width: 100%;
+}

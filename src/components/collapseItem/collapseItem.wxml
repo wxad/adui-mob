@@ -1,0 +1,39 @@
+<view class="{{prefix}} {{active && 'ad_collapse_item_active'}}" style="{{customStyle}}">
+	<slot name="header" />
+	<view class="{{prefix}}_header" wx:if="{{!noHeader}}">
+		<ad-cell-group noBottomBorder="{{noBorder || !active && !isLast}}" noTopBorder="{{noBorder || isFirst && noTopBorder}}">
+			<ad-cell
+			 title="{{title}}"
+			 bind:tap="handleClick"
+			 banner
+			>
+				<ad-icon
+				 wx:if="{{!noIcon}}"
+				 slot="rightElement"
+				 icon="arrow-down"
+				 class="{{prefix}}_icon"
+				 color="{{iconColor}}"
+				 size="{{20}}"
+				/>
+				<slot name="headerRight" />
+			</ad-cell>
+		</ad-cell-group>
+	</view>
+	<!-- <view class="{{prefix}}_header" bind:tap="handleClick">
+		<view class="{{prefix}}_header_title">{{title}}</view>
+		<view class="{{prefix}}_header_button">
+			<ad-icon
+			 icon="arrow-down"
+			 class="{{prefix}}_icon"
+			 size="{{20}}"
+			/>
+		</view>
+	</view> -->
+	<view class="{{prefix}}_body" style="height: {{contentHeight}}px">
+		<view class="{{prefix}}_main">
+			<view wx:if="{{content}}" class="{{prefix}}_content">{{content}}</view>
+			<slot/>
+		</view>
+	</view>
+</view>
+

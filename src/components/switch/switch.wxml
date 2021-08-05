@@ -1,0 +1,9 @@
+<view
+ class="{{prefix}} {{prefix}}_{{size}} {{finalChecked && 'ad_switch_checked'}} {{disabled && 'ad_switch_disabled'}}"
+ style="{{customStyle}}"
+ bind:tap="change"
+>
+	<view class="{{prefix}}_bg" />
+	<view class="{{prefix}}_icon {{finalChecked && 'ad_switch_icon_checked'}} {{disabled && 'ad_switch_icon_disabled'}}" />
+</view>
+

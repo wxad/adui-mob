@@ -1,0 +1,52 @@
+<DemoBody class="body">
+	<DemoHeader title="图片 Picture" desc="支持多种填充模式，且包含懒加载、加载中提示、加载失败提示等状态的控件。" />
+	<DemoBlock title="填充方式">
+		<view class="list">
+			<view
+			 class="item_outer"
+			 wx:for="{{modes}}"
+			 wx:key="{{item}}"
+			>
+				<view class="item">
+					<ad-picture
+					 style="width: 100%; height: 100%;"
+					 mode="{{item.name}}"
+					 src="{{index === 2 ? picture1 : picture}}"
+					/>
+				</view>
+				<view class="text">{{item.text}}</view>
+			</view>
+		</view>
+	</DemoBlock>
+	<!-- <DemoBlock title="填充方式">
+		<view class="list">
+			<view class="item_outer">
+				<view class="item">
+					<ad-picture style="width: 100%; height: 100%;"/>
+				</view>
+				<view class="text">默认提示</view>
+			</view>
+			<view class="item_outer">
+				<view class="item">
+					<ad-picture loading style="width: 100%; height: 100%;"/>
+				</view>
+				<view class="text">加载态</view>
+			</view>
+		</view> 
+	</DemoBlock> -->
+	<DemoBlock title="点击放大">
+		<view class="list">
+			<view class="item_outer">
+				<view class="item">
+					<ad-picture
+					 previewable
+					 src="{{picture}}"
+					 style="width: 100%; height: 100%;"
+					/>
+				</view>
+				<view class="text">点击放大图片</view>
+			</view>
+		</view>
+	</DemoBlock>
+</DemoBody>
+

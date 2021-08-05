@@ -1,0 +1,135 @@
+<DemoBody>
+	<DemoHeader title="选择器 Select" desc="用于承载较多的选择项内容、可展开与收起的组件。" />
+	<DemoBlock title="基础样式" noPadding>
+		<ad-select
+		 catch:touchmove="noop"
+		 bind:onOpen="open"
+		 bind:onClose="close"
+		 class="select"
+		>
+			<ad-select-item
+			 key="{{0}}"
+			 options="{{options1}}"
+			 defaultValue="{{value1}}"
+			/>
+		</ad-select>
+		<ad-select
+		 catch:touchmove="noop"
+		 bind:onOpen="open"
+		 bind:onClose="close"
+		 class="select"
+		>
+			<ad-select-item
+			 key="{{0}}"
+			 options="{{options1}}"
+			 defaultValue="{{value1}}"
+			/>
+			<ad-select-item
+			 key="{{1}}"
+			 options="{{options1}}"
+			 defaultValue="{{value2}}"
+			/>
+		</ad-select>
+		<ad-select
+		 catch:touchmove="noop"
+		 bind:onOpen="open"
+		 bind:onClose="close"
+		 class="select"
+		>
+			<ad-select-item
+			 key="{{0}}"
+			 options="{{options1}}"
+			 defaultValue="{{value1}}"
+			/>
+			<ad-select-item
+			 key="{{1}}"
+			 options="{{options1}}"
+			 defaultValue="{{value2}}"
+			/>
+			<ad-select-item
+			 key="{{2}}"
+			 options="{{options1}}"
+			 defaultValue="{{value3}}"
+			/>
+		</ad-select>
+		<ad-select
+		 catch:touchmove="noop"
+		 bind:onOpen="open"
+		 bind:onClose="close"
+		 class="select"
+		>
+			<ad-select-item
+			 key="{{0}}"
+			 options="{{options1}}"
+			 defaultValue="{{value1}}"
+			/>
+			<ad-select-item
+			 key="{{1}}"
+			 options="{{options1}}"
+			 defaultValue="{{value2}}"
+			/>
+			<ad-select-item
+			 key="{{2}}"
+			 options="{{options1}}"
+			 defaultValue="{{value3}}"
+			/>
+			<ad-select-item
+			 key="{{3}}"
+			 options="{{options1}}"
+			 defaultValue="{{value4}}"
+			/>
+		</ad-select>
+	</DemoBlock>
+	<DemoBlock
+	 title="状态"
+	 noPadding
+	 noBackground
+	>
+		<ad-select class="item">
+			<ad-select-item
+			 key="{{0}}"
+			 options="{{options1}}"
+			 defaultValue="{{0}}"
+			/>
+			<ad-select-item
+			 key="{{1}}"
+			 options="{{options1}}"
+			 defaultValue="{{1}}"
+			 disabled
+			/>
+		</ad-select>
+	</DemoBlock>
+	<DemoBlock title="自定义样式" noPadding>
+		<view class="header" bind:tap="choseHeader">
+			<view class="header_item {{showSelect && 'header_item_active'}}" data-key="{{0}}">自定义
+				<ad-icon
+				 style="margin-left: 6px;"
+				 icon="{{showSelect ? 'triangle-up' : 'triangle-down'}}"
+				 color="{{showSelect ? 'var(--transparent-gray-900)': 'var(--transparent-gray-700)'}}"
+				/>
+			</view>
+			<ad-divider style="width: 100%;" />
+		</view>
+		<ad-select-item
+		 key="{{1}}"
+		 bind:onClose="hideSheet"
+		 visible="{{showSelect}}"
+		>
+			<view class="main">
+				<ad-cell-group noTopBorder>
+					<ad-cell title="广告状态">
+						<ad-switch slot="rightElement" />
+					</ad-cell>
+				</ad-cell-group>
+				<ad-button
+				 class="button"
+				 intent="primary"
+				 bind:tap="hideSheet"
+				>确定
+				</ad-button>
+			</view>
+		</ad-select-item>
+	</DemoBlock>
+</DemoBody>
+<view style="height: 100vh" />
+

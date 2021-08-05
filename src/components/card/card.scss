@@ -1,0 +1,28 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+
+$prefix: 'ad_card';
+
+.#{$prefix} {
+  position: relative;
+  margin: 0 20px;
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 4px;
+
+  &_banner {
+    margin: 0;
+    padding: 12px 20px;
+    border-radius: 0;
+  }
+
+  &_hover {
+
+    &::after {
+      @include hoverBg;
+    }
+  }
+}

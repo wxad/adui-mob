@@ -1,0 +1,86 @@
+@import "../common/style/reset/common.scss";
+@import "../common/style/var.scss";
+@import "../common/style/theme.scss";
+@import "../common/style/mixin";
+
+$prefix: 'ad_animation';
+
+.#{$prefix} {
+  transition-timing-function: ease-in-out;
+  
+  &_fade_enter_active,
+  &_fade_leave_active {
+    transition-property: opacity;
+  }
+  
+  &_fade_enter,
+  &_fade_leave_to {
+    opacity: 0;
+  }
+  
+  &_fade_up_enter_active,
+  &_fade_up_leave_active,
+  &_fade_down_enter_active,
+  &_fade_down_leave_active,
+  &_fade_left_enter_active,
+  &_fade_left_leave_active,
+  &_fade_right_enter_active,
+  &_fade_right_leave_active {
+    transition-property: opacity, transform;
+  }
+  
+  &_fade_up_enter,
+  &_fade_up_leave_to {
+    transform: translate3d(0, 100%, 0);
+    opacity: 0;
+  }
+  
+  &_fade_down_enter,
+  &_fade_down_leave_to {
+    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+  }
+  
+  &_fade_left_enter,
+  &_fade_left_leave_to {
+    transform: translate3d(-100%, 0, 0);
+    opacity: 0;
+  }
+  
+  &_fade_right_enter,
+  &_fade_right_leave_to {
+    transform: translate3d(100%, 0, 0);
+    opacity: 0;
+  }
+  
+  &_slide_up_enter_active,
+  &_slide_up_leave_active,
+  &_slide_down_enter_active,
+  &_slide_down_leave_active,
+  &_slide_left_enter_active,
+  &_slide_left_leave_active,
+  &_slide_right_enter_active,
+  &_slide_right_leave_active {
+    transition-property: transform;
+  }
+  
+  &_slide_up_enter,
+  &_slide_up_leave_to {
+    transform: translate3d(0, 100%, 0);
+  }
+  
+  &_slide_down_enter,
+  &_slide_down_leave_to {
+    transform: translate3d(0, -100%, 0);
+  }
+  
+  &_slide_left_enter,
+  &_slide_left_leave_to {
+    transform: translate3d(-100%, 0, 0);
+  }
+  
+  &_slide_right_enter,
+  &_slide_right_leave_to {
+    transform: translate3d(100%, 0, 0);
+  }
+}

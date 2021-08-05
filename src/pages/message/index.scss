@@ -1,0 +1,16 @@
+.message {
+  display: block;
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.main {
+  
+  .demo_block_body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

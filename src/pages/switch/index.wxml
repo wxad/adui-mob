@@ -1,0 +1,35 @@
+<DemoBody>
+	<DemoHeader title="开关 Switch" desc="用于开启或关闭选项功能的控件。" />
+	<DemoBlock title="基础样式" noPadding>
+		<ad-cell-group noTopBorder noBottomBorder>
+			<ad-cell title="开启">
+				<ad-switch defaultChecked slot="rightElement" />
+			</ad-cell>
+			<ad-cell title="关闭">
+				<ad-switch slot="rightElement" />
+			</ad-cell>
+			<ad-cell title="开启并禁用">
+				<ad-switch
+				 checked
+				 disabled
+				 slot="rightElement"
+				/>
+			</ad-cell>
+			<ad-cell title="禁用">
+				<ad-switch disabled slot="rightElement" />
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+	<!-- <DemoBlock title="尺寸" noPadding>
+		<ad-cell-group noTopBorder noBottomBorder>
+			<ad-cell title="默认尺寸" bind:tap="showDialog">
+				<ad-switch slot="rightElement" />
+			</ad-cell>
+			<ad-cell title="小尺寸">
+				<ad-switch size="small" slot="rightElement" />
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock> -->
+</DemoBody>
+<!-- <ad-dialog visible="{{showDialog}}" bind:onCancel="hideDialog" /> -->
+

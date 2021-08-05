@@ -1,0 +1,55 @@
+---
+name: Card
+menu: 基础类
+index: 16
+---
+
+import { Alert, Table } from 'adui'
+
+# Card
+
+用于组织信息和操作的控件，也可作为信息入口。
+
+### 常用示例
+
+#### 基本用法
+
+```javascript
+<ad-card>
+  <view style="height: 68px" />
+</ad-card>
+```
+
+#### 通栏
+
+```javascript
+<ad-card banner>
+  <view style="height: 68px" />
+</ad-card>
+```
+
+## Slot
+
+export const slots = [
+  {
+    name: '',
+    desc: '默认 slot，用于承载 card 的内容',
+  },
+]
+
+<Table
+  columnsResizable
+  dataSource={slots}
+  columns={[
+    {
+      dataIndex: 'name',
+      title: 'name',
+    },
+    {
+      dataIndex: 'desc',
+      title: '描述',
+    },
+  ]}
+/>
+
+## Properties

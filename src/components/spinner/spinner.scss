@@ -1,0 +1,87 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+$prefix: 'ad_spinner';
+
+.#{$prefix} {
+  @include flex-center-center;
+  color: theme(--primary-color, $--primary-color);
+
+  &_vertical {
+    flex-direction: column;
+
+    .#{$prefix}_text {
+      margin-left: 0;
+      margin-top: 4px;
+      text-align: center;
+    }
+  }
+
+  &_circle {
+    padding: 2px;
+  }
+
+  &_circle_inner {
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50%;
+    border-top-color: currentColor;
+    border-right-color: currentColor;
+    border-bottom-color: theme(--transparent-gray-200, $--transparent-gray-200);
+    border-left-color: theme(--transparent-gray-200, $--transparent-gray-200);
+    // border-color: theme(--primary-color, $--primary-color) theme(--primary-color, $--primary-color) theme(--transparent-gray-200, $--transparent-gray-200) theme(--transparent-gray-200, $--transparent-gray-200);
+    animation: spinner .7s linear infinite;
+  }
+
+  &_small {
+
+    .#{$prefix}_circle {
+      padding: 1px;
+    }
+
+    .#{$prefix}_circle_inner {
+      width: 16px;
+      height: 16px;
+    }
+
+    .#{$prefix}_text {
+      @include font-small;
+    }
+  }
+
+  &_medium {
+
+    .#{$prefix}_circle_inner {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &_large {
+
+    .#{$prefix}_circle_inner {
+      width: 28px;
+      height: 28px;
+      border-width: 3px;
+    }
+  }
+
+  &_text {
+    margin-left: 8px;
+    @include font-large;
+    color: theme(--transparent-gray-700, $--transparent-gray-700);
+  }
+}
+
+@keyframes spinner {
+
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

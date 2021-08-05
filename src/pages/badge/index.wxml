@@ -1,0 +1,56 @@
+<DemoBody>
+	<DemoHeader title="徽标 Badge" desc="出现在按钮、图标旁的数字或状态标记。" />
+	<DemoBlock title="基础样式" noPadding>
+		<ad-cell-group noTopBorder noBottomBorder>
+			<ad-cell value="红点">
+				<view style="position: relative; width: fit-content;" slot="leftElement">
+					<ad-icon icon="bell-outlined" />
+					<ad-badge isFixed isDot/>
+				</view>
+			</ad-cell>
+			<ad-cell value="数值">
+				<view style="position: relative; width: fit-content;" slot="leftElement">
+					<ad-icon icon="image-outlined" customStyle="position: relative" />
+					<ad-badge isFixed >99+</ad-badge>
+				</view>
+			</ad-cell>
+			<ad-cell value="自定义">
+				<view slot="leftElement" style="position: relative; width: fit-content;">
+					<ad-icon icon="map-outlined" customStyle="position: relative" />
+					<ad-badge
+					 isFixed
+					 contentStyle="background-color: #07C160; font-weight: 700; font-size: 8px; line-height: 8px; letter-spacing: 0.1em;"
+					>NEW</ad-badge>
+				</view>
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+	<DemoBlock title="组合使用" noPadding>
+		<ad-cell-group noTopBorder noBottomBorder>
+			<ad-cell value="头像">
+				<view slot="leftElement" style="position: relative; width: fit-content;">
+					<ad-avatar
+					 size="medium"
+					 style="position: relative"
+					 src="https://wxa.wxs.qq.com/images/paki/adui-for-mobile/picture.png"
+					/>
+					<ad-badge isFixed >1</ad-badge>
+				</view>
+			</ad-cell>
+			<ad-cell value="icon">
+				<view slot="leftElement" style="position: relative; width: fit-content;">
+					<ad-icon
+					 slot="leftElement"
+					 icon="image-outlined"
+					 customStyle="position: relative"
+					/>
+					<ad-badge isFixed>∙∙∙</ad-badge>
+				</view>
+			</ad-cell>
+			<ad-cell title="列表" isLink>
+				<ad-badge slot="rightElement" isDot/>
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+</DemoBody>
+

@@ -1,0 +1,107 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+
+$prefix: 'ad_steps_item';
+
+.#{$prefix} {
+
+  &_horizontal {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  &_vertical {
+    display: flex;
+
+    &.#{$prefix}_pointer {
+
+      .#{$prefix}_body {
+        margin-left: 0;
+      }
+    }
+
+    .#{$prefix}_header {
+      flex: none;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .#{$prefix}_header_left {
+      width: 1px;
+      flex:  none;
+      height: 15px;
+    }
+
+    .#{$prefix}_header_right {
+      width: 1px;
+      flex: 1;
+      min-height: 15px;
+    }
+
+    .#{$prefix}_header_step {
+      margin: 0 0 4px 0;
+    }
+
+    .#{$prefix}_body {
+      margin-left: 4px;
+      padding-top: 15px;
+    }
+
+    .#{$prefix}_title {
+      margin-bottom: 2px;
+      text-align: left;
+    }
+
+    .#{$prefix}_desc {
+      text-align: left;
+    }
+  }
+
+  &_header {
+    @include flex-center-start;
+  }
+
+  &_header_left,  &_header_right {
+    flex: 1;
+    height: 1px;
+    background-color: theme(--transparent-gray-600, $--transparent-gray-600);
+  }
+
+  &_header_left_hidden, &_header_right_hidden {
+    background-color: transparent;
+  }
+
+  &_header_middle {
+    flex: none;
+  }
+
+  &_header_step {
+    flex: none;
+    display: block;
+    margin: 0 4px;
+  }
+
+  &_header_pointer {
+    flex: none;
+    margin: 6px;
+    width: 6px;
+    height: 6px;
+    background-color: theme(--transparent-gray-600, $--transparent-gray-600);
+    border-radius: 50%;
+  }
+
+  &_title {
+    @include font-large;
+    text-align: center;
+    color: theme(--transparent-gray-900, $--transparent-gray-900);
+  }
+
+  &_desc {
+    @include font-small;
+    text-align: center;
+    color: theme(--transparent-gray-700, $--transparent-gray-700);
+  }
+}

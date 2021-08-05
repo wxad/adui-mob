@@ -1,0 +1,50 @@
+<view class="{{prefix}} {{disabled && 'ad_input_disabled'}} {{isEllipsis && 'ad_input_ellipsis'}}" style="{{customStyle}}">
+	<view class="{{prefix}}_inner">
+		<input
+		 class="{{prefix}}_input"
+		 value="{{inputValue}}"
+		 type="{{type}}"
+		 password="{{password}}"
+		 placeholder="{{placeholder}}"
+		 placeholder-style="{{placeholderStyle}}"
+		 placeholder-class="ad_input_placeholder {{disabled && 'ad_input_placeholder_disabled'}} {{error && 'ad_input_placeholder_error'}}"
+		 disabled="{{disabled}}"
+		 maxlength="{{maxLength}}"
+		 cursor-spacing="{{cursorSpacing}}"
+		 focus="{{focusInner}}"
+		 confirm-type="{{confirmType}}"
+		 confirm-hold="{{confirmHold}}"
+		 cursor="{{cursor}}"
+		 selection-start="{{selectionStartInner}}"
+		 selection-end="{{selectionEndInner}}"
+		 adjust-position="{{adjustPosition}}"
+		 hold-keyboard="{{holdKeyboard}}"
+		 bindinput="onChange"
+		 bindfocus="onFocus"
+		 bindblur="onBlur"
+		 bindconfirm="onConfirm"
+		 bindkeyboardheightchange="onKeyboardHeightChange"
+		 style="text-align: {{align}}; {{inputStyle}}"
+		/>
+		<view class="{{prefix}}_counter" wx:if="{{counter !== 0 && (showCounter || counterVisible)}}">
+			<view class="{{(valueLength === null ? (value.length > counter): (valueLength > counter)) && 'ad_input_reminder'}}">{{value === null ? 0 : (valueLength === null ? value.length : valueLength)}}</view>
+			/{{counter}}
+		</view>
+		<view class="{{prefix}}_unit">{{unit}}</view>
+		<ad-icon
+		 wx:if="{{icon !== ''}}"
+		 icon="{{icon}}"
+		 color="{{iconColor}}"
+		 class="{{prefix}}_icon"
+		/>
+		<ad-icon
+		 wx:if="{{error}}"
+		 class="{{prefix}}_icon"
+		 icon="{{errorIcon}}"
+		 color="{{errorIconColor}}"
+		/>
+		<slot name="rightElement" />
+	</view>
+	<view class="{{prefix}}_error" wx:if="{{error && errorText !== '' && align === 'left'}}">{{errorText}}</view>
+</view>
+

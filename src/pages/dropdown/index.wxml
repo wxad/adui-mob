@@ -1,0 +1,80 @@
+<DemoBody>
+	<DemoHeader title="下拉菜单 Dropdown" desc="从底部弹出的模态框，提供和当前场景相关的2个以上的操作动作。主要采用文字按钮，重要敏感的操作一般会用主题颜色或红色显示。" />
+	<DemoBlock title="基础样式" noPadding>
+		<ad-dropdown visible="{{showDrop}}" isMaskClickable>
+			<view slot="header" class="header">
+				<view bind:tap="showOne" class="header_item {{type === 1 && 'header_item_active'}}">
+					全部流量场景
+					<ad-icon
+					 icon="triangle-down"
+					 style="margin-left: 6px;"
+					 color="{{type === 1 ? 'var(--primary-color)' : 'var(--transparent-gray-900)'}}"
+					/>
+				</view>
+				<view bind:tap="showTwo" class="header_item {{type === 2 && 'header_item_active'}}">
+					全部广告位
+					<ad-icon
+					 icon="triangle-down"
+					 style="margin-left: 6px;"
+					 color="{{type === 2 ? 'var(--primary-color)' : 'var(--transparent-gray-900)'}}"
+					/>
+				</view>
+			</view>
+			<view slot="body">
+				<ad-cell-group
+				 wx:if="{{type === 1}}"
+				 noTopBorder
+				 noBottomBorder
+				>
+					<ad-radio-group value="{{currentTrafficScene}}">
+						<ad-cell
+						 wx:for="{{traficScene}}"
+						 title="{{item.name}}"
+						 noBorder
+						 data-value="{{item.value}}"
+						 bind:tap="changeTraficScene"
+						 interactive
+						>
+							<ad-radio
+							 value="{{item.value}}"
+							 slot="rightElement"
+							 theme="light"
+							/>
+						</ad-cell>
+					</ad-radio-group>
+				</ad-cell-group>
+				<ad-cell-group
+				 wx:if="{{type === 2}}"
+				 noTopBorder
+				 noBottomBorder
+				>
+					<ad-radio-group value="{{currentAdSpace}}">
+						<ad-cell
+						 wx:for="{{adSpace}}"
+						 title="{{item.name}}"
+						 noBorder
+						 data-value="{{item.value}}"
+						 bind:tap="changeAdSpace"
+						 interactive
+						>
+							<ad-radio
+							 value="{{item.value}}"
+							 slot="rightElement"
+							 theme="light"
+							/>
+						</ad-cell>
+					</ad-radio-group>
+				</ad-cell-group>
+			</view>
+		</ad-dropdown>
+	</DemoBlock>
+	<DemoBlock title="禁用样式" noPadding>
+		<ad-dropdown hasMask isMaskClickable>
+			<!-- <view slot="header" style="display: flex; width: 100%; height: 40px; background-color: red;">
+				<view style="width: 50%; height: 40px; background-color: red;" bind:tap="showOne" />
+				<view style="width: 50%; height: 40px; background-color: blue;" bind:tap="showTwo" />
+			</view> -->
+		</ad-dropdown>
+	</DemoBlock>
+</DemoBody>
+

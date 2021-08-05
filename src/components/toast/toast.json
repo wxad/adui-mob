@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "animation": "../animation/animation",
+    "ad-spinner": "../spinner/spinner",
+    "ad-icon": "../icon/icon"
+  }
+}

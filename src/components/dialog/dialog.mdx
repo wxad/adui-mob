@@ -1,0 +1,167 @@
+---
+name: Dialog
+menu: 反馈类
+index: 20
+---
+
+import { Table } from 'adui'
+
+# Dialog
+
+用作显示系统的重要信息，并请求用户进行操作反馈，eg：删除某个重要内容时，弹出 Modal 进行二次确认。
+
+### 常用示例
+
+#### 基础样式
+
+只有确定按钮
+
+```javascript
+<ad-dialog
+  visible="{{true}}"
+  title="欢迎"
+  type="inform"
+  bind:onConfirm="close"
+  bind:onCancel="close"
+>
+  <view>欢迎使用 AD UI 小程序</view>
+</ad-dialog>
+```
+
+确定和取消按钮
+
+```javascript
+// 确定和取消按钮
+<ad-dialog
+  visible="{{true}}"
+  title="欢迎"
+  bind:onConfirm="close"
+  bind:onCancel="close"
+>
+  <view>欢迎使用 AD UI 小程序</view>
+</ad-dialog>
+```
+
+多个按钮
+
+```javascript
+  const buttonList = [
+    { value: 0, text: '选项一' },
+    { value: 1, text: '选项二' },
+    { value: 2, text: '选项三' },
+  ]
+  <ad-dialog
+    visible="{{true}}"
+    title="欢迎"
+    bind:onConfirm="close"
+    bind:onCancel="close"
+    buttonList="{{buttonList}}"
+  >
+    <view>
+      欢迎使用 AD UI 小程序
+    </view>
+  </ad-dialog>
+```
+
+#### 组合样式
+
+```javascript
+// 输入框
+<ad-dialog
+  visible="{{true}}"
+  title="输入数值"
+  bind:onConfirm="close"
+  bind:onCancel="close"
+>
+  <view style="margin-bottom: 16px">
+    辅助说明文字辅助说明文字辅助说明文字辅助说明文字辅助说明文字
+  </view>
+  <ad-input
+    align="left"
+    type="number"
+    customStyle="padding: 8px 7px; height: 38px; box-shadow: inset 0px 0px 0px 0.5px rgba(0, 0, 0, 0.16); border-radius: 4px;"
+  />
+</ad-dialog>
+
+// 图片
+<ad-dialog
+  visible="{{true}}"
+  title="标题"
+  bind:onConfirm="close"
+  bind:onCancel="close"
+>
+	<view>
+		辅助说明文字辅助说明文字辅助说明文字辅助说明文字辅助说明文字
+	</view>
+  <ad-picture
+    src="https://wxa.wxs.qq.com/images/paki/adui-for-mobile/coffe.png"
+    style="margin-bottom: 20px;"
+    round="{{false}}"
+    customStyle="width: 100%; height: 192px;"
+  />
+</ad-dialog>
+```
+
+## Slot
+
+export const slots = [
+  {
+    name: '',
+    desc: '默认的主体区域 slot，会有默认的样式',
+  },
+  {
+    name: 'main',
+    desc: '自定义主体区域时使用，没有默认样式，需要自定义',
+  },
+]
+
+<Table
+  columnsResizable
+  dataSource={slots}
+  columns={[
+    {
+      dataIndex: 'name',
+      title: 'name',
+    },
+    {
+      dataIndex: 'desc',
+      title: '描述',
+    },
+  ]}
+/>
+
+<!-- ## Events
+
+export const events = [
+  {
+    name: 'onConfirm',
+    desc: '单个或者是多个按钮时点击按钮触发，两个按钮时点击右边按钮触发',
+    value: '{ value }，按钮列表时才有返回值',
+  },
+  {
+    name: 'onCancel',
+    desc: '点击左边的按钮时触发',
+    value: '',
+  },
+]
+
+<Table
+  columnsResizable
+  dataSource={events}
+  columns={[
+    {
+      dataIndex: 'name',
+      title: 'name',
+    },
+    {
+      dataIndex: 'desc',
+      title: '描述',
+    },
+    {
+      dataIndex: 'value',
+      title: '返回值',
+    },
+  ]}
+/> -->
+
+## Properties

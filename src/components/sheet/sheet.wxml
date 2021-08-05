@@ -1,0 +1,52 @@
+<ad-overlay
+ show="{{finalVisible}}"
+ bind:tap="clickMask"
+ duration="{{duration}}"
+ wx:if="{{hasMask}}"
+ customStyle="z-index: var(--z-index-dialog, 1080)"
+ catch:touchmove="noop"
+/>
+<ad-animation
+ show="{{finalVisible}}"
+ name="slide_{{position}}"
+ duration="{{duration}}"
+ customStyle="z-index: var(--z-index-dialog, 1080); {{customStyle}}"
+ custom-class="{{prefix}} {{prefix}}_{{position}} {{round && 'ad_sheet_round'}}"
+>
+	<view class="{{prefix}}_inner" catch:touchmove="noop" style="{{innerStyle}}">
+		<view class="{{prefix}}_header">
+			<slot name="header" />
+			<view
+			 class="{{prefix}}_header_inner {{desc !== '' && 'ad_sheet_has_desc'}}"
+			 wx:if="{{!noHeader}}"
+			 style="{{headerStyle}}"
+			>
+				<slot name="headerLeft" />
+				<slot name="headerRight" />
+				<view class="{{prefix}}_header_left">
+					<view class="{{prefix}}_title_outer {{isTitleCenter && 'ad_sheet_title_outer_center'}}">
+						<ad-icon
+						 wx:if="{{titleIcon !== ''}}"
+						 icon="{{titleIcon}}"
+						 size="{{titleIconSize}}"
+						 color="{{titleIconColor}}"
+						 style="margin-right: 4px; flex: none;"
+						/>
+						<view class="{{prefix}}_title" wx:if="{{title !== ''}}">{{title}}</view>
+					</view>
+					<view class="{{prefix}}_desc" wx:if="{{desc !== ''}}">{{desc}}</view>
+					<slot name="desc"></slot>
+				</view>
+				<view class="{{prefix}}_icon" bind:tap="close">
+					<ad-icon
+					 icon="cancel"
+					 size="{{iconSize}}"
+					 color="{{iconColor}}"
+					/>
+				</view>
+			</view>
+		</view>
+		<slot/>
+	</view>
+</ad-animation>
+

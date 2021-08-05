@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ad-icon": "../icon/icon",
+    "ad-cell": "../cell/cell",
+    "ad-cell-group": "../cellGroup/cellGroup"
+  }
+}

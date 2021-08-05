@@ -1,0 +1,23 @@
+<ad-sheet
+ visible="{{finalVisible}}"
+ noHeader
+ round
+ isMaskClickable
+ bind:onClose="clickMask"
+ catch:touchmove="noop"
+ positon="bottom"
+>
+	<view class="{{prefix}} {{round ? 'ad_action_sheet_round' : ''}}" style="{{customStyle}}">
+		<view wx:if="{{desc !== ''}}" class="{{prefix}}_desc">{{desc}}</view>
+		<ad-divider wx:if="{{desc !== ''}}"></ad-divider>
+		<slot/>
+		<slot name="cancel" />
+		<ad-divider wx:if="{{hasCancel}}" customStyle="height: 8px; transform: scaleY(1);" />
+		<ad-action-sheet-item
+		 wx:if="{{hasCancel}}"
+		 title="{{cancelText}}"
+		 noBorder
+		 bind:tap="cancel"
+		/>
+	</view>
+</ad-sheet>

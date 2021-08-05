@@ -1,0 +1,28 @@
+<view
+ class="{{prefix}} {{(parentDisabled || disabled) && 'ad_radio_disabled'}}"
+ bind:tap="{{selectable ? 'handleCilck' : ''}}"
+ data-value="{{value}}"
+ style="{{customStyle}}"
+>
+	<view class="{{prefix}}_inner">
+		<view class="{{prefix}}_indicator_outer" wx:if="{{theme === 'standard'}}">
+			<view class="{{prefix}}_indicator {{active && 'ad_radio_indicator_active'}}">
+				<view class="{{prefix}}_indicator_bg" />
+				<view class="{{prefix}}_indicator_inner" wx:if="{{active}}" />
+			</view>
+		</view>
+		<view wx:if="{{theme === 'light'}}" class="{{prefix}}_light">
+			<ad-icon
+			 icon="tick"
+			 color="{{iconColor}}"
+			 wx:if="{{active}}"
+			 class="{{prefix}}_icon"
+			/>
+		</view>
+		<view class="{{prefix}}_content">
+			<slot/>
+		</view>
+	</view>
+	<view class="{{prefix}}_desc" wx:if="{{desc !== ''}}">{{desc}}</view>
+</view>
+

@@ -1,0 +1,34 @@
+<view
+ class="{{prefix}}"
+ hover-class="{{interactive ? 'ad_grid_item_hover' : ''}}"
+ hover-start-time="20"
+ hover-stay-time="70"
+ style="width: calc((100% - {{columnNumber * gutter * 2}}px ) / {{columnNumber}}); margin-left: {{gutter}}px; margin-right: {{gutter}}px; {{customStyle}}"
+>
+	<view class="{{prefix}}_icon">
+		<ad-icon
+		 wx:if="{{icon}}"
+		 icon="{{icon}}"
+		 size="{{iconSize}}"
+		 color="{{iconColor}}"
+		 style="margin-bottom: 2px;"
+		/>
+		<ad-badge
+		 wx:if="{{badgeContent !== '' || isBadgeDot}}"
+		 isDot="{{isBadgeDot}}"
+		 class="{{prefix}}_badge"
+		>{{badgeContent}}
+		</ad-badge>
+	</view>
+	<view wx:if="{{title}}" class="{{prefix}}_text">
+		<view wx:if="{{title}}">{{title}}</view>
+		<view
+		 wx:if="{{desc}}"
+		 class="{{prefix}}_desc"
+		 style="{{descStyle}}"
+		>{{desc}}
+		</view>
+	</view>
+	<slot/>
+</view>
+

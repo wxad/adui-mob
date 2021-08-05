@@ -1,0 +1,28 @@
+<view class="{{prefix}} {{banner && 'ad_tabs_banner'}}" style="{{customStyle}}">
+	<view
+	 wx:if="{{theme !== 'light'}}"
+	 class="{{prefix}}_bar"
+	 style="width: {{tabBarWidth}}px; background-color: {{tabBarColor}}; left:{{tabBarPoi - left}}px; {{transition && 'transition: left .2s ease-in-out'}};"
+	/>
+	<view class="{{prefix}}_list">
+		<view
+		 wx:for="{{tabItems}}"
+		 class="{{prefix}}_item {{activeItem === item.value && 'ad_tabs_item_active'}} {{(disabled || item.disabled) && 'ad_tabs_item_disabled'}}"
+		 wx:key="value"
+		 data-value="{{item.value}}"
+		 data-disabled="{{item.disabled}}"
+		 bind:tap="clickItem"
+		 style="color: {{activeItem === item.value ? activeColor : ''}}; {{itemCustomStyle}}"
+		>
+			<view
+			 class="{{prefix}}_title"
+			 data-value="{{item.value}}"
+			 data-disabled="{{item.disabled}}"
+			>{{item.title}}
+				<slot name="tabItem{{index}}" />
+			</view>
+		</view>
+	</view>
+	<slot/>
+</view>
+

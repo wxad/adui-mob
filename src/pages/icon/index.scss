@@ -1,0 +1,34 @@
+// @import '../../components/common/style/';
+@import '../../components/common/style/var.scss';
+@import '../../components/common/style/theme.scss';
+@import '../../components/common/style/mixin';
+
+page {
+  background-color: #fff;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--transparent-gray-100);
+  border-left: 1px solid var(--transparent-gray-100);
+}
+
+.list_item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc((100vw - 46px) / 5);
+  height: calc((100vw - 46px) / 5);
+  border-right: 1px solid var(--transparent-gray-100);
+  border-bottom: 1px solid var(--transparent-gray-100);
+
+  &_hover {
+
+    &::after {
+      @include hoverBg;
+    }
+  }
+}

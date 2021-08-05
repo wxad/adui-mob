@@ -1,0 +1,15 @@
+<DemoBody>
+	<DemoHeader title="宫格 Grid" desc="连续的、按照一定顺序垂直排布的内容条目。" />
+	<DemoBlock title="普通列表">
+		<ad-grid columnNumber="{{3}}" gutter="{{8}}">
+			<ad-grid-item icon="people-outlined" title="受众" desc="描述描述"/>
+			<ad-grid-item icon="people-outlined" title="受众" />
+			<ad-grid-item icon="people-outlined" title="受众" />
+			<ad-grid-item icon="people-outlined" title="受众" />
+			<ad-grid-item icon="people-outlined" title="受众" />
+			<ad-grid-item icon="people-outlined" title="受众" />
+			<ad-grid-item icon="people-outlined" title="受众" isBadgeDot/>
+		</ad-grid>
+	</DemoBlock>
+</DemoBody>
+

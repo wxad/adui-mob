@@ -1,0 +1,68 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+
+$prefix: 'ad_stepper';
+
+.#{$prefix} {
+  @include flex-center-center;
+  flex: none;
+  width: 140px;
+
+  &_banner {
+    width: 100%;
+  }
+
+  &_item {
+    position: relative;
+    @include flex-center-center;
+    width: 32px;
+    height: 32px;
+    flex: none;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  &_item_disabled {
+
+    .#{$prefix}_hover::after {
+      display: none;
+    }
+  }
+
+  &_bg {
+    @include background;
+    z-index: 0;
+    background-color: theme(--transparent-gray-100, $--transparent-gray-100);
+  }
+
+  &_hover {
+
+    &::after {
+      @include hoverBg;
+    }
+  }
+
+  &_input_outer {
+    padding: 0 8px;
+    flex: 1;
+    height: 100%;
+  }
+
+  &_input {
+    width: 100%;
+    height: 28px;
+    text-align: center;
+    color: theme(--transparent-gray-800, $--transparent-gray-800);
+
+    &_illegal {
+      color: theme(--ad-red, $--ad-red);
+    }
+
+    &_disabled {
+      color: theme(--transparent-gray-500, $--transparent-gray-500);
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<DemoBody>
+	<DemoHeader title="页底提示 Loadmore" desc="用于页底的加载提示" />
+	<DemoBlock
+	 title="基础样式"
+	 noPadding
+	 noShadow
+	>
+		<view style="backgroud-color: #fff">
+			<ad-load-more text="没有更多了" />
+		</view>
+	</DemoBlock>
+	<DemoBlock
+	 title="其他"
+	 noPadding
+	 noShadow
+	>
+		<view style="backgroud-color: #fff; margin-bottom: 16px;">
+			<ad-load-more text="暂无数据" />
+		</view>
+	</DemoBlock>
+	<DemoBlock
+	 noPadding
+	 noShadow
+	>
+		<view style="backgroud-color: #fff">
+			<ad-load-more loading />
+		</view>
+	</DemoBlock>
+</DemoBody>
+

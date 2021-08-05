@@ -1,0 +1,124 @@
+<DemoBody>
+	<DemoHeader title="多选  Checkbox" desc="支持同时选中多项的基础控件" />
+	<DemoBlock
+	 title="基础样式"
+	 noPadding
+	 noShadow
+	>
+		<ad-checkbox-group defaultValue="{{['选中']}}">
+			<ad-cell-group noTopBorder>
+				<ad-checkbox-field>
+					<ad-cell interactive>
+						<ad-checkbox
+						 value="常态"
+						 
+						 slot="leftElement"
+						>禁用
+						</ad-checkbox>
+					</ad-cell>
+				</ad-checkbox-field>
+				<ad-checkbox-field>
+					<ad-cell interactive>
+						<ad-checkbox
+						 value="选中"
+						 
+						 slot="leftElement"
+						>选中并禁用
+						</ad-checkbox>
+					</ad-cell>
+				</ad-checkbox-field>
+			</ad-cell-group>
+		</ad-checkbox-group>
+		<ad-checkbox-group disabled defaultValue="{{['选中']}}">
+			<ad-cell noTopBorder>
+				<ad-checkbox value="常态" slot="leftElement">禁用
+				</ad-checkbox>
+			</ad-cell>
+			<ad-cell noTopBorder>
+				<ad-checkbox value="选中" slot="leftElement">选中并禁用
+				</ad-checkbox>
+			</ad-cell>
+		</ad-checkbox-group>
+		<ad-checkbox-group defaultValue="{{['选中']}}">
+			<ad-cell-group noTopBorder noBottomBorder>
+				<ad-checkbox-field>
+					<ad-cell title="与列表组合使用" interactive>
+						<ad-checkbox
+						 value="选中"
+						 slot="rightElement"
+						 
+						/>
+					</ad-cell>
+				</ad-checkbox-field>
+			</ad-cell-group>
+		</ad-checkbox-group>
+	</DemoBlock>
+	<DemoBlock
+	 title="带描述说明"
+	 noPadding
+	 noShadow
+	>
+		<ad-checkbox-group value="{{value2}}" bind:onChange="change">
+			<ad-cell-group noTopBorder>
+				<ad-checkbox-field>
+					<ad-cell interactive>
+						<ad-checkbox
+						 
+						 value="常态"
+						 slot="leftElement"
+						 desc="描述文字"
+						>常态
+						</ad-checkbox>
+					</ad-cell>
+				</ad-checkbox-field>
+				<ad-checkbox-field>
+					<ad-cell interactive>
+						<ad-checkbox
+						 
+						 value="选中"
+						 slot="leftElement"
+						 desc="描述文字"
+						>选中
+						</ad-checkbox>
+					</ad-cell>
+				</ad-checkbox-field>
+				<!-- <ad-cell
+				 interactive
+				 data-num="{{2}}"
+				 data-value="选中"
+				 bind:tap="change"
+				>
+					<ad-checkbox
+					 value="选中"
+					 slot="leftElement"
+					 desc="描述文字"
+					>选中
+					</ad-checkbox>
+				</ad-cell> -->
+			</ad-cell-group>
+		</ad-checkbox-group>
+		<ad-checkbox-group value="{{['选中']}}">
+			<ad-cell-group noTopBorder noBottomBorder>
+				<ad-cell>
+					<ad-checkbox
+					 value="常态"
+					 disabled
+					 slot="leftElement"
+					 desc="描述文字"
+					>禁用
+					</ad-checkbox>
+				</ad-cell>
+				<ad-cell>
+					<ad-checkbox
+					 value="选中"
+					 disabled
+					 slot="leftElement"
+					 desc="描述文字"
+					>选中并禁用
+					</ad-checkbox>
+				</ad-cell>
+			</ad-cell-group>
+		</ad-checkbox-group>
+	</DemoBlock>
+</DemoBody>
+

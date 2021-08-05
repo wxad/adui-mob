@@ -1,0 +1,29 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+
+$prefix: 'ad_dropdown';
+
+.#{$prefix} {
+  position: relative;
+  z-index: 120;
+  width: 100%;
+
+  &_body {
+    position: absolute;
+    width: 100%;
+    transform: scaleY(0);
+    opacity: 0;
+    transform-origin: top;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+    background-color: #fff;
+  }
+
+  &_body_show {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}

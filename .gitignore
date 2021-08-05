@@ -1,0 +1,7 @@
+node_modules
+dist
+commentData
+.vscode
+.docz
+.docz/**
+out

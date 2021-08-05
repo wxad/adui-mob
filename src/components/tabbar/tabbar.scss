@@ -1,0 +1,37 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+$prefix: 'ad_tabbar';
+
+// :host {
+//   position: relative;
+//   display: block;
+//   z-index: theme(--z-index-tab-bar, $--z-index-tab-bar);
+// }
+
+.#{$prefix} {
+
+  &_inner {
+    @include flex-center-start;
+    padding-bottom: var(--con-bottom);
+    padding-bottom: var(--env-bottom);
+    background-color: #fff;
+  }
+
+  &_inner_fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: theme(--z-index-tab-bar, $--z-index-tab-bar);
+  }
+
+  &_placeholder {
+    padding-bottom: var(--con-bottom);
+    padding-bottom: var(--env-bottom);
+    min-height: 62px;
+    visibility: hidden;
+  }
+}

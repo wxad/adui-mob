@@ -1,0 +1,8 @@
+<ad-animation
+  show="{{show}}"
+  custom-class="{{prefix}}"
+  customStyle="z-index:{{zIndex}}; {{customStyle}}"
+  duration="{{duration}}"
+  bind:tap="onClick"
+  catch:touchmove="noop"
+/>

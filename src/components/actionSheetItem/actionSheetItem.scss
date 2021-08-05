@@ -1,0 +1,45 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+$prefix: 'ad_action_sheet_item';
+
+.#{$prefix} {
+  position: relative;
+  color: theme(--transparent-gray-900, $--transparent-gray-900);
+  background-color: #fff;
+
+  &_hover {
+
+    &::after {
+      @include hoverBg;
+    }
+  }
+
+  &_disabled {
+    color: theme(--transparent-gray-500, $--transparent-gray-500);
+  }
+
+  &_inner {
+    @include flex-center-center;
+    min-height: 56px;
+    padding: 12px 20px;
+    text-align: center;
+  }
+
+  &_content {
+    flex: 1;
+    text-align: center;
+  }
+
+  &_title {
+    @include font-large;
+  }
+
+  &_desc {
+    @include font-small;
+    text-align: center;
+    color: theme(--transparent-gray-600, $--transparent-gray-600);
+  }
+}

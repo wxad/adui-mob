@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ad-overlay": "../overlay/overlay",
+    "ad-animation": "../../components/animation/animation",
+    "ad-divider": "../../components/divider/divider",
+    "ad-cell": "../../components/cell/cell",
+    "ad-cell-group": "../../components/cellGroup/cellGroup"
+  }
+}

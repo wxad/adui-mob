@@ -1,0 +1,59 @@
+<DemoBody class="main">
+	<DemoHeader title="全局提示 Message" desc="承载系统告示、提醒等反馈型内容。" />
+	<DemoBlock title="基础样式">
+		<ad-message
+		 class="message"
+		 title="{{item.title}}"
+		 intent="{{item.intent}}"
+		 wx:for="{{list}}"
+		/>
+	</DemoBlock>
+	<DemoBlock title="带描述说明">
+		<ad-message
+		 class="message"
+		 title="{{item.title}}"
+		 intent="{{item.intent}}"
+		 wx:for="{{list}}"
+		 desc="此处是描述内容"
+		/>
+	</DemoBlock>
+	<DemoBlock title="带图标">
+		<ad-message
+		 class="message"
+		 title="{{item.title}}"
+		 intent="{{item.intent}}"
+		 wx:for="{{list}}"
+		 hasIcon
+		 desc="此处是描述内容"
+		/>
+	</DemoBlock>
+	<DemoBlock title="卡片式">
+		<ad-message
+		 class="message"
+		 title="{{item.title}}"
+		 intent="{{item.intent}}"
+		 wx:for="{{list}}"
+		 isCard
+		/>
+	</DemoBlock>
+	<DemoBlock title="可跳转">
+		<ad-message
+		 class="message"
+		 title="{{item.title}}"
+		 intent="{{item.intent}}"
+		 wx:for="{{list}}"
+		 hasIcon
+		 isLink
+		/>
+		<ad-message
+		 class="message"
+		 title="{{item.title}}"
+		 intent="{{item.intent}}"
+		 wx:for="{{list}}"
+		 hasIcon
+		 isCard
+		 isLink
+		/>
+	</DemoBlock>
+</DemoBody>
+

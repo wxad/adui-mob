@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ad-sheet": "../sheet/sheet",
+    "ad-action-sheet-item": "../actionSheetItem/actionSheetItem",
+    "ad-divider": "../divider/divider"
+  }
+}

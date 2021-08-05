@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ad-icon": "../icon/icon",
+    "ad-action-sheet": "../actionSheet/actionSheet",
+    "ad-action-sheet-item": "../actionSheetItem/actionSheetItem"
+  }
+}

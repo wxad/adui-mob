@@ -1,0 +1,93 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+
+$prefix: 'ad_avatar';
+
+.#{$prefix} {
+  padding: 2px;
+  border-radius: 6px;
+
+  &_inner {
+    @include flex-center-center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: theme(--transparent-gray-100, $--transparent-gray-100);
+    border-radius: inherit;
+  }
+
+  &_placeholder {
+    flex: none;
+  }
+
+  &_round {
+    padding: 0;
+    border-radius: 50%;
+
+    &.#{$prefix}_small {
+
+      .#{$prefix}_placeholder {
+        width: 14px;
+        height: 14px;
+      }
+    }
+
+    &.#{$prefix}_medium {
+
+      .#{$prefix}_placeholder {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    &.#{$prefix}_large {
+
+      .#{$prefix}_placeholder {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
+  &_no_border {
+    border: none;
+  }
+
+  &.#{$prefix}_small {
+    width: 28px;
+    height: 28px;
+
+    .#{$prefix}_placeholder {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &.#{$prefix}_medium {
+    width: 34px;
+    height: 34px;
+
+    .#{$prefix}_placeholder {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &.#{$prefix}_large {
+    width: 42px;
+    height: 42px;
+
+    .#{$prefix}_placeholder {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &_pic {
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,23 @@
+@import '../../../components/common/style/reset/common.scss';
+@import '../../../components/common/style/var.scss';
+@import '../../../components/common/style/theme.scss';
+@import '../../../components/common/style/mixin';
+
+$prefix: 'demo_header';
+
+.#{$prefix} {
+  padding: 0 20px;
+  
+  &_header {
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 60rpx;
+    color: var(--transparent-gray-900);
+    line-height: 80rpx;
+  }
+
+  &_desc {
+    @include font-large;
+    color: var(--transparent-gray-800);
+  }
+}

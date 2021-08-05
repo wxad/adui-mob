@@ -1,0 +1,23 @@
+.list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.tag_item {
+  flex: none;
+  margin-right: 9px;
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.main {
+  
+  .demo_block_body {
+    padding-bottom: 8px;
+  }
+}

@@ -1,0 +1,39 @@
+@import "../common/style/reset/common.scss";
+@import "../common/style/var.scss";
+@import "../common/style/theme.scss";
+@import "../common/style/mixin.scss";
+
+$prefix: "ad_collapse_item";
+
+.#{$prefix} {
+
+  &_header {
+    background: #FFFFFF;
+  }
+
+  &_active {
+
+    .#{$prefix}_icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  &_icon {
+    flex: none;
+    display: block;
+    transition: all .2s ease-in-out;
+  }
+
+  &_body {
+    background: #FFFFFF;
+    overflow: hidden;
+    transition: height .2s ease-in-out;
+  }
+
+  &_content {
+    // padding: 12px 20px;
+    // font-size: 13px;
+    // color: theme(--transparent-gray-700, $--transparent-gray-700);
+    // line-height: 22px;
+  }
+}

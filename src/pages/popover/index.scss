@@ -1,0 +1,30 @@
+.body {
+
+  .demo_block_body {
+    background-color: transparent;
+  }
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 16px 12px;
+
+  .ad_button {
+    height: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+  }
+}
+
+.item {
+  display: block;
+  margin: 8px;
+  width: calc((100vw - 72px) / 3);
+}
+
+.button {
+  display: block;
+  height: calc((100vw - 72px) / 3);
+}

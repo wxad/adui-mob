@@ -1,0 +1,30 @@
+<DemoBody>
+	<DemoHeader title="气泡提示 Popover" desc="用户点击某个功能后浮出临时气泡对其作出补充，更强调功能的归属，可以出现在页面的任何地方。气泡通常会伴随着半透明的遮罩或者投影衬底。" />
+	<DemoBlock class="body"noPadding>
+		<!-- <view style="width: 100px; height: 100px; background-color: red;" bind:tap="test"></view> -->
+		<view class="list">
+			<ad-popover
+			 placement="{{item.placement}}"
+			 class="item"
+			 wx:for="{{list}}"
+			 visible="{{index === active}}"
+			 popStyle="width: 200px"
+			 bind:onClose="close"
+			>
+				<ad-button
+				 theme="light"
+				 banner
+				 class="button"
+				 intent="normal"
+				 bind:tap="chose"
+				 data-index="{{index}}"
+				 wx:if="{{index !== 4}}"
+				>{{item.title}}
+				</ad-button>
+				<view wx:if="{{index === 4}}"></view>
+				<view slot="pop">哈哈哈哈哈哈哈哈哈哈或</view>
+			</ad-popover>
+		</view>
+	</DemoBlock>
+</DemoBody>
+

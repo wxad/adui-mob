@@ -1,0 +1,201 @@
+---
+name: Input
+menu: 基础类
+index: 13
+---
+
+import { Alert, Table } from 'adui'
+
+# Input
+
+通过键盘输入内容的控件。
+
+### 常用示例
+
+#### 基本用法
+
+input 常见的应用场景是在 cell 中使用，一般都是和 cell 组合使用
+
+```javascript
+<ad-cell-group>
+  <ad-cell title="标题">
+    <ad-input align="left" slot="rightElement" placeholder="输入内容左对齐" />
+  </ad-cell>
+  <ad-cell title="标题">
+    <ad-input slot="rightElement" placeholder="输入内容右对齐" />
+  </ad-cell>
+</ad-cell-group>
+```
+
+#### 格式输入
+
+input 除了支持原生的格式外，还另外支持手机号和千分号两种格式输入，通过 format 属性进行配置
+
+```javascript
+<ad-cell-group>
+  <ad-cell title="手机号">
+    <ad-input
+      type="number"
+      format="phone"
+      align="left"
+      slot="rightElement"
+      placeholder="请输入手机号"
+      value="152 1234 1234"
+    />
+  </ad-cell>
+  <ad-cell title="数字">
+    <ad-input
+      type="number"
+      format="number"
+      align="left"
+      slot="rightElement"
+      placeholder="支持千分符"
+      value="{{1234}}"
+    />
+  </ad-cell>
+</ad-cell-group>
+```
+
+#### 错误提示
+
+input 可以通过外部控制的方式来展示错误样式
+
+```javascript
+<ad-cell-group>
+  <ad-cell title="标题">
+    <ad-input
+      align="left"
+      error
+      placeholder="在此输入内容"
+      slot="rightElement"
+    />
+  </ad-cell>
+  <ad-cell title="标题" innerStyle="align-items: flex-start;">
+    <ad-input
+      align="left"
+      error
+      errorText="输入内容错误"
+      slot="rightElement"
+      value="123"
+    />
+  </ad-cell>
+</ad-cell-group>
+```
+
+#### 组合使用
+
+```javascript
+<ad-cell-group noTopBorder noBottomBorder>
+  <ad-cell title="标题" leftIcon="credit-card-outlined">
+    <ad-input
+      align="left"
+      slot="rightElement"
+      placeholder="在此输入内容"
+      icon="view-outlined"
+    />
+  </ad-cell>
+  <ad-cell title="显示图标">
+    <ad-input
+      align="left"
+      slot="rightElement"
+      placeholder="在此输入内容"
+      icon="view-outlined"
+    />
+  </ad-cell>
+  <ad-cell title="显示计数器">
+    <ad-input
+      align="left"
+      slot="rightElement"
+      placeholder="在此输入内容"
+      value="{{inputValue}}"
+      bind:onChange="changeInput"
+      counter="{{20}}"
+    />
+  </ad-cell>
+  <ad-cell title="显示单位">
+    <ad-input
+      align="left"
+      slot="rightElement"
+      placeholder="在此输入内容"
+      unit="元"
+    />
+  </ad-cell>
+</ad-cell-group>
+```
+
+## Slot
+
+export const slots = [
+  {
+    name: 'rightElement',
+    desc: '右边 slot，用于自定义右边内容',
+  },
+]
+
+<Table
+  columnsResizable
+  dataSource={slots}
+  columns={[
+    {
+      dataIndex: 'name',
+      title: 'name',
+    },
+    {
+      dataIndex: 'desc',
+      title: '描述',
+    },
+  ]}
+/>
+
+<!-- ## Events
+
+export const events = [
+  {
+    name: 'onChange',
+    desc: '输入值变化时触发',
+    value: '{value: number | string, cursor, keyCode}',
+  },
+  {
+    name: 'onFocus',
+    desc: 'focus 时触发',
+    value: '{...event}',
+  },
+  {
+    name: 'onBlur',
+    desc: 'blur 时触发',
+    value: '{...event}',
+  },
+  {
+    name: 'onConfirm',
+    desc: '点击确认键时触发',
+    value: '{...event}',
+  },
+  {
+    name: 'onKeyboardHeightChange',
+    desc: '键盘高度改变时触发',
+    value: '{...event}',
+  },
+]
+
+这里 {... event} 是对小程序原生事件的解构，不同的事件值的内容不同
+
+<Table
+  columnsResizable
+  dataSource={events}
+  columns={[
+    {
+      dataIndex: 'name',
+      title: 'name',
+    },
+    {
+      dataIndex: 'desc',
+      title: '描述',
+    },
+    {
+      dataIndex: 'value',
+      title: '返回值',
+    },
+  ]}
+/> -->
+
+## Properties

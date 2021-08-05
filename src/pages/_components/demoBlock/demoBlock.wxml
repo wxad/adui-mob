@@ -1,0 +1,7 @@
+<view class="{{prefix}} {{noPadding && 'demo_block_no_padding'}}">
+	<view class="{{prefix}}_title {{noTitleMargin && 'demo_block_no_margin'}}">{{title}}</view>
+	<view class="{{prefix}}_body {{noBackground && 'demo_block_no_bg'}}">
+		<slot/>
+	</view>
+</view>
+

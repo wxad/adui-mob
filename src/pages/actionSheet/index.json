@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "DemoBody": "../_components/demoBody/demoBody",
+    "DemoHeader": "../_components/demoHeader/demoHeader",
+    "DemoBlock": "../_components/demoBlock/demoBlock"
+  }
+}

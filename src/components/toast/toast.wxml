@@ -1,0 +1,39 @@
+<animation
+ show="{{visibleInner}}"
+ name="fade"
+ duration="300"
+ customStyle="z-index: var(--z-index-toast, 2020); position: fixed;"
+>
+	<view class="{{prefix}}_outer">
+		<view class="{{prefix}} {{titleList.length > 0 && titleList.length > 1 && 'ad_toast_text_list'}}" style="{{customStyle}}">
+			<view class="{{prefix}}_inner" wx:if="{{icon !== 'none' || loading}}">
+				<ad-spinner
+				 wx:if="{{loading}}"
+				 color="#ffffff"
+				 size="large"
+				 circleSize="{{34}}"
+				/>
+				<ad-icon
+				 wx:if="{{icon !== 'none'}}"
+				 icon="{{icon}}"
+				 size="{{iconSize}}"
+				 color="#ffffff"
+				/>
+				<view class="{{prefix}}_icon_text">
+					<view wx:if="{{titleList.length > 0}}">
+						<view wx:for="{{titleList}}" wx:key="item">{{item}}</view>
+					</view>
+					<view wx:else>{{title}}</view>
+					<slot/>
+				</view>
+			</view>
+			<view wx:else class="{{prefix}}_text">
+				<view wx:if="{{titleList.length === 0}}">{{title}}</view>
+				<view wx:else>
+					<view wx:for="{{titleList}}" wx:key="item">{{item}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</animation>
+

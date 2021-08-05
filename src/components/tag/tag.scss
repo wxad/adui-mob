@@ -1,0 +1,162 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+
+$prefix: 'ad_tag';
+
+.#{$prefix} {
+  position: relative;
+  @include inline-flex-center-center;
+  display: inline-flex;
+  min-width: 48px;
+  flex-wrap: wrap;
+  overflow: hidden;
+  @include font-medium;
+  font-weight: bold;
+  border-radius: 4px;
+
+  &_banner {
+    display: flex;
+  }
+
+  &_content {
+    padding: 0 4px;
+    text-align: center;
+    z-index: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &_small {
+    padding: 0 6px;
+  }
+
+  &_filter {
+    padding: 10px 8px;
+    font-size: 14px;
+  }
+
+  &_round {
+    border-radius: 16px;
+  }
+
+  &_bg {
+    @include background;
+  }
+
+  &_primary {
+    color: theme(--primary-color, $--primary-color);
+
+    .#{$prefix}_bg {
+      background-color: theme(--primary-color, $--primary-color);
+    }
+  }
+
+  &_success {
+    color: theme(--ad-green, $--ad-green);
+
+    .#{$prefix}_bg {
+      background-color: theme(--ad-green, $--ad-green);
+    }
+  }
+
+  &_warning {
+    color: theme(--ad-orange, $--ad-orange);
+
+    .#{$prefix}_bg {
+      background-color: theme(--ad-orange, $--ad-orange);
+    }
+  }
+
+  &_danger {
+    color: theme(--ad-red, $--ad-red);
+
+    .#{$prefix}_bg {
+      background-color: theme(--ad-red, $--ad-red);
+    }
+  }
+
+  &_normal {
+    color: theme(--transparent-gray-800, $--transparent-gray-800);
+
+    &.#{$prefix}_light {
+
+      .#{$prefix}_bg {
+        opacity: 1;
+        background-color: theme(--transparent-gray-100, $--transparent-gray-100);
+      }
+    }
+
+    .#{$prefix}_bg {
+      background-color: theme(--transparent-gray-800, $--transparent-gray-800);
+    }
+  }
+
+  &_standard {
+    color: #FFFFFF;
+  }
+
+  &_light {
+
+    &.#{$prefix}_hover::after {
+      @include hoverBg;
+    }
+
+    .#{$prefix}_bg {
+      opacity: 0.06;
+    }
+  }
+
+  &_outlined {
+    padding: 0 5px;
+    border-width: 1px;
+    border-style: solid;
+
+    &.#{$prefix}_primary {
+      border-color: theme(--primary-color, $--primary-color);
+    }
+
+    &.#{$prefix}_success {
+      border-color: theme(--ad-green, $--ad-green);
+    }
+
+    &.#{$prefix}_warning {
+      border-color: theme(--ad-orange, $--ad-orange);
+    }
+
+    &.#{$prefix}_danger {
+      border-color: theme(--ad-red, $--ad-red);
+    }
+  }
+
+  &_text, &_outlined {
+
+    .#{$prefix}_bg {
+      display: none;
+    }
+  }
+
+  &_text {
+
+    &.#{$prefix}_hover::after {
+      @include hoverBg;
+    }
+  }
+
+  &_disabled {
+    color: theme(--transparent-gray-500, $--transparent-gray-500);
+
+    .#{$prefix}_bg {
+      opacity: 0.06;
+      background-color: theme(--transparent-gray-900, $--transparent-gray-900);
+    }
+  }
+
+  &_removed {
+    display: none;
+  }
+}

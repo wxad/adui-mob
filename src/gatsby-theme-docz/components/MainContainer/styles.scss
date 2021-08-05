@@ -1,0 +1,58 @@
+.main .container {
+  max-width: 1440px;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  background: #ffffff;
+  max-width: 960px;
+
+  table {
+    position: relative;
+    font-size: 13px;
+    line-height: 20px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
+
+    th, td{
+      padding: 11px 8px;
+      border: none;
+      min-height: 40px;
+      max-width: 100%;
+      word-break: break-all;
+      box-shadow: 0 -1px 0 0 rgba(0,0,0,0.08) inset;
+    }
+
+    th:first-child, td:first-child {
+      padding-left: 8px;
+    }
+
+    th:last-child, td:last-child {
+      padding-right: 8px;
+    }
+  }
+}
+
+.container_body {
+  flex: 1;
+}
+
+.qrCode {
+  position: sticky;
+  top: 118px;
+  flex: none;
+  margin-left: 40px;
+  width: 200px;
+  text-align: center;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.qrcode_desc {
+  margin-top: 20px;
+  font: 16px;
+}

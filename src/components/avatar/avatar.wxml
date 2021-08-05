@@ -1,0 +1,31 @@
+<view class="{{prefix}} {{prefix}}_{{size}} {{round && 'ad_avatar_round'}} {{noBorder && 'ad_avatar_no_border'}}" style="width: {{numSize}}px; height: {{numSize}}px; {{customStyle}}">
+	<view class="{{prefix}}_inner">
+		<image
+		 class="{{prefix}}_pic"
+		 wx:if="{{src !== ''}}"
+		 src="{{src}}"
+		 mode="{{mode}}"
+		/>
+		<view
+		 wx:if="{{src === ''}}"
+		 class="{{prefix}}_placeholder"
+		 style="{{placeholderSize === null ? '' : ('width:' + placeholderSize + 'px;' + 'height:' + placeholderSize + 'px;')}}"
+		>
+			<image
+			 class="{{prefix}}_placeholder_inner"
+			 wx:if="{{placeholderPicture !== ''}}"
+			 src="{{placeholderPicture}}"
+			 style="{{placeholderPictureStyle}}"
+			/>
+			<ad-icon
+			 wx:if="{{placeholderPicture === ''}}"
+			 icon="{{placeholderIcon === '' ? (round ? 'person' : 'image-outlined') : placeholderIcon}}"
+			 color="{{placeholderIconColor}}"
+			 style="width: 100%; height: 100%;"
+			 customStyle="width: 100%; height: 100%;"
+			/>
+		</view>
+		<slot name="badge" />
+	</view>
+</view>
+

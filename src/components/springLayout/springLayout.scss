@@ -1,0 +1,23 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+$prefix: 'ad_spring_layout';
+
+.#{$prefix} {
+  @include flex-start-start;
+  flex-direction: column;
+
+  &_body {
+    flex: 1;
+    width: 100%;
+  }
+
+  &_footer {
+    flex: none;
+    width: 100%;
+  }
+}
+
+

@@ -1,0 +1,88 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+
+$prefix: "ad_input";
+
+:host {
+  width: 100%;
+}
+
+.#{$prefix} {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 32px;
+  @include font-large;
+  color: theme(--transparent-gray-800, $--transparent-gray-800);
+
+  &_disabled {
+    color: theme(--transparent-gray-500, $--transparent-gray-500);
+
+    &_placeholder {
+      color: theme(--transparent-gray-500, $--transparent-gray-500);
+    }
+  }
+
+  &_inner {
+    @include flex-center-between;
+    height: 100%;
+    flex: 1;
+  }
+
+  &_input {
+    line-height: 28px;
+    flex: 1;
+    min-height: 32px;
+  }
+
+  &_ellipsis {
+
+    .#{$prefix}_input {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &_placeholder {
+    @include font-large;
+    color: theme(--transparent-gray-700, $--transparent-gray-700);
+
+    &.#{$prefix}_placeholder_disabled {
+      color: theme(--transparent-gray-500, $--transparent-gray-500);
+    }
+
+    &.#{$prefix}_placeholder_error {
+      color: theme(--ad-red, $--ad-red);
+    }
+  }
+
+  &_counter {
+    margin-left: 6px;
+    @include flex-center-start;
+    @include font-large;
+    color: theme(--transparent-gray-700, $--transparent-gray-700);
+  }
+
+  &_reminder {
+    color: theme(--ad-red, $--ad-red);
+  }
+
+  &_unit {
+    @include font-medium;
+    color: theme(--transparent-gray-900, $--transparent-gray-900);
+  }
+
+  &_icon {
+    flex: none;
+    margin-left: 6px;
+  }
+
+  &_error {
+    @include font-small;
+    color: theme(--ad-red, $--ad-red);
+  }
+}

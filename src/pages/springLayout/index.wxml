@@ -1,0 +1,11 @@
+<ad-spring-layout>
+	<view slot="body">
+		<DemoBody>
+			<DemoHeader title="弹性布局 Loadmore" />
+		</DemoBody>
+	</view>
+		<view slot="footer">
+			<ad-button>底部按钮</ad-button>
+	</view>
+</ad-spring-layout>
+

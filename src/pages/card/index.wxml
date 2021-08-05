@@ -1,0 +1,20 @@
+<DemoBody class="main">
+	<DemoHeader title="卡片 Card" desc="用于组织信息和操作的控件，也可作为信息入口。" />
+	<DemoBlock title="基础样式" noPadding>
+		<ad-card class="card">
+			<view style="height: 68px" />
+		</ad-card>
+		<ad-card class="card">
+			<view style="height: 68px" />
+		</ad-card>
+	</DemoBlock>
+	<DemoBlock title="通栏样式" noPadding>
+		<ad-card banner class="card">
+			<view style="height: 68px" />
+		</ad-card>
+		<ad-card banner class="card">
+			<view style="height: 68px" />
+		</ad-card>
+	</DemoBlock>
+</DemoBody>
+

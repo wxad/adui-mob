@@ -1,0 +1,278 @@
+{
+    "description": "项目配置文件",
+    "packOptions": {
+        "ignore": []
+    },
+    "compileType": "miniprogram",
+    "libVersion": "2.12.0",
+    "projectname": "adui 小程序组件库",
+    "scripts": {
+        "beforeCompile": "npm run compile",
+        "beforePreview": "npm run compile",
+        "beforeUpload": "npm run compile"
+    },
+    "setting": {
+        "urlCheck": true,
+        "es6": true,
+        "postcss": true,
+        "minified": true,
+        "newFeature": true,
+        "nodeModules": false,
+        "autoAudits": false,
+        "uglifyFileName": false,
+        "useCompilerModule": false
+    },
+    "appid": "wx1a23c4f8c2253140",
+    "simulatorType": "wechat",
+    "simulatorPluginLibVersion": {},
+    "condition": {
+        "search": {
+            "current": -1,
+            "list": []
+        },
+        "conversation": {
+            "current": -1,
+            "list": []
+        },
+        "plugin": {
+            "current": -1,
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "miniprogram": {
+            "current": 0,
+            "list": [
+                {
+                    "id": -1,
+                    "name": "home",
+                    "pathName": "pages/home/index",
+                    "query": ""
+                },
+                {
+                    "id": -1,
+                    "name": "font",
+                    "pathName": "pages/font/index",
+                    "query": ""
+                },
+                {
+                    "id": -1,
+                    "name": "color",
+                    "pathName": "pages/color/index",
+                    "query": ""
+                },
+                {
+                    "id": -1,
+                    "name": "style",
+                    "pathName": "pages/style/index",
+                    "query": ""
+                },
+                {
+                    "id": -1,
+                    "name": "icon",
+                    "pathName": "pages/icon/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "layout",
+                    "pathName": "pages/layout/index",
+                    "query": ""
+                },
+                {
+                    "id": -1,
+                    "name": "navigation",
+                    "pathName": "pages/navigation/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "tabs",
+                    "pathName": "pages/tabs/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "tabbar",
+                    "pathName": "pages/tabbar/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "avatar",
+                    "pathName": "pages/avatar/index",
+                    "query": ""
+                },
+                {
+                    "id": -1,
+                    "name": "picture",
+                    "pathName": "pages/picture/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "uploadImage",
+                    "pathName": "pages/uploadImage/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "button",
+                    "pathName": "pages/button/index",
+                    "query": ""
+                },
+                {
+                    "id": -1,
+                    "name": "floatingButton",
+                    "pathName": "pages/floatingButton/index",
+                    "query": ""
+                },
+                {
+                    "id": -1,
+                    "name": "radio",
+                    "pathName": "pages/radio/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "checkbox",
+                    "pathName": "pages/checkbox/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "tag",
+                    "pathName": "pages/tag/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "badge",
+                    "pathName": "pages/badge/index",
+                    "query": ""
+                },
+                {
+                    "id": -1,
+                    "name": "switch",
+                    "pathName": "pages/switch/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "steps",
+                    "pathName": "pages/steps/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "input",
+                    "pathName": "pages/input/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "cell",
+                    "pathName": "pages/cell/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "card",
+                    "pathName": "pages/card/index",
+                    "query": ""
+                },
+                {
+                    "id": -1,
+                    "name": "stepper",
+                    "pathName": "pages/stepper/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "searchBar",
+                    "pathName": "pages/searchBar/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "collapse",
+                    "pathName": "pages/collapse/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "dialog",
+                    "pathName": "pages/dialog/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "sheet",
+                    "pathName": "pages/sheet/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "actionSheet",
+                    "pathName": "pages/actionSheet/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "select",
+                    "pathName": "pages/select/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "popover",
+                    "pathName": "pages/popover/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "message",
+                    "pathName": "pages/message/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "spinner",
+                    "pathName": "pages/spinner/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "loadMore",
+                    "pathName": "pages/loadMore/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "emptyState",
+                    "pathName": "pages/emptyState/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "slider",
+                    "pathName": "pages/slider/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "dropdown",
+                    "pathName": "pages/dropdown/index",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "overlay",
+                    "pathName": "pages/overlay/index",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

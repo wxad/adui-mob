@@ -1,0 +1,178 @@
+<DemoBody>
+	<DemoHeader title="单选  Radio" desc="支持选中单项的基础控件" />
+	<DemoBlock
+	 title="基础样式"
+	 noPadding
+	 noShadow
+	>
+		<ad-radio-group defaultValue="{{value1}}">
+			<ad-cell-group noTopBorder noBottomBorder>
+				<ad-radio-field>
+					<ad-cell interactive>
+						<ad-radio slot="leftElement" value="常态" selectable="{{false}}">常态</ad-radio>
+					</ad-cell>
+				</ad-radio-field>
+				<ad-radio-field>
+					<ad-cell interactive>
+						<ad-radio slot="leftElement" value="选中" selectable="{{false}}">选中</ad-radio>
+					</ad-cell>
+				</ad-radio-field>
+				<ad-radio-field>
+					<ad-cell title="与列表组合" interactive>
+						<ad-radio slot="rightElement" value="列表" selectable="{{false}}"/>
+					</ad-cell>
+				</ad-radio-field>
+			</ad-cell-group>
+		</ad-radio-group>
+		<ad-radio-group defaultValue="选中" disabled>
+			<ad-cell-group noBottomBorder>
+				<ad-cell>
+					<ad-radio slot="leftElement" value="常态">禁用
+					</ad-radio>
+				</ad-cell>
+				<ad-cell>
+					<ad-radio slot="leftElement" value="选中">选中并禁用
+					</ad-radio>
+				</ad-cell>
+			</ad-cell-group>
+		</ad-radio-group>
+		<!-- <ad-radio-group defaultValue="选中">
+			<ad-cell-group noBottomBorder>
+				<ad-cell title="与列表组合">
+					<ad-radio slot="rightElement" value="选中" />
+				</ad-cell>
+			</ad-cell-group>
+		</ad-radio-group> -->
+	</DemoBlock>
+	<DemoBlock
+	 title="轻量样式"
+	 noPadding
+	 noShadow
+	>
+		<ad-radio-group defaultValue="{{value2}}">
+			<ad-cell-group noTopBorder noBottomBorder>
+				<ad-radio-field>
+					<ad-cell interactive>
+						<ad-radio
+						 theme="light"
+						 slot="leftElement"
+						 value="常态"
+						>常态
+						</ad-radio>
+					</ad-cell>
+				</ad-radio-field>
+				<ad-radio-field>
+					<ad-cell interactive>
+						<ad-radio
+						 theme="light"
+						 slot="leftElement"
+						 value="选中"
+						>选中
+						</ad-radio>
+					</ad-cell>
+				</ad-radio-field>
+				<ad-radio-field>
+					<ad-cell title="与列表组合" interactive>
+						<ad-radio
+						 theme="light"
+						 slot="rightElement"
+						 value="列表"
+						/>
+					</ad-cell>
+				</ad-radio-field>
+			</ad-cell-group>
+		</ad-radio-group>
+		<ad-radio-group defaultValue="选中">
+			<ad-cell-group noBottomBorder>
+				<ad-cell>
+					<ad-radio
+					 slot="leftElement"
+					 theme="light"
+					 disabled
+					 value="常态"
+					>禁用
+					</ad-radio>
+				</ad-cell>
+				<ad-cell>
+					<ad-radio
+					 slot="leftElement"
+					 theme="light"
+					 disabled
+					 value="选中"
+					>选中并禁用
+					</ad-radio>
+				</ad-cell>
+			</ad-cell-group>
+		</ad-radio-group>
+		<!-- <ad-radio-group defaultValue="选中">
+			<ad-cell-group noBottomBorder>
+				<ad-cell title="与列表组合">
+					<ad-radio
+					 slot="rightElement"
+					 theme="light"
+					 value="选中"
+					/>
+				</ad-cell>
+			</ad-cell-group>
+		</ad-radio-group> -->
+	</DemoBlock>
+	<DemoBlock
+	 title="带描述说明"
+	 noPadding
+	 noShadow
+	>
+		<ad-radio-group value="{{value3}}">
+			<ad-cell-group noTopBorder noBottomBorder>
+				<ad-cell
+				 interactive
+				 data-num="{{3}}"
+				 data-value="常态"
+				 bind:tap="change"
+				>
+					<ad-radio
+					 slot="leftElement"
+					 value="常态"
+					 desc="描述文字"
+					>常态
+					</ad-radio>
+				</ad-cell>
+				<ad-cell
+				 interactive
+				 data-num="{{3}}"
+				 data-value="选中"
+				 bind:tap="change"
+				>
+					<ad-radio
+					 slot="leftElement"
+					 value="选中"
+					 desc="描述文字"
+					>选中
+					</ad-radio>
+				</ad-cell>
+			</ad-cell-group>
+		</ad-radio-group>
+		<ad-radio-group defaultValue="选中">
+			<ad-cell-group noBottomBorder>
+				<ad-cell>
+					<ad-radio
+					 slot="leftElement"
+					 disabled
+					 value="常态"
+					 desc="描述文字"
+					>禁用
+					</ad-radio>
+				</ad-cell>
+				<ad-cell>
+					<ad-radio
+					 slot="leftElement"
+					 disabled
+					 value="选中"
+					 desc="描述文字"
+					>选中并禁用
+					</ad-radio>
+				</ad-cell>
+			</ad-cell-group>
+		</ad-radio-group>
+	</DemoBlock>
+</DemoBody>
+

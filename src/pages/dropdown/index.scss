@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.header_item {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  padding: 16px 20px;
+}
+
+.header_item_active {
+  color: var(--primary-color);
+}

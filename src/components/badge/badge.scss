@@ -1,0 +1,40 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+
+$prefix: 'ad_badge';
+
+.#{$prefix} {
+  @include flex-center-center;
+  min-width: 18px;
+  min-height: 18px;
+  color: #ffffff;
+  @include font-mini;
+  font-weight: bold;
+
+  &_fixed {
+    position: absolute;
+    bottom: calc(100% - 9px);
+    left: calc(100% - 9px);
+  }
+
+  &_dot {
+    min-width: 6px;
+    min-height: 6px;
+    background-color: theme(--ad-red, $--ad-red);
+    border-radius: 50%;
+  }
+
+  &_text {
+    @include flex-center-center;
+    min-width: 18px;
+    min-height: 18px;
+    padding: 0 6px;
+    font-weight: bold;
+    line-height: 18px;
+    background-color: theme(--ad-red, $--ad-red);
+    border-radius: 10px;
+  }
+}

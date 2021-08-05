@@ -1,0 +1,49 @@
+<view class="{{prefix}}_outer">
+	<view
+	 class="{{prefix}} {{show && 'ad_select_item_show'}}"
+	 style="height: {{height}}px;"
+	 catch:touchmove="noop"
+	>
+		<view class="{{prefix}}_inner">
+			<slot name="header" />
+			<ad-cell-group
+			 noTopBorder
+			 noBottomBorder
+			 wx:if="{{options.length > 0}}"
+			>
+				<ad-radio-group value="{{activeItem}}">
+					<ad-cell
+					 wx:for="{{options}}"
+					 title="{{item.title}}"
+					 data-value="{{item.value}}"
+					 data-title="{{item.title}}"
+					 banner
+					 bind:tap="chose"
+					 interactive
+					 noBorder
+					>
+						<ad-radio
+						 slot="rightElement"
+						 value="{{item.value}}"
+						 theme="light"
+						/>
+					</ad-cell>
+				</ad-radio-group>
+			</ad-cell-group>
+			<slot/>
+			<slot name="footer" />
+		</view>
+	</view>
+	<ad-overlay
+	 show="{{show}}"
+	 bind:tap="close"
+	 class="{{prefix}}_mask"
+	 customStyle="position: absolute;height: 100vh; z-index: var(--z-index-select, 1040)"
+	/>
+	<!-- <view
+	 wx:if="{{hasTransparentMask && show}}"
+	 class="{{prefix}}_transparent_mask"
+	 catch:touchmove="noop"
+	/> -->
+</view>
+

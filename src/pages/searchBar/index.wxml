@@ -1,0 +1,14 @@
+<DemoBody>
+	<DemoHeader title="搜索栏 Search bar" desc="可用于输入搜索信息" />
+	<DemoBlock title="基础样式" noPadding>
+		<ad-search-bar placeholder="搜索账户" />
+	</DemoBlock>
+	<DemoBlock
+	 title="卡片样式"
+	 noPadding
+	 class="body"
+	>
+		<ad-search-bar isCard placeholder="搜索账户" />
+	</DemoBlock>
+</DemoBody>
+

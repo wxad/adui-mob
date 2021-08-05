@@ -1,0 +1,98 @@
+@import '../../components/common/style/reset/common.scss';
+@import '../../components/common/style/var.scss';
+@import '../../components/common/style/theme.scss';
+@import '../../components/common/style/mixin';
+
+.body {
+  padding: 0 20px 40px 20px;
+}
+
+.header {
+  text-align: center;
+}
+
+.logo {
+  margin-top: 10px;
+  margin-bottom: 16px;
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.0001) 33.75%, rgba(0, 0, 0, 0.0199956) 100%), linear-gradient(180deg, #FEFEFE 0%, #FCFCFC 99.83%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1.875px rgba(0, 0, 0, 0.06);
+}
+
+.header_title {
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: 0.88px;
+  text-align: center;
+  color: var(--transparent-gray-900);
+}
+
+.header_desc {
+  @include font-medium;
+  color: var(--transparent-gray-700);
+}
+
+.introduction {
+  margin-top: 16px;
+  margin-bottom: 40px;
+  @include font-medium;
+  color: var(--transparent-gray-900);
+}
+
+.item {
+  margin-bottom: 12px;
+  display: block;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.colla_header {}
+
+.colla_header_hover {
+  opacity: 0.7;
+}
+
+.colla_header_active {
+  opacity: 0.7;
+}
+
+
+.colla_header_inner {
+  @include flex-center-between;
+  @include font-large;
+  padding-left: 20px;
+  color: var(--transparent-gray-900);
+  background-color: #fff;
+}
+
+.icon {
+  width: 56px;
+  height: 56px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  flex: none;
+}
+
+.icon_style {
+  background-image: url("data:image/svg+xml,%3Csvg width='56' height='56' viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M26 36.5H26.5H26ZM26 23.5H25.5H26ZM30 36.5H29.5H30ZM19.5 19.5H26V18.5H19.5V19.5ZM19.5 22.5V19.5H18.5V22.5H19.5ZM25.5 22.5H19.5V23.5H25.5V22.5ZM26.5 36.5L26.5 23.5L25.5 23.5L25.5 36.5H26.5ZM29.5 36.5H26.5V37.5H29.5V36.5ZM29.5 23.5L29.5 36.5H30.5L30.5 23.5H29.5ZM36.5 22.5H30.5V23.5H36.5V22.5ZM36.5 19.5V22.5H37.5V19.5H36.5ZM30 19.5H36.5V18.5H30V19.5ZM26 19.5H30V18.5H26V19.5ZM37.5 19.5C37.5 18.9477 37.0523 18.5 36.5 18.5V19.5H37.5ZM36.5 23.5C37.0523 23.5 37.5 23.0523 37.5 22.5H36.5V23.5ZM30.5 23.5V22.5C29.9477 22.5 29.5 22.9477 29.5 23.5H30.5ZM25.5 36.5C25.5 37.0523 25.9477 37.5 26.5 37.5V36.5H25.5ZM25.5 23.5V23.5L26.5 23.5C26.5 22.9477 26.0523 22.5 25.5 22.5V23.5ZM18.5 22.5C18.5 23.0523 18.9477 23.5 19.5 23.5V22.5H19.5H18.5ZM29.5 37.5C30.0523 37.5 30.5 37.0523 30.5 36.5H29.5V37.5ZM19.5 18.5C18.9477 18.5 18.5 18.9477 18.5 19.5H19.5V18.5Z' fill='black' fill-opacity='0.88'/%3E %3C/svg%3E ");
+}
+
+.icon_nav {
+  background-image: url("data:image/svg+xml,%3Csvg width='56' height='56' viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Ccircle cx='20' cy='28' r='2.5' stroke='black' stroke-opacity='0.88'/%3E %3Ccircle cx='28' cy='28' r='2.5' stroke='black' stroke-opacity='0.88'/%3E %3Ccircle cx='36' cy='28' r='2.5' stroke='black' stroke-opacity='0.88'/%3E %3C/svg%3E ");
+}
+
+.icon_base {
+  background-image: url("data:image/svg+xml,%3Csvg width='56' height='56' viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cline x1='19.5' y1='20.5' x2='36.5' y2='20.5' stroke='black' stroke-opacity='0.88' stroke-linecap='round' stroke-linejoin='round'/%3E %3Cline x1='19.5' y1='27.5' x2='36.5' y2='27.5' stroke='black' stroke-opacity='0.88' stroke-linecap='round' stroke-linejoin='round'/%3E %3Cline x1='19.5' y1='34.5' x2='36.5' y2='34.5' stroke='black' stroke-opacity='0.88' stroke-linecap='round' stroke-linejoin='round'/%3E %3C/svg%3E ");
+}
+
+.icon_section {
+  background-image: url("data:image/svg+xml,%3Csvg width='56' height='56' viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M22.092 33.081L21.8014 33.4878L21.7988 33.486L22.092 33.081ZM25.0278 34.4914L24.8897 34.9721L24.8815 34.9695L25.0278 34.4914ZM24.2896 34.5895L24.5394 35.0226L24.5394 35.0226L24.2896 34.5895ZM22.3305 35.7195L22.5804 36.1526L22.5794 36.1532L22.3305 35.7195ZM21.9079 35.2592L21.4245 35.1316L21.4253 35.1284L21.9079 35.2592ZM22.3111 33.7564L21.8281 33.627L21.8286 33.6251L22.3111 33.7564ZM21.7988 33.486C19.8074 32.0444 18.4998 29.8837 18.4998 27.4501H19.4998C19.4998 29.5059 20.6036 31.3863 22.3852 32.6759L21.7988 33.486ZM18.4998 27.4501C18.4998 22.9775 22.8202 19.5 27.9491 19.5V20.5C23.193 20.5 19.4998 23.6936 19.4998 27.4501H18.4998ZM27.9491 19.5C33.0777 19.5 37.3979 22.9775 37.3979 27.4501H36.3979C36.3979 23.6936 32.7049 20.5 27.9491 20.5V19.5ZM37.3979 27.4501C37.3979 31.9226 33.0777 35.4 27.9491 35.4V34.4C32.7049 34.4 36.3979 31.2065 36.3979 27.4501H37.3979ZM27.9491 35.4C26.8805 35.4 25.848 35.2474 24.8897 34.972L25.1659 34.0109C26.0357 34.2609 26.9753 34.4 27.9491 34.4V35.4ZM24.8815 34.9695C24.8449 34.9583 24.8059 34.9522 24.7649 34.9522V33.9522C24.9069 33.9522 25.0445 33.9737 25.1742 34.0133L24.8815 34.9695ZM24.7649 34.9522C24.7003 34.9522 24.6297 34.9705 24.5394 35.0226L24.0397 34.1564C24.244 34.0385 24.4857 33.9522 24.7649 33.9522V34.9522ZM24.5394 35.0226L22.5804 36.1526L22.0807 35.2864L24.0397 34.1564L24.5394 35.0226ZM22.5794 36.1532C22.5043 36.1963 22.3574 36.2752 22.158 36.2752V35.2752C22.1254 35.2752 22.0982 35.2818 22.0809 35.2879C22.0674 35.2927 22.0641 35.2959 22.0816 35.2859L22.5794 36.1532ZM22.158 36.2752C21.7169 36.2752 21.3599 35.9174 21.3599 35.477H22.3599C22.3599 35.3657 22.2698 35.2752 22.158 35.2752V36.2752ZM21.3599 35.477C21.3599 35.3766 21.3797 35.2913 21.3937 35.2384C21.4009 35.2115 21.4086 35.1859 21.4136 35.1693C21.4193 35.15 21.4223 35.14 21.4245 35.1316L22.3914 35.3868C22.3843 35.4137 22.3766 35.4393 22.3716 35.456C22.3658 35.4753 22.3627 35.4859 22.3601 35.4954C22.3548 35.5154 22.3599 35.5037 22.3599 35.477H21.3599ZM21.4253 35.1284C21.4365 35.0872 21.6774 34.1891 21.8281 33.627L22.794 33.8859C22.6437 34.4467 22.4022 35.347 22.3905 35.39L21.4253 35.1284ZM21.8286 33.6251C21.8362 33.5973 21.8396 33.5825 21.8415 33.5723C21.8431 33.5635 21.8427 33.5627 21.8427 33.5665H22.8427C22.8427 33.7036 22.8122 33.8191 22.7935 33.8877L21.8286 33.6251ZM21.8427 33.5665C21.8427 33.5355 21.828 33.5069 21.8014 33.4878L22.3826 32.6741C22.6593 32.8717 22.8427 33.1972 22.8427 33.5665H21.8427Z' fill='black' fill-opacity='0.88'/%3E %3C/svg%3E ");
+}

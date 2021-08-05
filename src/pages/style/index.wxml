@@ -1,0 +1,104 @@
+<DemoBody>
+	<DemoHeader title="样式 Style" desc="组件样式发挥着传递信息、区分信息层级的作用。" />
+	<DemoBlock
+	 title="固态样式"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder>
+			<ad-cell wx:for="{{standard}}">
+				<view
+				 slot="leftElement"
+				 class="cell_block"
+				 style="background-color: var({{item.color}})"
+				>
+					AD
+				</view>
+				<view slot="rightElement" class="cell_right">
+					<view class="cell_right_detail">BG：{{item.bg}}，{{item.opacity}}%</view>
+					<view class="cell_right_detail">Font：{{item.fontColor}}，{{item.opacity}}%</view>
+				</view>
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+	<DemoBlock
+	 title="轻量样式"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder>
+			<ad-cell wx:for="{{light}}">
+				<view
+				 slot="leftElement"
+				 class="cell_block"
+				 style="color: var({{item.color}});"
+				>
+					<view class="cell_block_bg" style="background-color: var({{item.color}}); opacity: {{item.opacity / 100}}" />
+					<view class="cell_block_text">AD</view>
+				</view>
+				<view slot="rightElement" class="cell_right">
+					<view class="cell_right_detail">BG：{{item.bg}}，{{item.opacity}}%</view>
+					<view class="cell_right_detail">Font：{{item.fontColor}}，{{100}}%</view>
+				</view>
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+	<DemoBlock
+	 title="空心样式"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder>
+			<ad-cell wx:for="{{standard}}">
+				<view
+				 slot="leftElement"
+				 class="cell_block"
+				 style="color: var({{item.color}}); border: 1px solid var({{item.color}});"
+				>
+					<view class="cell_block_text">AD</view>
+				</view>
+				<view slot="rightElement" class="cell_right">
+					<view class="cell_right_detail">Stroke：{{item.bg}}，{{100}}%</view>
+					<view class="cell_right_detail">Font：{{item.fontColor}}，{{100}}%</view>
+				</view>
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+	<DemoBlock
+	 title="状态"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder>
+			<ad-cell>
+				<view slot="leftElement" class="cell">
+					<view class="cell_block cell_transparent">
+						<view class="cell_color_circle"></view>
+					</view>
+					<view>
+						<view class="title">常态</view>
+						<view class="desc">Normal</view>
+					</view>
+				</view>
+				<view slot="rightElement" class="cell_right">
+					0%
+				</view>
+			</ad-cell>
+				<ad-cell>
+				<view slot="leftElement" class="cell">
+					<view class="cell_block cell_transparent">
+						<view class="cell_color_circle" style="background-color: var(--transparent-gray-100)"></view>
+					</view>
+					<view>
+						<view class="title">点击</view>
+						<view class="desc">Tap</view>
+					</view>
+				</view>
+				<view slot="rightElement" class="cell_right">
+					6%
+				</view>
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+</DemoBody>
+

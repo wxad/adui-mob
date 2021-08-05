@@ -1,0 +1,88 @@
+@import "../common/style/reset/common.scss";
+@import "../common/style/var.scss";
+@import "../common/style/theme.scss";
+@import "../common/style/mixin.scss";
+
+$prefix: "ad_switch";
+
+.#{$prefix} {
+  position: relative;
+  overflow: hidden;
+
+  &_bg {
+    @include background;
+    background-color: theme(--transparent-gray-400, $--transparent-gray-400);
+    transition: all .2s ease-in-out;
+    z-index: 0;
+  }
+
+  &_icon {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.04), 0 4px 8px 0 rgba(0,0,0,0.04);
+    transition: left .2s ease-in-out;
+  }
+
+  &.#{$prefix}_large {
+    width: 40px;
+    height: 22px;
+    border-radius: 14px;
+
+    .#{$prefix}_icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    .#{$prefix}_icon_checked {
+      left: calc(100% - 19px);
+    }
+  }
+
+  &_small {
+    width: 28px;
+    height: 16px;
+    border-radius: 14px;
+
+    .#{$prefix}_icon {
+      width: 10px;
+      height: 10px;
+    }
+
+    .#{$prefix}_icon_checked {
+      left: calc(100% - 13px);
+    }
+  }
+
+  &_checked {
+    
+    .#{$prefix}_bg {
+      background-color: theme(--primary-color, $--primary-color);
+    }
+  }
+
+  &_disabled {
+
+    .#{$prefix}_icon {
+      opacity: 0.9;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .#{$prefix}_bg {
+      background-color: theme(--transparent-gray-900, $--transparent-gray-900);
+      opacity: 0.06;
+    }
+
+    &.#{$prefix}_checked {
+
+      .#{$prefix}_bg {
+        background-color: theme(--primary-color, $--primary-color);
+        opacity: 0.5;
+      }
+    }
+  }
+
+}
+

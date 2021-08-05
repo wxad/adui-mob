@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ad-icon": "../icon/icon",
+    "ad-picture": "../picture/picture",
+    "ad-avatar": "../avatar/avatar",
+    "ad-divider": "../divider/divider"
+  }
+}

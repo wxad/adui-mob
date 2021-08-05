@@ -1,0 +1,47 @@
+<button
+ class="{{prefix}} {{prefix}}_{{intent}} {{prefix}}_{{theme}} {{disabled && 'ad_button_disabled'}} {{prefix}}_{{size}} {{fitContent && 'ad_button_fit_content'}} {{banner && 'ad_button_banner'}}"
+ style="{{customStyle}}"
+ hover-class="{{!disabled && 'ad_button_hover'}}"
+ disabled="{{disabled}}"
+ form-type="{{formType}}"
+ open-type="{{openType}}"
+ hover-stop-propagation="{{hoverStopPropagation}}"
+ hover-start-time="{{hoverStartTime}}"
+ hover-stay-time="{{hoverStayTime}}"
+ lang="{{lang}}"
+ session-from="{{sessionFrom}}"
+ send-message-title="{{sendMessageTitle}}"
+ send-message-path="{{ sendMessagePath }}"
+ send-message-img="{{ sendMessageImg }}"
+ show-message-card="{{ showMessageCard }}"
+ app-parameter="{{ appParameter }}"
+ bindgetuserinfo="onGetUserInfo"
+ bindcontact="onContact"
+ bindgetphonenumber="onGetPhoneNumber"
+ binderror="onError"
+ bindopensetting="onOpenSetting"
+>
+	<ad-icon
+	 wx:if="{{leftIcon}}"
+	 icon="{{leftIcon}}"
+	 color="{{iconColor}}"
+	 size="{{iconSize}}"
+	/>
+	<slot name="leftElement" />
+	<ad-spinner
+	 wx:if="{{loading}}"
+	 size="{{spinnerSize}}"
+	 color="{{spinnerColor}}"
+	/>
+	<view class="{{prefix}}_title">
+		<slot/>
+	</view>
+	<slot name="rightElement" />
+	<ad-icon
+	 wx:if="{{rightIcon}}"
+	 icon="{{rightIcon}}"
+	 size="{{iconSize}}"
+	 color="{{iconColor}}"
+	/>
+</button>
+

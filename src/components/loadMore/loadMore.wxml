@@ -1,0 +1,16 @@
+<view class="{{prefix}}" style="{{customStyle}}">
+	<view class="{{prefix}}_inner">
+		<view wx:if="{{!loading && text !== ''}}" class="{{prefix}}_text">
+			{{hasLine ? '- ' : ''}}{{text}}{{hasLine ? ' -' : ''}}
+		</view>
+		<ad-spinner
+		 wx:if="{{loading}}"
+		 text="{{spinnerText}}"
+		 textColor="{{spinnerTextColor}}"
+		 color="{{spinnerColor}}"
+		 size="{{spinnerSize}}"
+		/>
+		<slot/>
+	</view>
+</view>
+

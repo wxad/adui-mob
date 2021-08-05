@@ -1,0 +1,61 @@
+@import "../common/style/reset/common.scss";
+@import "../common/style/var.scss";
+@import "../common/style/theme.scss";
+@import "../common/style/mixin.scss";
+
+$prefix: 'ad_tabs';
+
+.#{$prefix} {
+  position: relative;
+  display: inline-flex;
+  @include font-large;
+  background-color: #ffffff;
+  font-weight: bold;
+
+  &.#{$prefix}_banner {
+    width: 100%;
+
+    .#{$prefix}_item {
+      margin-right: 0;
+      flex: 1;
+    }
+  }
+  
+  &_bar {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    z-index: 2;
+    background-color: theme(--transparent-gray-900, $--transparent-gray-900);
+  }
+
+  &_list {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  &_item {
+    @include flex-center-center;
+    padding: 14px 16px;
+    color: theme(--transparent-gray-700, $--transparent-gray-700);
+
+    &_active {
+      color: theme(--transparent-gray-900, $--transparent-gray-900);
+    }
+
+    &_disabled {
+      color: theme(--transparent-gray-500, $--transparent-gray-500);
+
+      &.#{$prefix} {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &_title {
+    width: fit-content;
+  }
+}
+
+

@@ -1,0 +1,10 @@
+function judgeArray(value) {
+  console.log('pakizheng', value.constructor)
+  var a = []
+  console.log('pakizheng 111', a.constructor)
+  return value.constructor === 'Array'
+}
+
+module.exports = {
+  judgeArray: judgeArray,
+}

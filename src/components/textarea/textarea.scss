@@ -1,0 +1,55 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+
+$prefix: 'ad_textarea';
+
+:host {
+  width: 100%;
+}
+
+.#{$prefix} {
+  @include font-large;
+  color: var(--transparent-gray-800);
+
+  &_disabled {
+    color: theme(--transparent-gray-500, $--transparent-gray-500);
+
+    &_placeholder {
+      color: theme(--transparent-gray-500, $--transparent-gray-500);
+    }
+  }
+
+  &_textarea {
+    width: 100%;
+    height: 84px;
+  }
+
+  &_placeholder {
+    @include font-large;
+    color: theme(--transparent-gray-700, $--transparent-gray-700);
+
+    &.#{$prefix}_placeholder_disabled {
+      color: theme(--transparent-gray-500, $--transparent-gray-500);
+    }
+
+    &.#{$prefix}_placeholder_error {
+      color: theme(--ad-red, $--ad-red);
+    }
+  }
+
+  &_counter {
+    margin-top: 12px;
+    text-align: right;
+    @include flex-center-end;
+    @include font-large;
+    color: theme(--transparent-gray-700, $--transparent-gray-700);
+  }
+
+  &_reminder {
+    color: theme(--ad-red, $--ad-red);
+  }
+
+}

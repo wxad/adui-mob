@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ad-overlay": "../../components/overlay/overlay",
+    "ad-animation": "../../components/animation/animation",
+    "ad-icon": "../../components/icon/icon"
+  }
+}

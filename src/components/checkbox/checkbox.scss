@@ -1,0 +1,95 @@
+@import "../common/style/reset/common.scss";
+@import "../common/style/var.scss";
+@import "../common/style/theme.scss";
+@import "../common/style/mixin";
+
+$prefix: "ad_checkbox";
+
+.#{$prefix} {
+  @include font-large;
+  color: theme(--transparent-gray-900, $--transparent-gray-900);
+
+  &_inner {
+    @include flex-center-start;
+    flex: none;
+  }
+
+  &_indicator_outer {
+    width: 18px;
+    height: 18px;
+    @include flex-center-center;
+  }
+
+  &_indicator {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    &_icon {
+      position: relative;
+      display: block;
+    }
+
+    &_bg {
+      @include background;
+      background-color: #FFFFFF;
+      border: 1px solid theme(--transparent-gray-300, $--transparent-gray-300);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    &_active {
+
+      .#{$prefix}_indicator_bg {
+        background-color: theme(--primary-color, $--primary-color);
+        border: none;
+      }
+    }
+  }
+
+  &_content {
+    margin-left: 8px;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  &_desc {
+    margin-left: 26px;
+    @include font-small;
+    color: theme(--transparent-gray-700, $--transparent-gray-700);
+  }
+
+  &_disabled {
+    color: theme(--transparent-gray-600, $--transparent-gray-600);
+
+    .#{$prefix}_indicator {
+      background-color: theme(--transparent-gray-50, $--transparent-gray-50);
+      border-color: theme(--transparent-gray-300, $--transparent-gray-300);
+
+      &_bg {
+        background-color: theme(--transparent-gray-50, $--transparent-gray-50);
+        border-color: theme(--transparent-gray-100, $--transparent-gray-100);
+      }
+
+      &_active {
+
+        .#{$prefix}_indicator_bg {
+          background-color: theme(--primary-color, $--primary-color);
+          border: none;
+          opacity: 0.5;
+        }
+      }
+    }
+
+    .#{$prefix}_desc {
+      color: theme(--transparent-gray-600, $--transparent-gray-600);
+    }
+  }
+}

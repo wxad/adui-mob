@@ -1,0 +1,51 @@
+<DemoBody>
+	<DemoHeader title="布局 Layout" desc="AD UI for mob 的布局规范由三大要素组成，分别是：边距、列、间距。" />
+	<DemoBlock
+	 title="边距"
+	 noPadding
+	 noShadow
+	>
+		<view class="content_outer">
+			<view class="content">边界是内容与屏幕左右边缘之间的空间。以iPhone X 机型为设计基础，规范边距为固定值20pt。</view>
+			<image
+			 mode="widthFix"
+			 src="margin.svg"
+			 class="image"
+			/>
+		</view>
+	</DemoBlock>
+	<DemoBlock
+	 title="列"
+	 noPadding
+	 noShadow
+	>
+		<view class="content_outer">
+			<view class="content">列是放置内容的容器，列宽是使用百分比定义，以允许内容灵活地适应任何屏幕尺寸。列数可根据页面内容决定。</view>
+			<image
+			 mode="widthFix"
+			 src="column.svg"
+			 class="image"
+			/>
+		</view>
+	</DemoBlock>
+	<DemoBlock
+	 title="间距"
+	 noPadding
+	 noShadow
+	>
+		<view class="content_outer">
+			<view class="content">间距是列之间的空间，它们帮助分离内容。本规范定义紧凑、宽松两种间距规格，以满足不同布局需求。</view>
+			<image
+			 mode="widthFix"
+			 src="padding-1.svg"
+			 class="image"
+			/>
+			<image
+			 mode="widthFix"
+			 src="padding-2.svg"
+			 class="image"
+			/>
+		</view>
+	</DemoBlock>
+</DemoBody>
+

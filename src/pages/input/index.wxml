@@ -1,0 +1,161 @@
+<DemoBody>
+	<DemoHeader title="输入 Input" desc="通过键盘输入内容的控件。" />
+	<DemoBlock
+	 title="基础样式"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder noBottomBorder>
+			<ad-cell title="标题">
+				<ad-input
+				 align="left"
+				 slot="rightElement"
+				 placeholder="输入内容左对齐"
+				 bind:onChange="change"
+				 bind:focus="inputFocus"
+				/>
+			</ad-cell>
+			<ad-cell title="标题">
+				<ad-input slot="rightElement" placeholder="输入内容右对齐" />
+			</ad-cell>
+			<ad-cell>
+				<ad-textarea
+				 bind:onChange="changeTextarea"
+				 customStyle="padding: 7px 0"
+				 placeholder="在此输入内容"
+				 counter="{{30}}"
+				/>
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+	<DemoBlock
+	 title="格式输入"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder noBottomBorder>
+			<ad-cell title="手机号">
+				<ad-input
+				 type="number"
+				 format="phone"
+				 align="left"
+				 slot="rightElement"
+				 placeholder="请输入手机号"
+				 value="152 1234 1234"
+				/>
+			</ad-cell>
+			<ad-cell title="数字">
+				<ad-input
+				 type="number"
+				 format="number"
+				 align="left"
+				 slot="rightElement"
+				 placeholder="支持千分符"
+				 value="{{1234}}"
+				/>
+			</ad-cell>
+			<ad-cell title="数字">
+				<ad-input
+				 type="digit"
+				 align="left"
+				 slot="rightElement"
+				 placeholder="支持小数点"
+				 value="{{12.3}}"
+				/>
+			</ad-cell>
+			<ad-cell title="数字">
+				<ad-input
+				 type="digit"
+				 align="left"
+				 slot="rightElement"
+				 placeholder="支持整数"
+				 value="{{123}}"
+				/>
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+	<DemoBlock
+	 title="禁用"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder noBottomBorder>
+			<ad-cell title="标题" disabled>
+				<ad-input
+				 align="left"
+				 slot="rightElement"
+				 disabled
+				 placeholder="输入框禁用"
+				/>
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+	<DemoBlock
+	 title="错误提示"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder noBottomBorder>
+			<ad-cell title="标题">
+				<ad-input
+				 align="left"
+				 error
+				 placeholder="在此输入内容"
+				 slot="rightElement"
+				/>
+			</ad-cell>
+			<ad-cell title="标题" innerStyle="align-items: flex-start;">
+				<ad-input
+				 align="left"
+				 error
+				 errorText="输入内容错误"
+				 slot="rightElement"
+				 value="123"
+				/>
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+	<DemoBlock
+	 title="组合使用"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder noBottomBorder>
+			<ad-cell title="标题" leftIcon="credit-card-outlined">
+				<ad-input
+				 align="left"
+				 slot="rightElement"
+				 placeholder="在此输入内容"
+				 icon="view-outlined"
+				/>
+			</ad-cell>
+			<ad-cell title="显示图标">
+				<ad-input
+				 align="left"
+				 slot="rightElement"
+				 placeholder="在此输入内容"
+				 icon="view-outlined"
+				/>
+			</ad-cell>
+			<ad-cell title="显示计数器">
+				<ad-input
+				 align="left"
+				 slot="rightElement"
+				 placeholder="在此输入内容"
+				 value="{{inputValue}}"
+				 bind:onChange="changeInput"
+				 counter="{{20}}"
+				/>
+			</ad-cell>
+			<ad-cell title="显示单位">
+				<ad-input
+				 align="left"
+				 slot="rightElement"
+				 placeholder="在此输入内容"
+				 unit="元"
+				/>
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+</DemoBody>
+

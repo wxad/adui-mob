@@ -1,0 +1,61 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+
+$prefix: 'ad_select';
+
+// :host {
+//   position: relative;
+//   display: block;
+//   // z-index: theme(--z-index-select, $--z-index-select);
+// }
+
+.#{$prefix} {
+  position: relative;
+  width: 100%;
+
+
+  &_header_outer {
+    position: relative;
+    background-color: #fff;
+  }
+
+  &_header_outer_active {
+    z-index: 121;
+  }
+
+  &_header {
+    @include flex-center-start;
+  }
+
+  &_header_item {
+    @include flex-center-center;
+    flex: 1;
+    height: 56px;
+    color: theme(--transparent-gray-700, $--transparent-gray-700);
+    @include font-large;
+    font-weight: bold;
+  }
+
+  &_header_item_active {
+    color: theme(--transparent-gray-900, $--transparent-gray-900);
+  }
+
+  &_header_item_disabled {
+    color: theme(--transparent-gray-500, $--transparent-gray-500);
+  }
+
+  &_body {
+    position: absolute;
+    z-index: theme(--z-index-select, $--z-index-select);
+    width: 100%;
+    background-color: #fff;
+  }
+
+  &_body_inner {
+    position: relative;
+    z-index: theme(--z-index-select, $--z-index-select);
+  }
+}

@@ -1,0 +1,39 @@
+<DemoBody>
+	<DemoHeader title="轻提示 Toast" desc="一种轻量级的反馈/提示，可以用来显示不会打断用户操作的内容，适用于页面转场、数据交互等场景中。" />
+	<DemoBlock title="基础样式">
+		<ad-button
+		 theme="light"
+		 intent="normal"
+		 bind:tap="showToast"
+		 data-num="{{1}}"
+		 class="button"
+		>文字样式
+		</ad-button>
+		<ad-button
+		 theme="light"
+		 intent="normal"
+		 bind:tap="showToast"
+		 data-num="{{2}}"
+		 class="button"
+		>操作成功
+		</ad-button>
+		<ad-button
+		 theme="light"
+		 intent="normal"
+		 bind:tap="showToast"
+		 data-num="{{3}}"
+		 class="button"
+		>操作失败
+		</ad-button>
+		<ad-button
+		 theme="light"
+		 intent="normal"
+		 bind:tap="showToast"
+		 data-num="{{4}}"
+		 class="button"
+		>加载中
+		</ad-button>
+	</DemoBlock>
+</DemoBody>
+<ad-toast id="ad-toast"/>
+

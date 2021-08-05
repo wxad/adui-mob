@@ -1,0 +1,52 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+
+$prefix: 'ad_search_bar';
+
+.#{$prefix} {
+  padding: 0 20px;
+  height: 56px;
+  background-color: #fff;
+
+  &_card {
+    margin: 0 20px;
+    padding: 0 16px;
+    border-radius: 4px;
+  }
+
+
+  &_inner {
+    @include flex-center-start;
+    height: 100%;
+  }
+
+  &_icon {
+    flex: none;
+  }
+
+  &_icon_left {
+    margin-right: 16px;
+  }
+
+  &_icon_right {
+    flex: none;
+    @include flex-center-center;
+    height: 100%;
+    padding-left: 16px;
+  }
+
+  &_input {
+    height: 100%;
+    flex: 1;
+    @include font-large;
+    color: theme(--transparent-gray-800, $--transparent-gray-800);
+  }
+
+  &_input_placeholder {
+    color: theme(--transparent-gray-700, $--transparent-gray-700);
+  }
+
+}

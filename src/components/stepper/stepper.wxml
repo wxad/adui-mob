@@ -1,0 +1,39 @@
+<view class="{{prefix}} {{banner && 'ad_stepper_banner'}}" style="{{customStyle}}">
+	<view
+	 class="{{prefix}}_item {{(disabled || minusDisabled || inputValue <= min) ? 'ad_stepper_item_disabled' : ''}}"
+	 hover-class="{{(disabled || minusDisabled || inputValue <= min) ? '' : 'ad_stepper_hover'}}"
+	 hover-start-time="20"
+	 hover-stay-time="70"
+	 data-type="less"
+	 bind:tap="click"
+	>
+		<view class="{{prefix}}_bg" />
+		<ad-icon icon="minus" wx:if="{{disabled || minusDisabled || inputValue <= min}}" color="{{iconDisableColor}}" />
+		<ad-icon icon="minus" wx:else color="{{iconColor}}" />
+	</view>
+	<view class="{{prefix}}_input_outer">
+		<input
+		 class="{{prefix}}_input {{illegal && 'ad_stepper_input_illegal'}} {{ (disabled || inputDisabled) && 'ad_stepper_input_disabled'}}"
+		 type="{{integer ? 'number' : 'digit'}}"
+		 disabled="{{disabled || inputDisabled}}"
+		 value="{{inputValue}}"
+		 style="{{inputStyle}}"
+		 bindblur="inputBlur"
+		 bindinput="inputChange"
+		 bindfocus="inputFocus"
+		/>
+	</view>
+	<view
+	 class="{{prefix}}_item {{(disabled || addDisabled || inputValue >= max) ? 'ad_stepper_item_disabled' : ''}}"
+	 hover-class="{{(disabled || addDisabled || inputValue >= max) ? '' : 'ad_stepper_hover'}}"
+	 hover-start-time="20"
+	 hover-stay-time="70"
+	 data-type="add"
+	 bind:tap="click"
+	>
+		<view class="{{prefix}}_bg" />
+		<ad-icon icon="add" wx:if="{{disabled || addDisabled || inputValue >= max}}" color="{{iconDisableColor}}" />
+		<ad-icon icon="add" wx:else color="{{iconColor}}" />
+	</view>
+</view>
+

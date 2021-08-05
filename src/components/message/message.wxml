@@ -1,0 +1,45 @@
+<view
+ class="{{prefix}} {{prefix}}_{{intent}} {{isCard && 'ad_message_card'}}"
+ hover-start-time="20"
+ hover-stay-time="70"
+ hover-class="{{(isLink || interactive) && 'ad_message_hover'}}"
+ style="{{customStyle}}"
+>
+	<view class="{{prefix}}_bg" style="{{backgroundStyle}}"/>
+	<view class="{{prefix}}_body">
+		<view class="{{prefix}}_body_left">
+			<ad-icon
+			 wx:if="{{hasIcon}}"
+			 icon="{{leftIconDefault}}"
+			 color="{{leftIconColorDefault}}"
+			 class="{{prefix}}_left_icon"
+			/>
+			<ad-icon
+			 wx:if="{{leftIcon !== ''}}"
+			 icon="{{leftIcon}}"
+			 color="{{leftIconColor}}"
+			 class="{{prefix}}_left_icon"
+			/>
+			<view class="{{prefix}}_title title-class" style="{{titleStyle}}">{{title}}</view>
+		</view>
+		<slot name="left" />
+		<view class="{{prefix}}_body_right">
+			<ad-icon
+			 icon="arrow-right"
+			 color="#a3a3a3"
+       wx:if="{{isLink}}"
+			 class="{{prefix}}_arrow_right {{prefix}}_right_icon"
+			/>
+			<ad-icon
+			 wx:if="{{rightIcon !== ''}}"
+			 icon="{{rightIcon}}"
+			 iconSize="{{rightIconSize}}"
+			 color="{{rightIconColor}}"
+			 class="{{prefix}}_right_icon"
+			/>
+		</view>
+		<slot name="right" />
+	</view>
+	<view class="{{prefix}}_desc">{{desc}}</view>
+</view>
+

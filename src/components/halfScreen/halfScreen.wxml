@@ -1,0 +1,20 @@
+<ad-overlay
+ show="{{show}}"
+ bind:tap="clickMask"
+ duration="{{duration}}"
+ wx:if="{{showOverlay}}"
+ customStyle="z-index:{{zIndex}}"
+ catch:touchmove="noop"
+/>
+<ad-animation
+ show="{{show}}"
+ name="slide_{{position}}"
+ duration="{{duration}}"
+ customStyle="z-index:{{zIndex}}; {{customStyle}}"
+ custom-class="{{prefix}} {{prefix}}_{{position}} {{round && 'ad_half_screen_round'}}"
+>
+	<view class="{{prefix}}_inner">
+		<slot/>
+	</view>
+</ad-animation>
+

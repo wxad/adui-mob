@@ -1,0 +1,48 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+
+$prefix: 'ad_toast';
+
+.#{$prefix} {
+  display: inline-block;
+  @include font-large;
+  text-align: center;
+  color: #fff;
+  background-color: theme(--gray-800, $--gray-800);
+  border-radius: 4px;
+
+  &_outer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    @include flex-center-center;
+  }
+
+  &_text {
+    max-width: 192px;
+    padding: 8px 16px;
+  }
+
+  &_inner {
+    @include flex-center-center;
+    flex-direction: column;
+    padding: 14px 12px;
+    width: 120px;
+    height: 120px;
+  }
+
+  &_icon_text {
+    margin-top: 6px;
+    font-weight: bold;
+  }
+
+  &_text_list {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

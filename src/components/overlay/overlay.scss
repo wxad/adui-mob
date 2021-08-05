@@ -1,0 +1,15 @@
+@import "../common/style/reset/common.scss";
+@import "../common/style/var.scss";
+@import "../common/style/theme.scss";
+@import "../common/style/mixin.scss";
+
+$prefix: 'ad_overlay';
+
+.#{$prefix} {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: theme(--transparent-gray-800, $--transparent-gray-800);
+}

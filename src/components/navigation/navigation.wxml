@@ -1,0 +1,25 @@
+<view class="{{prefix}} {{ios ? 'ad_navigation_ios' : 'ad_navigation_android'}}" style="--left-width: {{leftWidth}}px; {{customStyle}}">
+	<view
+	 class="{{prefix}}_placeholder"
+	 wx:if="{{isFixed}}"
+	 style="padding-top: {{statusBarHeight}}px;visibility: hidden;"
+	/>
+	<view class="{{prefix}}_inner {{isFixed && 'ad_navigation_inner_fixed'}}" style="padding-top: {{statusBarHeight}}px; color: {{color}};background: {{background}};{{displayStyle}};{{innerPaddingRight}};{{innerWidth}};">
+		<view class="{{prefix}}_left" bind:tap="close">
+			<view
+			 wx:if="{{icon}}"
+			 class="{{prefix}}_left_icon {{prefix}}_icon_{{icon}}"
+			 style="color: {{iconColor ? iconColor : ''}}"
+			/>
+			<slot wx:else name="leftElement" />
+		</view>
+		<view class="{{prefix}}_center">
+			<view wx:if="{{title}}" class="{{prefix}}_center">{{title}}</view>
+			<slot wx:else name="centerElement" />
+		</view>
+		<view class="{{prefix}}_right">
+			<slot name="rightElement" />
+		</view>
+	</view>
+</view>
+

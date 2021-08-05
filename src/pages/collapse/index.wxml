@@ -1,0 +1,66 @@
+<DemoBody>
+	<DemoHeader title="折叠面板 Collapse" desc="用于折叠或展开内容的控件。" />
+	<DemoBlock
+	 title="基础样式"
+	 noPadding
+	 noShadow
+	>
+		<ad-collapse bind:onChange="change" noTopBorder>
+			<ad-collapse-item
+			 wx:for="{{lists}}"
+			 wx:key="{{item.value}}"
+			 value="{{item.value}}"
+			 title="{{index + 1}}.{{item.title}}"
+			>
+				<ad-cell-group noTopBorder noBottomBorder>
+					<ad-cell
+					 wx:for="{{item.content}}"
+					 title="{{item}}"
+					 innerStyle="color: var(--transparent-gray-800); font-size: 14px; line-height: 24px;"
+					/>
+				</ad-cell-group>
+			</ad-collapse-item>
+		</ad-collapse>
+	</DemoBlock>
+	<DemoBlock
+	 title="手风琴样式"
+	 noPadding
+	 noShadow
+	>
+		<ad-collapse accordion bind:onChange="change">
+			<ad-collapse-item
+			 wx:for="{{lists}}"
+			 wx:key="{{item.value}}"
+			 value="{{item.value}}"
+			 title="{{index + 1}}.{{item.title}}"
+			>
+				<ad-cell-group noTopBorder noBottomBorder>
+					<ad-cell
+					 wx:for="{{item.content}}"
+					 title="{{item}}"
+					 innerStyle="color: var(--transparent-gray-800); font-size: 14px; line-height: 24px;"
+					/>
+				</ad-cell-group>
+			</ad-collapse-item>
+		</ad-collapse>
+	</DemoBlock>
+	<DemoBlock
+	 title="单独使用"
+	 noPadding
+	 noShadow
+	>
+		<ad-collapse-item visible="{{show}}" noHeader>
+			<ad-cell title="{{lists[0].title}}" slot="header">
+				<ad-switch slot="rightElement" bind:onChange="changeShow"></ad-switch>
+			</ad-cell>
+			<ad-cell-group noTopBorder noBottomBorder>
+				<ad-cell
+				 wx:for="{{lists[0].content}}"
+				 title="{{item}}"
+				 innerStyle="color: var(--transparent-gray-800); font-size: 14px; line-height: 24px;"
+				/>
+			</ad-cell-group>
+		</ad-collapse-item>
+	</DemoBlock>
+</DemoBody>
+

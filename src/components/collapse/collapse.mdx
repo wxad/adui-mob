@@ -1,0 +1,133 @@
+---
+name: Collapse
+menu: 基础类
+index: 19
+---
+
+import { Alert, Table } from 'adui'
+
+# Collapse
+
+用于折叠/展开内容的控件。
+
+<Alert
+  title="组件间关系"
+  text="collapseItem 组件的祖先组件，需要搭配 collapseItem 使用"
+/>
+
+### 常用示例
+
+#### 基本用法
+
+```javascript
+const lists = [
+  {
+    value: 5,
+    title: '法律服务',
+    content: ['司法鉴定', '律师事务所', '公证'],
+  },
+  {
+    value: 1,
+    title: '零售百货',
+    content: ['麦芽糖', '苏打饼', '水果'],
+  },
+  {
+    value: 2,
+    title: '数码家电',
+    content: ['手机', '单方', '笔记本'],
+  },
+],
+<ad-collapse bind:onChange="change" noTopBorder>
+  <ad-collapse-item
+    wx:for="{{lists}}"
+    wx:key="{{item.value}}"
+    value="{{item.value}}"
+    title="{{index + 1}}.{{item.title}}"
+  >
+    <ad-cell-group noTopBorder noBottomBorder>
+      <ad-cell
+        wx:for="{{item.content}}"
+        title="{{item}}"
+        innerStyle="color: var(--transparent-gray-800); font-size: 14px; line-height: 24px;"
+      />
+    </ad-cell-group>
+  </ad-collapse-item>
+</ad-collapse>
+```
+
+#### 手风琴模式
+
+配置 accordion 属性实现
+```javascript
+<ad-collapse accordion bind:onChange="change" noTopBorder>
+  <ad-collapse-item
+    wx:for="{{lists}}"
+    wx:key="{{item.value}}"
+    value="{{item.value}}"
+    title="{{index + 1}}.{{item.title}}"
+  >
+    <ad-cell-group noTopBorder noBottomBorder>
+      <ad-cell
+        wx:for="{{item.content}}"
+        title="{{item}}"
+        innerStyle="color: var(--transparent-gray-800); font-size: 14px; line-height: 24px;"
+      />
+    </ad-cell-group>
+  </ad-collapse-item>
+</ad-collapse>
+```
+
+## Slot
+
+export const slots = [
+  {
+    name: '',
+    desc: '默认 slot，用于承载 collapseItem',
+  },
+]
+
+<Table
+  columnsResizable
+  dataSource={slots}
+  columns={[
+    {
+      dataIndex: 'name',
+      title: 'name',
+    },
+     {
+      dataIndex: 'desc',
+      title: '描述',
+    },
+  ]}
+/>
+
+<!-- ## Events
+
+export const events = [
+  {
+    name: 'onChange',
+    desc: '点击子项展开时触发',
+    value: '{value: any[]}',
+  },
+]
+
+<Table
+  columnsResizable
+  dataSource={events}
+  columns={[
+    {
+      dataIndex: 'name',
+      title: 'name',
+    },
+    {
+      dataIndex: 'desc',
+      title: '描述',
+    },
+    {
+      dataIndex: 'value',
+      title: '返回值',
+    },
+  ]}
+/> -->
+
+## Properties

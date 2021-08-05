@@ -1,0 +1,25 @@
+<view
+ class="{{prefix}} {{disabled && 'ad_action_sheet_item_disabled'}}"
+ hover-class="{{!disabled && !loading && 'ad_action_sheet_item_hover'}}"
+ hover-start-time="20"
+ hover-stay-time="70"
+ style="{{customStyle}}"
+ bind:tap="click"
+>
+	<view class="{{prefix}}_inner">
+		<ad-spinner
+		 wx:if="{{loading}}"
+		 text="{{loadingText}}"
+		 color="{{loadingColor}}"
+		 style="{{loadingText === '' ? 'margin-right: 8px;' : ''}}"
+		/>
+		<view wx:if="{{loadingText === ''}}" class="{{prefix}}_content">
+			<view class="{{prefix}}_title" wx:if="{{title !== ''}}">{{title}}</view>
+			<slot name="title" />
+			<view class="{{prefix}}_desc" wx:if="{{desc !== ''}}">{{desc}}</view>
+			<slot class="desc" />
+			<slot/>
+		</view>
+	</view>
+</view>
+

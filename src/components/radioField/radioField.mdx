@@ -1,0 +1,49 @@
+---
+name: RadioField
+menu: 基础类
+index: 6
+---
+
+import { Alert, Table } from 'adui'
+
+# RadioField
+
+在使用 radio 和 radioGroup 的时候，通常会将 radio 包在其他组件中使用，比如 cell，这个时候整个 cell 都是可点击区域，这种情况下经常需要开发者重新写一遍 radio 的逻辑，
+为了解决这个问题，开发了这个组件，这个组件起到一种中间传递消息的作用，将 radio 的消息传递给 radioGroup，以此扩大了 radio 的可点击区域。
+
+<Alert
+  title="组件间关系"
+  text="radioGroup 组件的子孙组件，radio 组件的祖先组件，需要搭配 radioGroup 和 radio 一起使用"
+/>
+
+### 常用示例
+
+#### 基本用法
+
+需要与 radioGroup、radio 搭配使用`
+
+```javascript
+<ad-radio-group defaultValue="{{value1}}">
+  <ad-cell-group noTopBorder noBottomBorder>
+    <ad-radio-field>
+      <ad-cell interactive>
+        <ad-radio slot="leftElement" value="常态" selectable="{{false}}">
+          常态
+        </ad-radio>
+      </ad-cell>
+    </ad-radio-field>
+    <ad-radio-field>
+      <ad-cell interactive>
+        <ad-radio slot="leftElement" value="选中" selectable="{{false}}">
+          选中
+        </ad-radio>
+      </ad-cell>
+    </ad-radio-field>
+    <ad-radio-field>
+      <ad-cell title="与列表组合" interactive>
+        <ad-radio slot="rightElement" value="列表" selectable="{{false}}" />
+      </ad-cell>
+    </ad-radio-field>
+  </ad-cell-group>
+</ad-radio-group>
+```

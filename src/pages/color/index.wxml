@@ -1,0 +1,68 @@
+<DemoBody>
+	<DemoHeader title="色彩 Color" desc="色彩发挥着传递信息、保持体验一致性等作用。" />
+	<DemoBlock
+	 title="主题色"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder>
+			<ad-cell value="{{themeColor.color}}">
+				<view slot="leftElement" class="cell">
+					<view class="cell_color_block" style="background-color: {{themeColor.color}}" />
+					<view>
+						<view class="title">{{themeColor.title}}</view>
+						<view class="desc">{{themeColor.enTitle}}</view>
+					</view>
+				</view>
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+	<DemoBlock
+	 title="色相系"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder>
+			<ad-cell wx:for="{{hues}}" value="{{item.color}}">
+				<view slot="leftElement" class="cell">
+					<view class="cell_color_block" style="background-color: {{item.color}}" />
+					<view>
+						<view class="title">{{item.title}}</view>
+						<view class="desc">{{item.enTitle}}</view>
+					</view>
+				</view>
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+	<DemoBlock
+	 title="灰色系"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder>
+			<ad-cell wx:for="{{transparentGrays}}" value="{{item.color}}%">
+				<view slot="leftElement" class="cell">
+					<view class="cell_color_block cell_transparent" style="background-color: {{item.color}}" >
+						<view class="cell_color_circle" style="background-color: var(--transparent-gray-{{item.value}})"></view>
+					</view>
+					<view>
+						<view class="title">{{item.title}}</view>
+						<view class="desc">{{item.enTitle}}</view>
+					</view>
+				</view>
+			</ad-cell>
+		</ad-cell-group>
+		<ad-cell-group noTopBorder>
+			<ad-cell wx:for="{{grays}}" value="{{item.color}}">
+				<view slot="leftElement" class="cell">
+					<view class="cell_color_block" style="background-color: {{item.color}}" />
+					<view>
+						<view class="title">{{item.title}}</view>
+						<view class="desc">{{item.enTitle}}</view>
+					</view>
+				</view>
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+</DemoBody>
+

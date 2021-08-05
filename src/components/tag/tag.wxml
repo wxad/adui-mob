@@ -1,0 +1,33 @@
+<view
+ class="{{prefix}} {{prefix}}_{{size}} {{isFilter && 'ad_tag_filter'}} {{prefix}}_{{theme}} {{prefix}}_{{intent}} {{round && 'ad_tag_round'}} {{disabled && 'ad_tag_disabled'}} {{banner && 'ad_tag_banner'}} {{removed && 'ad_tag_removed'}}"
+ hover-class="{{!disabled && 'ad_tag_hover'}}"
+ hover-start-time="{{20}}"
+ hover-stay-time="{{70}}"
+ style="{{customStyle}}"
+>
+	<view class="{{prefix}}_bg" />
+	<ad-icon
+	 wx:if="{{leftIcon !== ''}}"
+	 icon="{{leftIcon}}"
+	 color="{{iconColor}}"
+	 size="{{iconSize}}"
+	/>
+	<slot name="leftElement" />
+	<view class="{{prefix}}_content">
+		<slot/>
+	</view>
+	<slot name="rightElement" />
+	<ad-icon
+	 wx:if="{{rightIcon !== ''}}"
+	 icon="{{rightIcon}}"
+	 color="{{iconColor}}"
+	 size="{{iconSize}}"
+	/>
+	<ad-icon
+	 wx:if="{{closable}}"
+	 icon="cancel"
+	 color="{{iconColor}}"
+	 bind:tap="close"
+	/>
+</view>
+

@@ -1,0 +1,43 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+$prefix: 'ad_tabbar_item';
+
+:host {
+  flex: 1;
+}
+
+.#{$prefix} {
+  @include flex-center-start;
+  flex-direction: column;
+  padding: 8px 8px 4px 8px;
+  text-align: center;
+
+  &_icon {
+    position: relative;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+  }
+
+  &_image {
+    width: 28px;
+    height: 28px;
+  }
+
+  &_text {
+    margin-top: 4px;
+    @include font-mini;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &_badge {
+    position: absolute;
+    z-index: 2;
+    bottom: calc(100% - 12px);
+    left: calc(100% - 9px);
+  }
+}

@@ -1,0 +1,106 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+
+$prefix: 'ad_message';
+
+.#{$prefix} {
+  position: relative;
+  padding: 6px 20px;
+  overflow: hidden;
+  background-color: #fff;
+
+  &_card {
+    margin: 0 20px;
+    border-radius: 4px;
+  }
+
+  &_bg {
+    @include background;
+    opacity: 0.06;
+    z-index: 0;
+  }
+
+  &_hover {
+
+    &::after {
+      @include hoverBg;
+    }
+  }
+
+  &_primary {
+
+    .#{$prefix}_bg {
+      background-color: theme(--ad-blue, $--ad-blue);
+    }
+  }
+
+  &_normal {
+    background-color: transparent;
+
+    .#{$prefix}_bg {
+      background-color: theme(--transparent-gray-900, $--transparent-gray-900);
+    }
+  }
+
+  &_success {
+
+    .#{$prefix}_bg {
+      background-color: theme(--primary-color, $--primary-color);
+    }
+  }
+
+  &_warning {
+
+    .#{$prefix}_bg {
+      background-color: theme(--ad-orange, $--ad-orange);
+    }
+  }
+
+  &_danger {
+
+    .#{$prefix}_bg {
+      background-color: theme(--ad-red, $--ad-red);
+    }
+  }
+
+  &_body {
+    @include flex-center-between;
+  }
+
+  &_body_left {
+    @include flex-center-start;
+    flex: 1;
+  }
+
+  &_left_icon {
+    margin-right: 4px;
+  }
+
+  &_body_right {
+    flex: none;
+  }
+
+  &_arrow_right {
+    display: block;
+    margin-right: -4px;
+  }
+
+  &_right_icon {
+    display: block;
+    margin-left: 4px;
+  }
+
+  &_title {
+    font-weight: bold;
+    @include font-large;
+    color: theme(--transparent-gray-900, $--transparent-gray-900);
+  }
+
+  &_desc {
+    @include font-small;
+    color: theme(--transparent-gray-800, $--transparent-gray-800);
+  }
+}

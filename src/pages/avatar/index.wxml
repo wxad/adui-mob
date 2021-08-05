@@ -1,0 +1,84 @@
+<DemoBody>
+	<DemoHeader title="头像 Avatar" desc="用于表示用户身份的常用控件。" />
+	<DemoBlock
+	 title="内嵌图片"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder noBottomBorder>
+			<ad-cell>
+				<view class="cell" slot="leftElement">
+					<ad-avatar round src="/pages/avatar/avatar.png"/>
+					<view style="margin-left: 16px;">圆形头像</view>
+				</view>
+			</ad-cell>
+			<ad-cell>
+				<view class="cell" slot="leftElement">
+					<ad-avatar src="/pages/avatar/avatar.png" />
+					<view style="margin-left: 16px;">方形头像</view>
+				</view>
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+	<DemoBlock
+	 title="内嵌图标"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder noBottomBorder>
+			<ad-cell>
+				<view class="cell" slot="leftElement">
+					<ad-avatar round />
+					<view style="margin-left: 16px;">圆形头像</view>
+				</view>
+			</ad-cell>
+			<ad-cell>
+				<view class="cell" slot="leftElement">
+					<ad-avatar/>
+					<view style="margin-left: 16px;">方形头像</view>
+				</view>
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+	<DemoBlock
+	 title="头像尺寸"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group noTopBorder noBottomBorder>
+			<ad-cell value="大尺寸 42*42">
+				<view class="cell" slot="leftElement">
+					<ad-avatar
+					 round
+					 size="large"
+					 style="margin-right: 12px;"
+					 src="/pages/avatar/avatar.png"
+					/>
+					<ad-avatar size="large" src="/pages/avatar/avatar.png" />
+				</view>
+			</ad-cell>
+			<ad-cell value="默认尺寸 34*34">
+				<view class="cell" slot="leftElement">
+					<ad-avatar
+					 round
+					 style="margin-right: 12px;"
+					 src="/pages/avatar/avatar.png"
+					/>
+					<ad-avatar src="/pages/avatar/avatar.png" />
+				</view>
+			</ad-cell>
+			<ad-cell value="小尺寸 28*28">
+				<view class="cell" slot="leftElement">
+					<ad-avatar
+					 round
+					 size="small"
+					 style="margin-right: 12px;"
+					 src="/pages/avatar/avatar.png"
+					/>
+					<ad-avatar size="small" src="/pages/avatar/avatar.png" />
+				</view>
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+</DemoBody>
+

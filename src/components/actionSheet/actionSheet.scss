@@ -1,0 +1,25 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+
+$prefix: 'ad_action_sheet';
+
+.#{$prefix} {
+  padding-bottom: 20px;
+  @include safeBottom;
+  overflow: hidden;
+
+  &_round {
+    border-radius: theme(--border-radius-large, $--border-radius-large) theme(--border-radius-large, $--border-radius-large) 0 0;
+  }
+
+  &_desc {
+    padding: 22px 20px;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    color: theme(--transparent-gray-700, $--transparent-gray-700);
+  }
+}

@@ -1,0 +1,12 @@
+.cell {
+  margin-top: 30px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.title {
+  margin-bottom: 10px;
+  font-size: 14px;
+}

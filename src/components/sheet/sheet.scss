@@ -1,0 +1,116 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+$prefix: 'ad_sheet';
+
+// :host {
+//   position: relative;
+//   display: block;
+//   z-index: theme(--z-index-sheet, $--z-index-sheet);
+// }
+
+.#{$prefix} {
+  overflow: hidden;
+
+  &_inner {
+    // background-color: white;
+  }
+
+  &_header_inner {
+    position: relative;
+    @include flex-center-between;
+    padding: 0 20px;
+    box-shadow: inset 0 -1px 0 theme(--transparent-gray-100, $--transparent-gray-100);
+  }
+
+  &_header_left {
+    flex: 1;
+    padding: 14px 0;
+  }
+
+  &_has_desc {
+    align-items: flex-start;
+  }
+
+  &_title_outer {
+    @include flex-center-start;
+    min-height: 28px;
+  }
+
+  &_title_outer_center {
+    justify-content: center;
+  }
+
+  &_title {
+    @include font-large;
+    font-weight: bold;
+    color: theme(--transparent-gray-900, $--transparent-gray-900);
+  }
+
+  &_desc {
+    @include font-small;
+    color: theme(--transparent-gray-800, $--transparent-gray-800);
+  }
+
+  &_down {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 100vh;
+    background-color: white;
+
+    &.#{$prefix}_round {
+      border-radius: 0 0 theme(--border-radius-large, $--border-radius-large) theme(--border-radius-large, $--border-radius-large);
+    }
+  }
+
+  &_up {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-height: 100vh;
+    background-color: white;
+
+    &.#{$prefix}_round {
+      overflow: hidden;
+      border-radius: theme(--border-radius-large, $--border-radius-large) theme(--border-radius-large, $--border-radius-large) 0 0;
+    }
+  }
+
+  &_left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    max-width: 100vw;
+    background-color: white;
+
+    &.#{$prefix}_round {
+      border-radius: 0 theme(--border-radius-large, $--border-radius-large) theme(--border-radius-large, $--border-radius-large) 0;
+    }
+  }
+
+  &_right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    max-width: 100vw;
+    background-color: white;
+
+    &.#{$prefix}_round {
+      border-radius: theme(--border-radius-large, $--border-radius-large) 0 0 theme(--border-radius-large, $--border-radius-large);
+    }
+  }
+
+  &_icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 14px 16px;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ad-spinner": "../spinner/spinner"
+  }
+}

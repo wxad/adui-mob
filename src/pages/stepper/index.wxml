@@ -1,0 +1,95 @@
+<DemoBody>
+	<DemoHeader title="步骤 Stepper" desc="步进器由增加按钮、减少按钮和输入框组成，用于在一定范围内输入、调整数字。" />
+	<DemoBlock
+	 title="基础样式"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group>
+			<ad-cell title="默认用法">
+				<ad-stepper slot="rightElement" value="{{20}}" />
+			</ad-cell>
+			<ad-cell title="步长设置(整数)">
+				<ad-stepper
+				 slot="rightElement"
+				 value="{{20}}"
+				 step="{{10}}"
+				 bind:onChange="change"
+				/>
+			</ad-cell>
+			<ad-cell title="步长设置(小数)">
+				<ad-stepper
+				 slot="rightElement"
+				 value="{{20}}"
+				 step="{{0.3}}"
+				/>
+			</ad-cell>
+			<ad-cell title="限制输入范围(左)">
+				<ad-stepper
+				 slot="rightElement"
+				 min="{{20}}"
+				 value="{{20}}"
+				/>
+			</ad-cell>
+			<ad-cell title="限制输入范围(右)">
+				<ad-stepper
+				 slot="rightElement"
+				 max="{{20}}"
+				 value="{{20}}"
+				/>
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+	<DemoBlock
+	 title="状态"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group>
+			<ad-cell title="输入超出限制(左)">
+				<ad-stepper
+				 slot="rightElement"
+				 value="{{20}}"
+				 min="{{30}}"
+				 max="{{60}}"
+				 bind:onError="error"
+				/>
+			</ad-cell>
+			<ad-cell title="输入超出限制(右)">
+				<ad-stepper
+				 slot="rightElement"
+				 value="{{20}}"
+				 min="{{2}}"
+				 max="{{10}}"
+				 bind:onError="error"
+				/>
+			</ad-cell>
+			<ad-cell title="禁用状态">
+				<ad-stepper
+				 slot="rightElement"
+				 disabled
+				 value="{{20}}"
+				/>
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock>
+	<!-- <DemoBlock
+	 title="通栏"
+	 noPadding
+	 noShadow
+	>
+		<ad-cell-group>
+			<ad-cell title="输入超限">
+				<ad-stepper
+				 slot="rightElement"
+				 value="{{20}}"
+				 min="{{2}}"
+				 max="{{10}}"
+				 bind:onError="error"
+				 banner
+				/>
+			</ad-cell>
+		</ad-cell-group>
+	</DemoBlock> -->
+</DemoBody>
+

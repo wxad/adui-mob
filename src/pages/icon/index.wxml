@@ -1,0 +1,24 @@
+<DemoBody>
+	<DemoHeader title="图标 Icon" desc="后台系统的图标集合，分为导航、反馈、编辑、工具、图表和生活六种类型。" />
+	<DemoBlock
+	 title="{{item.name}}类"
+	 wx:for="{{icons}}"
+	 wx:key="item"
+	>
+		<view class="list">
+			<view
+			 class="list_item"
+			 wx:for="{{item.icons}}"
+			 wx:for-item="icon"
+			 hover-class="list_item_hover"
+			 hover-start-time="20"
+			 hover-stay-time="70"
+			 bind:tap="showIconName"
+			 data-icon="{{icon}}"
+			>
+				<ad-icon icon="{{icon}}" />
+			</view>
+		</view>
+	</DemoBlock>
+</DemoBody>
+

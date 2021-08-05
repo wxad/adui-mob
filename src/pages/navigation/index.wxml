@@ -1,0 +1,42 @@
+<view class="main">
+	<DemoBody>
+		<DemoHeader title="导航 Navigation" desc="AD UI for mob 导航栏提供两套配色方案，以适应小程序页面设计风格。" />
+		<DemoBlock title="白色" noPadding>
+			<ad-navigation
+			 class="nav"
+			 wx:for="{{icons}}"
+			 title="页面标题"
+			 icon="{{item}}"
+			 background="#fff"
+			 color="#000000"
+			>
+				<view class="right" slot="rightElement">
+					<view class="header">
+						<view class="header_left">10:15</view>
+						<view class="header_right" />
+					</view>
+					<view class="title_bar" />
+				</view>
+			</ad-navigation>
+		</DemoBlock>
+		<DemoBlock title="透明" noPadding>
+			<ad-navigation
+			 class="nav"
+			 wx:for="{{icons}}"
+			 title="页面标题"
+			 icon="{{item}}"
+			 background=""
+			 color="#000000"
+			>
+				<view class="right" slot="rightElement">
+					<view class="header">
+						<view class="header_left">10:15</view>
+						<view class="header_right" />
+					</view>
+					<view class="title_bar" />
+				</view>
+			</ad-navigation>
+		</DemoBlock>
+	</DemoBody>
+</view>
+

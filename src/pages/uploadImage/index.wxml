@@ -1,0 +1,50 @@
+<DemoBody>
+	<DemoHeader title="上传图片 UploadImage" desc="上传组件可以帮助用户对上传过程和上传结果有预期，并可以更改或撤销上传行为。" />
+	<DemoBlock title="基础样式">
+		<ad-upload-image />
+		<view style="margin-top: 10px;">
+			<ad-upload-image desc="上传图片" />
+		</view>
+		<!-- <view class="block">
+			<ad-upload-image style="display: block; flex: 1; margin-right: 10px;" bind:onChange="change" />
+			<ad-upload-image style="display: block; flex: 1; margin-right: 10px;" />
+			<ad-upload-image style="display: block; flex: 1; " />
+		</view> -->
+	</DemoBlock>
+	<DemoBlock title="可删除">
+		<ad-upload-image deletable desc="可删除"/>
+	</DemoBlock>
+	<DemoBlock title="底纹样式">
+		<view class="block">
+			<ad-upload-image
+			 style="display: block; flex: 1; margin-right: 10px;"
+			 desc="人像面"
+			 banner="{{false}}"
+			 placeholderType="IDPerson"
+			 banner="{{false}}"
+			/>
+			<ad-upload-image
+			 desc="国徽面"
+			 banner="{{false}}"
+			 style="flex: 1"
+			 banner="{{false}}"
+			 placeholderType="IDNation"
+			/>
+		</view>
+		<view style="margin-top: 10px;">
+			<ad-upload-image
+			 desc="营业执照"
+			 placeholderType="businessLicense"
+			 banner
+			/>
+		</view>
+		<view style="margin-top: 10px;">
+			<ad-upload-image
+			 desc="互联网新闻信息服务许可证"
+			 placeholderType="serviceLicense"
+			 banner
+			/>
+		</view>
+	</DemoBlock>
+</DemoBody>
+

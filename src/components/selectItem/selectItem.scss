@@ -1,0 +1,49 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+
+$prefix: 'ad_select_item';
+
+// :host {
+//   position: relative;
+//   display: block;
+//   z-index: var(--z-index-select, $--z-index-select);
+// }
+
+.#{$prefix} {
+  position: absolute;
+  z-index: calc(var(--z-index-select, 1040) + 1);
+  width: 100%;
+  height: 0;
+  transition: all .2s ease-in-out;
+  transform-origin: top;
+  overflow: hidden;
+
+  &_outer {
+    position: absolute;
+    width: 100%;
+  }
+
+  &_show {
+    transform: scaleY(1);
+  }
+
+  &_inner {
+    position: relative;
+    // z-index: 121;
+  }
+
+  &_transparent_mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.ad_cell_title {
+  @include font-bold;
+}

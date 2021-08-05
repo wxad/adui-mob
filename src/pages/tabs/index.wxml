@@ -1,0 +1,66 @@
+<DemoBody class="body">
+	<DemoHeader title="标签页 Tabs" desc="切换导航至同一层级的内容页面。" />
+	<DemoBlock
+	 title="基础样式"
+	 noPadding
+	 noShadow
+	>
+		<ad-tabs
+		 bind:onChange="tabChange"
+		 tabItems="{{tabs1}}"
+		 style="margin-bottom: 16px; display: block;"
+		/>
+		<ad-tabs
+		 bind:onChange="tabChange"
+		 tabItems="{{tabs2}}"
+		 style="margin-bottom: 16px; display: block;"
+		/>
+		<ad-tabs
+		 bind:onChange="tabChange"
+		 tabItems="{{tabs3}}"
+		 style="margin-bottom: 16px; display: block;"
+		/>
+	</DemoBlock>
+	<DemoBlock
+	 title="轻量样式"
+	 noPadding
+	 noShadow
+	>
+		<ad-tabs
+		 bind:onChange="tabChange"
+		 tabItems="{{tabs1}}"
+		 theme="light"
+		 style="margin-bottom: 16px; display: block;"
+		/>
+		<ad-tabs
+		 bind:onChange="tabChange"
+		 tabItems="{{tabs2}}"
+		 theme="light"
+		 style="margin-bottom: 16px; display: block;"
+		/>
+		<ad-tabs
+		 bind:onChange="tabChange"
+		 tabItems="{{tabs3}}"
+		 theme="light"
+		 style="margin-bottom: 16px; display: block;"
+		/>
+	</DemoBlock>
+	<DemoBlock
+	 title="禁用状态"
+	 noPadding
+	 noShadow
+	>
+    <ad-tabs
+		 bind:onChange="tabChange"
+		 tabItems="{{tabs4}}"
+		 style="margin-bottom: 16px; display: block;"
+		/>
+		<ad-tabs
+		 bind:onChange="tabChange"
+		 tabItems="{{tabs4}}"
+		 theme="light"
+		 style="margin-bottom: 16px; display: block;"
+		/>
+	</DemoBlock>
+</DemoBody>
+

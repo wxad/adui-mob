@@ -1,0 +1,26 @@
+<DemoBody>
+	<DemoHeader title="空状态 Emptystate" desc="当内容区域（页面、区块、组件、数据）没有内容显示给用户时，就会出现空状态。" />
+	<DemoBlock
+	 title="基础样式"
+	 noPadding
+	 noShadow
+	 class="body"
+	>
+		<view style="background-color: #fff; padding: 30px 0; margin-bottom: 16px;">
+			<ad-empty-state text="搜索结果为空" type="search" />
+		</view>
+		<view style="background-color: #fff; padding: 30px 0; margin-bottom: 16px;">
+			<ad-empty-state text="没有找到门店" type="store" />
+		</view>
+		<view style="background-color: #fff; padding: 30px 0; margin-bottom: 16px;">
+			<ad-empty-state text="暂无广告列表" type="list" />
+		</view>
+		<view style="background-color: #fff; padding: 30px 0; margin-bottom: 16px;">
+			<ad-empty-state text="暂无筛选项" type="filter" />
+		</view>
+		<view style="background-color: #fff; padding: 30px 0; margin-bottom: 16px;">
+			<ad-empty-state text="暂无新通知" type="news" />
+		</view>
+	</DemoBlock>
+</DemoBody>
+

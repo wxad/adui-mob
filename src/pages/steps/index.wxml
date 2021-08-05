@@ -1,0 +1,240 @@
+<DemoBody>
+	<DemoHeader title="步骤 Steps" desc="用于显示任务进度或引导用户完成复杂任务的控件。" />
+	<DemoBlock title="横向">
+		<view class="cell">
+			<view class="title">数值</view>
+			<view class="body">
+				<ad-steps value="{{0}}">
+					<ad-steps-item
+					 value="{{0}}"
+					 title="标题"
+					 stepNumber="1"
+					 desc="描述说明"
+					/>
+					<ad-steps-item
+					 value="{{1}}"
+					 title="标题"
+					 stepNumber="2"
+					 desc="描述说明"
+					/>
+					<ad-steps-item
+					 value="{{2}}"
+					 title="标题"
+					 stepNumber="3"
+					 desc="描述说明"
+					/>
+					<ad-steps-item
+					 value="{{3}}"
+					 title="标题"
+					 stepNumber="4"
+					 desc="描述说明"
+					/>
+				</ad-steps>
+			</view>
+		</view>
+		<view class="cell">
+			<view class="title">状态</view>
+			<view class="body">
+				<ad-steps value="{{1}}">
+					<ad-steps-item
+					 value="{{0}}"
+					 title="开始"
+					 icon="play-circle"
+					 desc="描述说明"
+					/>
+					<ad-steps-item
+					 value="{{1}}"
+					 title="等待"
+					 icon="time"
+					 desc="描述说明"
+					/>
+					<ad-steps-item
+					 value="{{2}}"
+					 title="错误"
+					 icon="cancel-circle"
+					 desc="描述说明"
+					/>
+					<ad-steps-item
+					 value="{{3}}"
+					 title="完成"
+					 icon="tick-circle"
+					 desc="描述说明"
+					/>
+				</ad-steps>
+			</view>
+		</view>
+		<view class="cell">
+			<view class="title">流程</view>
+			<view class="body">
+				<ad-steps value="{{0}}">
+					<ad-steps-item
+					 value="{{0}}"
+					 title="标题"
+					 desc="描述说明"
+					/>
+					<ad-steps-item
+					 value="{{1}}"
+					 title="标题"
+					 desc="描述说明"
+					/>
+					<ad-steps-item
+					 value="{{2}}"
+					 title="标题"
+					 desc="描述说明"
+					/>
+					<ad-steps-item
+					 value="{{3}}"
+					 title="标题"
+					 desc="描述说明"
+					/>
+				</ad-steps>
+			</view>
+		</view>
+		<view class="cell">
+			<view class="title">说明</view>
+			<view class="body">
+				<ad-steps value="{{0}}">
+					<ad-steps-item
+					 value="{{0}}"
+					 title="提交资质"
+					 desc="描述说明"
+					/>
+					<ad-steps-item
+					 value="{{1}}"
+					 title="资质审核"
+					 desc="描述说明"
+					/>
+					<ad-steps-item
+					 value="{{2}}"
+					 title="发票寄送"
+					 desc="描述说明"
+					/>
+					<ad-steps-item
+					 value="{{3}}"
+					 title="金额到账"
+					 desc="描述说明"
+					/>
+				</ad-steps>
+			</view>
+		</view>
+	</DemoBlock>
+	<DemoBlock title="竖向">
+		<view class="cell">
+			<view class="title">数值</view>
+			<view class="body">
+				<ad-steps value="{{0}}" direction="vertical">
+					<ad-steps-item
+					 value="{{0}}"
+					 title="标题"
+					 stepNumber="1"
+					 desc="描述说明"
+					/>
+					<ad-steps-item
+					 value="{{1}}"
+					 title="标题"
+					 stepNumber="2"
+					 desc="描述说明"
+					/>
+					<ad-steps-item
+					 value="{{2}}"
+					 title="标题"
+					 desc="描述说明"
+					 stepNumber="3"
+					/>
+					<ad-steps-item
+					 value="{{3}}"
+					 title="标题"
+					 stepNumber="4"
+					 desc="描述说明"
+					/>
+				</ad-steps>
+			</view>
+		</view>
+		<view class="cell">
+			<view class="title">状态</view>
+			<view class="body">
+				<ad-steps value="{{1}}" direction="vertical">
+					<ad-steps-item
+					 value="{{0}}"
+					 title="开始"
+					 icon="play-circle"
+					 desc="描述说明"
+					/>
+					<ad-steps-item
+					 value="{{1}}"
+					 title="等待"
+					 icon="time"
+					 desc="描述说明"
+					/>
+					<ad-steps-item
+					 value="{{2}}"
+					 title="错误"
+					 icon="cancel-circle"
+					 desc="描述说明"
+					/>
+					<ad-steps-item
+					 value="{{3}}"
+					 title="完成"
+					 icon="tick-circle"
+					 desc="描述说明"
+					/>
+				</ad-steps>
+			</view>
+		</view>
+		<view class="cell">
+			<view class="title">流程</view>
+			<view class="body">
+				<ad-steps value="{{0}}" direction="vertical">
+					<ad-steps-item
+					 value="{{0}}"
+					 title="标题"
+					 desc="描述说明"
+					/>
+					<ad-steps-item
+					 value="{{1}}"
+					 title="标题"
+					 desc="描述说明"
+					/>
+					<ad-steps-item
+					 value="{{2}}"
+					 title="标题"
+					 desc="描述说明"
+					/>
+					<ad-steps-item
+					 value="{{3}}"
+					 title="标题"
+					 desc="描述说明"
+					/>
+				</ad-steps>
+			</view>
+		</view>
+		<view class="cell">
+			<view class="title">说明</view>
+			<view class="body">
+				<ad-steps value="{{0}}" direction="vertical">
+					<ad-steps-item
+					 value="{{0}}"
+					 title="提交资质"
+					 desc="描述说明"
+					/>
+					<ad-steps-item
+					 value="{{1}}"
+					 title="资质审核"
+					 desc="描述说明"
+					/>
+					<ad-steps-item
+					 value="{{2}}"
+					 title="发票寄送"
+					 desc="描述说明"
+					/>
+					<ad-steps-item
+					 value="{{3}}"
+					 title="金额到账"
+					 desc="描述说明"
+					/>
+				</ad-steps>
+			</view>
+		</view>
+	</DemoBlock>
+</DemoBody>
+

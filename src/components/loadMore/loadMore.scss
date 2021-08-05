@@ -1,0 +1,22 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+$prefix: 'ad_load_more';
+
+.#{$prefix} {
+  height: 70px;
+
+  &_inner {
+    @include flex-center-center;
+    height: 100%;
+    @include font-small;
+    text-align: center;
+    color: theme(--transparent-gray-700, $--transparent-gray-700);
+  }
+
+  &_text {
+    @include flex-center-center;
+  }
+}
