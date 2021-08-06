@@ -130,7 +130,15 @@ const componentOptions = ADComponent({
       value: ['album', 'camera'],
     },
     /**
-     * @property {Array} deletable 是否可删除，默认不能删除，只能更换
+     * @property {Boolean} onlyPreview 是否只能查看，这种情况下不能进行图片的更换和删除等其他操作
+     * @default false
+     */
+    onlyPreview: {
+      type: Boolean,
+      value: false,
+    },
+    /**
+     * @property {Boolean} deletable 是否可删除，默认不能删除，只能更换
      * @default false
      */
     deletable: {
@@ -175,37 +183,39 @@ const componentOptions = ADComponent({
 
   observers: {
     value(value: string) {
-      this.propUpdate(false, '', 'imgUrl', value)
+      this.propUpdate(false, '', 'valueInner', value)
     },
     defaultValue(defaultValue: string) {
-      this.propUpdate(true, 'value', 'imgUrl', defaultValue)
+      this.propUpdate(true, 'value', 'valueInner', defaultValue)
     },
   },
   data: {
-    imgUrl: '',
+    valueInner: '',
     isSheetVisible: false,
   },
   lifetimes: {
     ready() {
-      this.initState('defaultValue', 'value', 'imgUrl')
+      this.initState('defaultValue', 'value', 'valueInner')
     },
   },
   methods: {
     click() {
-      const { deletable } = this.properties
-      const { imgUrl } = this.data
-      if (deletable && imgUrl) {
+      const { deletable, disabled, onlyPreview } = this.properties
+      if (disabled) return
+      const { valueInner } = this.data
+      if (deletable && valueInner !== '' && !onlyPreview) {
         this.openSheet()
-      } else {
-        this.choseImage()
+        return
       }
+      if (onlyPreview) {
+        this.previewImage()
+        return
+      }
+      this.choseImage()
     },
     choseImage() {
       const that = this
-      const { sizeType, sourceType, disabled, imgCount } = this.properties
-      if (disabled) {
-        return
-      }
+      const { sizeType, sourceType, imgCount } = this.properties
       wx.chooseImage({
         count: imgCount,
         sizeType,
@@ -213,7 +223,7 @@ const componentOptions = ADComponent({
         success(res) {
           // tempFilePath可以作为img标签的src属性显示图片
           const { tempFilePaths } = res
-          that.shouldDataUpate('value', 'imgUrl', tempFilePaths[0])
+          that.shouldDataUpate('value', 'valueInner', tempFilePaths[0])
           that.triggerEvent('onChange', { value: res })
         },
         fail(res) {
@@ -222,8 +232,19 @@ const componentOptions = ADComponent({
       })
     },
     deleteImage() {
-      this.shouldDataUpate('value', 'imgUrl', '')
+      this.shouldDataUpate('value', 'valueInner', '')
       this.triggerEvent('onChange', { value: '' })
+    },
+    previewImage() {
+      const { valueInner } = this.data
+      if (!valueInner) {
+        console.log('请确保已经选择了图片')
+        return
+      }
+      wx.previewImage({
+        current: valueInner,
+        urls: [valueInner],
+      })
     },
     changeImage(event: any) {
       const { value } = event.detail

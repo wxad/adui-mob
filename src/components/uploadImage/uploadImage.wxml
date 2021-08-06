@@ -1,5 +1,5 @@
 <view
- class="{{prefix}} {{imgUrl !== '' && 'ad_upload_image_value'}} {{banner && 'ad_upload_image_banner'}} {{disabled && 'ad_upload_image_disabled'}}"
+ class="{{prefix}} {{valueInner !== '' && 'ad_upload_image_value'}} {{banner && 'ad_upload_image_banner'}} {{disabled && 'ad_upload_image_disabled'}}"
  hover-class="{{!disabled && 'ad_upload_image_hover'}}"
  hover-start-time="20"
  hover-stay-time="70"
@@ -7,21 +7,21 @@
  style="{{customStyle}}"
 >
 	<image
-	 wx:if="{{imgUrl === '' && placeholder !== ''}}"
+	 wx:if="{{valueInner === '' && placeholder !== ''}}"
 	 class="{{prefix}}_placeholder"
 	 src="{{placeholder}}"
 	 mode="{{placeholderMode}}"
 	 style="{{placeholderStyle}}"
 	/>
 	<image
-	 wx:if="{{imgUrl === '' && placeholder == '' && placeholderType !== ''}}"
+	 wx:if="{{valueInner === '' && placeholder == '' && placeholderType !== ''}}"
 	 class="{{prefix}}_placeholder"
 	 src="{{placeholderType}}.svg"
 	 mode="{{placeholderMode}}"
 	 style="{{placeholderStyle}}"
 	/>
 	<view class="{{prefix}}_inner">
-		<view class="{{prefix}}_empty" wx:if="{{imgUrl === ''}}">
+		<view class="{{prefix}}_empty" wx:if="{{valueInner === ''}}">
 			<ad-icon
 			 icon="{{icon}}"
 			 size="{{iconSize}}"
@@ -30,13 +30,13 @@
 			<view class="{{prefix}}_desc">{{desc}}</view>
 		</view>
 		<image
-		 src="{{imgUrl}}"
+		 src="{{valueInner}}"
 		 mode="{{imgMode}}"
 		 class="{{prefix}}_image"
-		 wx:if="{{imgUrl !== ''}}"
+		 wx:if="{{valueInner !== ''}}"
 		/>
-		<view class="{{prefix}}_change" wx:if="{{imgUrl !== ''}}">
-			更改
+		<view class="{{prefix}}_change" wx:if="{{valueInner !== ''}}">
+			{{onlyPreview ? '查看' : '更改'}}
 		</view>
 	</view>
 </view>
