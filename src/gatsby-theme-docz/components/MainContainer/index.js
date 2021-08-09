@@ -22,6 +22,7 @@ const fileFilter = [
   'stepsItem',
   'tabbarItem',
   '开始使用',
+  'changelog',
 ]
 
 export const data = {
