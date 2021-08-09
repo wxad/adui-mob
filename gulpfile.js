@@ -27,7 +27,6 @@ const scssPathsFinal = [
 ]
 const TsPathsFinal = ['src/**/*.ts', '!src/gatsby-theme-docz/**']
 const extraPathsFinal = [
-  'package.json',
   'src/**/**.wxs',
   'src/**/**.wxml',
   'src/**/**.json',

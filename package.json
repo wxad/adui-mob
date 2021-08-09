@@ -1,9 +1,9 @@
 {
   "name": "adui-mob",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
-  "miniprogram": "lib",
+  "miniprogram": "dist",
   "appid": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,18 +15,38 @@
     "docz:serve": "docz build && docz serve",
     "release": "standard-version"
   },
+  "files": [
+    "/dist/components",
+    "./package.json",
+    "./README.md",
+    "./LICENSE"
+  ],
   "repository": {
     "type": "git",
-    "url": "http://git.code.oa.com/wxad/adui-for-mobile.git"
+    "url": "https://github.com/wxad/adui-mob.git"
   },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
-  "author": "pakizheng",
+  "keywords": [
+    "adui",
+    "miniprogram",
+    "component"
+  ],
+  "author": "zhengpq",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wxad/adui-mob/issues"
+  },
+  "homepage": "https://github.com/wxad/adui-mob/#readme",
   "devDependencies": {
+    "@babel/parser": "^7.14.7",
+    "@babel/traverse": "^7.14.7",
+    "htmlparser2": "^6.1.0",
+    "node-html-parser": "^3.3.6",
+    "through2": "^4.0.2",
     "@babel/core": "^7.7.5",
     "@babel/preset-env": "^7.7.6",
     "@commitlint/cli": "^8.2.0",
@@ -37,7 +57,6 @@
     "adui": "^0.11.2",
     "adui-icon": "^1.8.10",
     "autoprefixer": "^9.6.5",
-    "bisheng": "^1.4.6",
     "cross-env": "^7.0.3",
     "css-loader": "^3.4.2",
     "cssnano": "^4.1.10",
@@ -83,11 +102,5 @@
     "stylelint-scss": "^3.11.1",
     "typescript": "^3.7.3"
   },
-  "dependencies": {
-    "@babel/parser": "^7.14.7",
-    "@babel/traverse": "^7.14.7",
-    "htmlparser2": "^6.1.0",
-    "node-html-parser": "^3.3.6",
-    "through2": "^4.0.2"
-  }
+  "dependencies": {}
 }
