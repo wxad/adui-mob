@@ -23,15 +23,19 @@ adui-mob 目前已经发布到 npm 上了，可以直接使用 npm 包的方式�
 
 除了组件外，我们还开发了配套的 vscode 提示补全插件和用于编译的 gulp 插件，具体如下:
 
-- ad-mob，vscode 插件，这个插件提供了 vscode 中开发时组件的标签补全，props 的提示和补全功能，整个插件的功能实现是参考 **minapp** 插件的，建议和**minapp**配套使用，因为其提供了代码高亮和基础组件补全的功能
-- [gulp-ad-icon-shaking](https://www.npmjs.com/package/gulp-ad-icon-shaking)，这个插件提供了 icon 的 shaking 功能
-- [gulp-adui-component](https://www.npmjs.com/package/gulp-adui-component-shaking)，这个插件提供了组价按需打包的功能
+1、**ad-mob**，vscode 插件，这个插件提供了 vscode 中开发时组件的标签补全，props 的提示和补全功能，整个插件的功能实现是参考 **minapp** 插件的，建议和**minapp**配套使用，因为其提供了代码高亮和基础组件补全的功能
+
+2、[**gulp-ad-icon-shaking**](https://www.npmjs.com/package/gulp-ad-icon-shaking)，这个插件提供了 icon 的 shaking 功能
+
+3、[**gulp-adui-component**](https://www.npmjs.com/package/gulp-adui-component-shaking)，这个插件提供了组价按需打包的功能
+
 
 ## 内部控制和外部控制
 **adui-mob**中包含状态的组件基本上都有**内部控制**和**外部控制**两种设计，可以根据组件是否同时有`defaultValue`和`value`这两个Prop来区分。
 `defaultValue`只在第一次渲染时生效，之后的状态由组件自身控制，而`value`只能通过外部的设置来改变组价的状态。
 
 这样设计的好处是如果你只是需要设置一个初始值，并且只想要关心这个值的改变情况，比如 `<ad-switch defaultChecked onChange={xxx} />`，这样你就不需要单独地设置一个 data 保证组件 UI 状态的完整； 如果你想要存储这个值，那么你需要在变化时将这个值回传给组件：`<ad-switch checked={xxx} onChange={xxx} />`。
+
 
 ## 主题色和内置变量
 adui-mob 和 adui 沿用同一套色系和主题色，同样使用的是 css 变量的方式来实现的，因此，如果你想改变整个组件库的主题色和灰色色系，可以在 `app.wxss` 文件中使用变量进行覆盖，具体如下：

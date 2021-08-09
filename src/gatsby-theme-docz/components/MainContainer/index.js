@@ -22,8 +22,6 @@ const fileFilter = [
   'stepsItem',
   'tabbarItem',
   '开始使用',
-  '设计资源',
-  '更新日志',
 ]
 
 export const data = {
