@@ -5,7 +5,7 @@
 
 ## 扫码体验
 <div>
-  <img src="https://wxa.wxs.qq.com/images/paki/adui-for-mobile/adui-mob.jpg" width="200" height="200"/>
+  <img src="https://wxa.wxs.qq.com/images/paki/adui-for-mobile/adui-mob-1.jpg" width="200" height="200"/>
 </div>
 
 ---
