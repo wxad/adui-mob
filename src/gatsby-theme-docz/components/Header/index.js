@@ -20,7 +20,7 @@ export const Header = props => {
 
   return (
     <div className='header' data-testid="header">
-      adui-for-mobile
+      adui-mob
     </div>
   )
 }
