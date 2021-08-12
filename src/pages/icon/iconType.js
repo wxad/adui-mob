@@ -376,14 +376,14 @@ var _default = {
       "name": "overstriking",
       "keywords": ["overstriking", ""]
     }, {
-      "name": "first-hearing",
-      "keywords": ["first-hearing", ""]
+      "name": "first-heading",
+      "keywords": ["first-heading", ""]
     }, {
-      "name": "secondary-hearing",
-      "keywords": ["secondary-hearing", ""]
+      "name": "secondary-heading",
+      "keywords": ["secondary-heading", ""]
     }, {
-      "name": "tertiary-hearing",
-      "keywords": ["tertiary-hearing", ""]
+      "name": "tertiary-heading",
+      "keywords": ["tertiary-heading", ""]
     }, {
       "name": "main-body",
       "keywords": ["main-body", ""]
