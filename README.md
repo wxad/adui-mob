@@ -2,6 +2,7 @@
 ## adui-mob
 
 这个项目是 adui 小程序版本的组件库，沿用与 adui 同一套设计语言，目前只支持小程序原生开发。
+开发者文档：[https://wxad.design/adui-mob/](https://wxad.design/adui-mob/)
 
 ## 扫码体验
 <div>
