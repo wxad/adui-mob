@@ -44,7 +44,6 @@ $prefix: 'ad_textarea';
     margin-top: 12px;
     text-align: right;
     @include flex-center-end;
-    @include font-large;
     color: theme(--transparent-gray-700, $--transparent-gray-700);
   }
 
