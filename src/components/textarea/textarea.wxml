@@ -26,7 +26,7 @@
 	 bindkeyboardheightchange="onKeyboardHeightChange"
 	 style="{{textareaStyle}}"
 	/>
-	<view class="{{prefix}}_counter" wx:if="{{counter !== 0}}">
+	<view class="{{prefix}}_counter" style="{{counterStyle}}" wx:if="{{counter !== 0}}">
     	<view class="{{(valueLength !== null ? (valueLength > counter): (textareaValue.length > counter)) && 'ad_textarea_reminder'}}">{{valueLength === null ? textareaValue.length : valueLength}}</view>
 			/{{counter}}
   </view>

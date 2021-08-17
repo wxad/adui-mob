@@ -289,6 +289,14 @@ const componentOptions = ADComponent({
       value: '',
     },
     /**
+     * @property {String} counterStyle 自定义计数器的样式
+     * @default ''
+     */
+    counterStyle: {
+      type: String,
+      value: '',
+    },
+    /**
      * @property {String} customStyle 自定义样式
      * @default ''
      */

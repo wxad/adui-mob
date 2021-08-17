@@ -26,7 +26,11 @@
 		 bindkeyboardheightchange="onKeyboardHeightChange"
 		 style="text-align: {{align}}; {{inputStyle}}"
 		/>
-		<view class="{{prefix}}_counter" wx:if="{{counter !== 0 && (showCounter || counterVisible)}}">
+		<view
+		 class="{{prefix}}_counter"
+		 style="{{counterStyle}}"
+		 wx:if="{{counter !== 0 && (showCounter || counterVisible)}}"
+		>
 			<view class="{{(valueLength === null ? (value.length > counter): (valueLength > counter)) && 'ad_input_reminder'}}">{{value === null ? 0 : (valueLength === null ? value.length : valueLength)}}</view>
 			/{{counter}}
 		</view>
