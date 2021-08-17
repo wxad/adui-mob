@@ -1,4 +1,4 @@
-<view class="{{prefix}}" style="min-height: {{minHeight}}; {{customStyle}}">
+<view class="{{prefix}}" style="min-height: {{minHeightInner}}; {{customStyle}}">
 	<view class="{{prefix}}_body">
 		<slot name="body" />
 	</view>

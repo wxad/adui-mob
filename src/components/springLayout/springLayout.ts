@@ -1,4 +1,5 @@
 import ADComponent from '../common/adComponent'
+import { getNavigationHeight } from '../common/utils'
 
 /**
  * @name ad-layout
@@ -27,6 +28,14 @@ const componentOptions = ADComponent({
       value: '100vh',
     },
     /**
+     * @property {Boolean} minusNavHeight 是否减去 navigation 的高度
+     * @default false
+     */
+    minusNavHeight: {
+      type: Boolean,
+      value: false,
+    },
+    /**
      * @property {String} bodyStyle 主体区域的自定义样式
      * @default ''
      */
@@ -53,7 +62,24 @@ const componentOptions = ADComponent({
   },
   relations: {},
   observers: {},
-  data: {},
+  lifetimes: {
+    attached() {
+      const { minusNavHeight, minHeight } = this.properties
+      if (minusNavHeight) {
+        const navHeight = getNavigationHeight()
+        this.setData({
+          minHeightInner: `calc(${minHeight} - ${navHeight}px)`,
+        })
+        return
+      }
+      this.setData({
+        minHeightInner: minHeight,
+      })
+    },
+  },
+  data: {
+    minHeightInner: '100vh',
+  },
   methods: {},
 })
 

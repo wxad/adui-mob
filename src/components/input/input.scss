@@ -14,7 +14,7 @@ $prefix: "ad_input";
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 32px;
+  height: 32px;
   @include font-large;
   color: theme(--transparent-gray-800, $--transparent-gray-800);
 
@@ -33,9 +33,9 @@ $prefix: "ad_input";
   }
 
   &_input {
+    height: 100%;
     line-height: 28px;
     flex: 1;
-    min-height: 32px;
   }
 
   &_ellipsis {

@@ -1,4 +1,5 @@
-<ad-spring-layout>
+<ad-navigation title="测试" isFixed="{{true}}"></ad-navigation>
+<ad-spring-layout minusNavHeight>
 	<view slot="body">
 		<DemoBody>
 			<DemoHeader title="弹性布局 Loadmore" />
