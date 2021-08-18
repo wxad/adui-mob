@@ -7,7 +7,6 @@
 $prefix: 'ad_avatar';
 
 .#{$prefix} {
-  padding: 2px;
   border-radius: 6px;
 
   &_inner {
@@ -24,7 +23,6 @@ $prefix: 'ad_avatar';
   }
 
   &_round {
-    padding: 0;
     border-radius: 50%;
 
     &.#{$prefix}_small {
