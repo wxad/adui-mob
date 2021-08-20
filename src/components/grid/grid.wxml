@@ -1,3 +1,3 @@
-<view class="{{prefix}} {{hasBorder && 'ad_grid_has_border'}}" style="margin-left: -{{gutter}}px; margin-top: -{{gutter}}px; {{customStyle}}">
+<view class="{{prefix}} {{hasBorder && 'ad_grid_has_border'}}" style="margin-top: -{{gutter}}px; {{customStyle}}">
   <slot></slot>
 </view>
