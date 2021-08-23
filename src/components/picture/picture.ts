@@ -26,7 +26,7 @@ const componentOptions = ADComponent({
       value: '',
     },
     /**
-     * @property {String} src 图片缩放模式，默认是 aspectFill
+     * @property {String} mode 图片缩放模式，默认是 aspectFill
      * @default aspectFill
      */
     mode: {

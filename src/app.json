@@ -42,7 +42,8 @@
     "pages/sheet/index",
     "pages/actionSheet/index",
     "pages/select/index",
-    "pages/springLayout/index"
+    "pages/springLayout/index",
+    "pages/textHighlight/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#F2F2F2",
@@ -104,7 +105,8 @@
     "ad-select-item": "./components/selectItem/selectItem",
     "ad-popover": "./components/popover/popover",
     "ad-spring-layout": "./components/springLayout/springLayout",
-    "ad-toast": "./components/toast/toast"
+    "ad-toast": "./components/toast/toast",
+    "ad-text-highlight": "./components/textHighlight/textHighlight"
   },
   "networkTimeout": {
     "request": 10000,
