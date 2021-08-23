@@ -1,0 +1,16 @@
+@import '../common/style/reset/common.scss';
+@import '../common/style/var.scss';
+@import '../common/style/theme.scss';
+@import '../common/style/mixin';
+
+
+$prefix: 'ad_text_highlight';
+
+.#{$prefix} {
+  @include font-large;
+  color: theme(--transparent-gray-900, $--transparent-gray-900);
+
+  &_highlight {
+    color: theme(--primary-color, $--primary-color);
+  }
+}

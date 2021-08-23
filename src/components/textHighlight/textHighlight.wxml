@@ -1,0 +1,4 @@
+<text class="{{prefix}}" style="{{customStyle}}">
+	<text wx:for="{{textInner}}" wx:key="{{text}}" class="{{item.highlight && 'ad_text_highlight_highlight'}}" style="color: {{highlightColor && item.highlight ? highlightColor : ''}}; {{item.highlight && highlightStyle}}">{{item.text}}</text>
+</text>
+

@@ -1,0 +1,7 @@
+<DemoBody class="main">
+	<DemoHeader title="文字高亮 TextHighlight" desc="用于文字匹配高亮" />
+	<DemoBlock title="基础样式">
+		<ad-text-highlight text="测试这是一个测试" target="测试"></ad-text-highlight>
+	</DemoBlock>
+</DemoBody>
+
