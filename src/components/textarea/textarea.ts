@@ -172,6 +172,22 @@ const componentOptions = ADComponent({
       value: true,
     },
     /**
+     * @property {String} errorText textarea 错误文案
+     * @default ''
+     */
+    errorText: {
+      type: String,
+      value: '',
+    },
+    /**
+     * @property {String} errorTextStyle errorText 的样式
+     * @default ''
+     */
+    errorTextStyle: {
+      type: String,
+      value: '',
+    },
+    /**
      * @property {String} textareaStyle textarea 自定义样式
      * @default ''
      */

@@ -40,6 +40,15 @@ $prefix: 'ad_textarea';
     }
   }
 
+  &_footer {
+    @include flex-center-between;
+  }
+
+  &_error {
+    margin-top: 12px;
+    color: var(--ad-red);
+  }
+
   &_counter {
     margin-top: 12px;
     text-align: right;
