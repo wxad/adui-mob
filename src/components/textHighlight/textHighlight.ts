@@ -66,7 +66,14 @@ const componentOptions = ADComponent({
   },
   // end
   relations: {},
-  observers: {},
+  observers: {
+    text() {
+      this.init()
+    },
+    target() {
+      this.init()
+    },
+  },
   data: {
     textInner: [],
   },
@@ -84,7 +91,6 @@ const componentOptions = ADComponent({
         result = regex.exec(text)
         indexes.push(result?.index)
       } while (result)
-      console.log('paki', result)
       return indexes
     },
     init() {
@@ -95,7 +101,6 @@ const componentOptions = ADComponent({
           highlight: false,
         }
       })
-      console.log('paki 000', textTransform)
       if (text !== '' && target !== '') {
         const indexes = this.getIndexes(text, target)
         if (indexes.length !== 0) {
@@ -110,7 +115,6 @@ const componentOptions = ADComponent({
           })
         }
       }
-      console.log('paki 111', textTransform)
       this.setData({
         textInner: textTransform,
       })
