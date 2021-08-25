@@ -89,7 +89,9 @@ const componentOptions = ADComponent({
       const indexes = []
       do {
         result = regex.exec(text)
-        indexes.push(result?.index)
+        if (result) {
+          indexes.push(result?.index)
+        }
       } while (result)
       return indexes
     },
@@ -113,6 +115,9 @@ const componentOptions = ADComponent({
           textTransform.forEach((item: ITextItem, index: number) => {
             item.highlight = textPoi.includes(index)
           })
+          if (textPoi.length > 0) {
+            this.triggerEvent('onMatch', { value: textPoi })
+          }
         }
       }
       this.setData({
