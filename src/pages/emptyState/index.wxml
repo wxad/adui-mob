@@ -10,7 +10,10 @@
 			<ad-empty-state text="搜索结果为空" type="search" />
 		</view>
 		<view style="background-color: #fff; padding: 30px 0; margin-bottom: 16px;">
-			<ad-empty-state text="没有找到门店" type="store" />
+			<ad-empty-state text="没有找到门店" type="location" />
+		</view>
+			<view style="background-color: #fff; padding: 30px 0; margin-bottom: 16px;">
+			<ad-empty-state text="暂无门店列表" type="store" />
 		</view>
 		<view style="background-color: #fff; padding: 30px 0; margin-bottom: 16px;">
 			<ad-empty-state text="暂无广告列表" type="list" />
