@@ -39,6 +39,7 @@
 				</view>
 				<view class="{{prefix}}_icon" bind:tap="close">
 					<ad-icon
+					 wx:if="{{hasCloseIcon}}"
 					 icon="cancel"
 					 size="{{iconSize}}"
 					 color="{{iconColor}}"
