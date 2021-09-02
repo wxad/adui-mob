@@ -101,6 +101,14 @@ const componentOptions = ADComponent({
       value: '',
     },
     /**
+     * @property {String} itemActiveStyle 自定义选项选中时的样式
+     * @default ''
+     */
+    itemActiveStyle: {
+      type: String,
+      value: '',
+    },
+    /**
      * @property {String} customStyle 自定义样式
      * @default ''
      */
