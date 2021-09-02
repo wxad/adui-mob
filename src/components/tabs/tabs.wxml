@@ -12,7 +12,7 @@
 		 data-value="{{item.value}}"
 		 data-disabled="{{item.disabled}}"
 		 bind:tap="clickItem"
-		 style="color: {{activeItem === item.value ? activeColor : ''}}; {{itemCustomStyle}}"
+		 style="color: {{activeItem === item.value ? activeColor : ''}}; {{itemCustomStyle}} {{activeItem === item.value ? itemActiveStyle : ''}}"
 		>
 			<view
 			 class="{{prefix}}_title"
