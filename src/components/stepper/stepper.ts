@@ -61,10 +61,10 @@ const componentOptions = ADComponent({
       value: 1,
     },
     /**
-     * @property {Boolean} isinteger 是否是整数，默认是整数
+     * @property {Boolean} isInteger 是否是整数，默认是整数
      * @default true
      */
-    isinteger: {
+    isInteger: {
       type: Boolean,
       value: true,
     },
@@ -133,6 +133,14 @@ const componentOptions = ADComponent({
     iconSize: {
       type: Number,
       value: 18,
+    },
+    /**
+     * @property {String} buttonStyle 按钮的自定义样式
+     * @default ''
+     */
+    buttonStyle: {
+      type: String,
+      value: '',
     },
     /**
      * @property {String} inputStyle input 的自定义样式
@@ -248,9 +256,9 @@ const componentOptions = ADComponent({
 
     // filter illegal characters
     filter(value: string) {
-      const { isinteger } = this.properties
+      const { isInteger } = this.properties
       let valueFormated = value.replace(/[^0-9.-]/g, '')
-      if (isinteger && value.indexOf('.') !== -1) {
+      if (isInteger && value.indexOf('.') !== -1) {
         valueFormated = valueFormated.split('.')[0]
       }
       return valueFormated

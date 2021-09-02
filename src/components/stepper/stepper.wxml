@@ -6,6 +6,7 @@
 	 hover-stay-time="70"
 	 data-type="less"
 	 bind:tap="click"
+	 style="{{buttonStyle}}"
 	>
 		<view class="{{prefix}}_bg" />
 		<ad-icon
@@ -40,6 +41,7 @@
 	 hover-stay-time="70"
 	 data-type="add"
 	 bind:tap="click"
+	 style="{{buttonStyle}}"
 	>
 		<view class="{{prefix}}_bg" />
 		<ad-icon
