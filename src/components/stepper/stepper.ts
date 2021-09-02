@@ -127,6 +127,14 @@ const componentOptions = ADComponent({
       value: 'rgba(0, 0, 0, 0.16)',
     },
     /**
+     * @property {String} iconSize icon 的尺寸大小
+     * @default 18
+     */
+    iconSize: {
+      type: Number,
+      value: 18,
+    },
+    /**
      * @property {String} inputStyle input 的自定义样式
      * @default ''
      */

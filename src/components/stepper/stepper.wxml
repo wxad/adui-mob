@@ -8,8 +8,18 @@
 	 bind:tap="click"
 	>
 		<view class="{{prefix}}_bg" />
-		<ad-icon icon="minus" wx:if="{{disabled || minusDisabled || inputValue <= min}}" color="{{iconDisableColor}}" />
-		<ad-icon icon="minus" wx:else color="{{iconColor}}" />
+		<ad-icon
+		 icon="minus"
+		 size="{{iconSize}}"
+		 wx:if="{{disabled || minusDisabled || inputValue <= min}}"
+		 color="{{iconDisableColor}}"
+		/>
+		<ad-icon
+		 icon="minus"
+		 size="{{iconSize}}"
+		 wx:else
+		 color="{{iconColor}}"
+		/>
 	</view>
 	<view class="{{prefix}}_input_outer">
 		<input
@@ -32,8 +42,18 @@
 	 bind:tap="click"
 	>
 		<view class="{{prefix}}_bg" />
-		<ad-icon icon="add" wx:if="{{disabled || addDisabled || inputValue >= max}}" color="{{iconDisableColor}}" />
-		<ad-icon icon="add" wx:else color="{{iconColor}}" />
+		<ad-icon
+		 icon="add"
+		 size="{{iconSize}}"
+		 wx:if="{{disabled || addDisabled || inputValue >= max}}"
+		 color="{{iconDisableColor}}"
+		/>
+		<ad-icon
+		 icon="add"
+		 size="{{iconSize}}"
+		 wx:else
+		 color="{{iconColor}}"
+		/>
 	</view>
 </view>
 
