@@ -120,10 +120,12 @@ const componentOptions = ADComponent({
     },
     activeItem(activeItem) {
       const { options, closeDelay, key } = this.properties
+      const { init } = this.data
       const { title } = this.getItem(activeItem, options)
       if (this.parent) {
         this.parent.changeHeader(key, title)
       }
+      if (!init) return
       setTimeout(() => {
         this.shouldDataUpate('visible', 'show', false)
         this.triggerEvent('onClose', { value: false })
@@ -151,7 +153,7 @@ const componentOptions = ADComponent({
     },
   },
   lifetimes: {
-    ready() {
+    attached() {
       this.initParent('../select/select')
       const { options } = this.properties
       this.initState(
@@ -162,8 +164,14 @@ const componentOptions = ADComponent({
       )
       this.initState('defaultVisible', 'visible', 'show')
     },
+    ready() {
+      this.setData({
+        init: true,
+      })
+    },
   },
   data: {
+    init: false,
     show: false,
     activeItem: null,
     height: 0,
