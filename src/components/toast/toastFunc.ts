@@ -35,7 +35,7 @@ const getContext = () => {
   return pages[pages.length - 1]
 }
 
-let toastContext: Toast & WechatMiniprogram.Page.Instance = {}
+let toastContext: Toast & WechatMiniprogram.Page.Instance = null
 
 function Toast(options: ToastProp) {
   const optionAll = { ...defaultOptions, ...options }
