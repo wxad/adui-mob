@@ -166,27 +166,27 @@ const componentOptions = ADComponent({
       })
       this.triggerEvent('onChange', { value: '' })
     },
-    onChange(event: WechatMiniprogram.InputEvent) {
+    onChange(event: WechatMiniprogram.Input) {
       const { value } = event.detail
       this.setData({
         inputValue: value,
       })
       this.triggerEvent('onChange', { value })
     },
-    onFocus(event: WechatMiniprogram.InputEvent) {
+    onFocus(event: WechatMiniprogram.Input) {
       this.triggerEvent('onFocus', { ...event })
     },
-    onBlur(event: WechatMiniprogram.InputEvent) {
+    onBlur(event: WechatMiniprogram.Input) {
       console.log('paki blur')
       this.setData({
         inputFocus: false,
       })
       this.triggerEvent('onBlur', { ...event })
     },
-    onConfirm(event: WechatMiniprogram.InputEvent) {
+    onConfirm(event: WechatMiniprogram.Input) {
       this.triggerEvent('onConfirm', { ...event })
     },
-    onKeyboardHeightChange(event: WechatMiniprogram.InputEvent) {
+    onKeyboardHeightChange(event: WechatMiniprogram.Input) {
       this.triggerEvent('onKeyboardHeightChange', { ...event })
     },
   },
