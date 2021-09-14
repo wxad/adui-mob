@@ -12,6 +12,7 @@
 		 placeholder="{{placeholder}}"
 		 value="{{inputValue}}"
 		 focus="{{inputFocus}}"
+		 disabled="{{disabled}}"
 		 bindinput="onChange"
 		 bindfocus="onFocus"
 		 bindblur="onBlur"

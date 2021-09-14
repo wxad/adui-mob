@@ -90,6 +90,14 @@ const componentOptions = ADComponent({
       value: 18,
     },
     /**
+     * @property {Boolean} disabled 是否禁用
+     * @default false
+     */
+    disabled: {
+      type: Boolean,
+      value: false,
+    },
+    /**
      * @property {String} inputStyle input 自定义样式
      * @default ''
      */
