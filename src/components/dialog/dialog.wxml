@@ -11,7 +11,7 @@
  customStyle="z-index: 2001"
 >
 	<view class="{{prefix}}" style="{{customStyle}}">
-		<view class="{{prefix}}_inner {{banner && 'ad_dialog_banner'}}">
+		<view class="{{prefix}}_inner {{banner && 'ad_dialog_banner'}}" style="{{innerStyle}}">
 			<view class="{{prefix}}_body">
 				<view class="{{prefix}}_title">{{title}}</view>
 				<view class="{{prefix}}_main">

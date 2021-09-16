@@ -132,6 +132,14 @@ const componentOptions = ADComponent({
       value: 'var(--primary-color, #07C160)',
     },
     /**
+     * @property {String} innerStyle 内层自定义样式
+     * @default ''
+     */
+    innerStyle: {
+      type: String,
+      value: '',
+    },
+    /**
      * @property {String} customStyle 自定义样式
      * @default ''
      */
