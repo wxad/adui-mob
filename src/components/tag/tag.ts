@@ -126,6 +126,14 @@ const componentOptions = ADComponent({
       value: false,
     },
     /**
+     * @property {Boolean} interactive 是否可交互，默认可交互
+     * @default true
+     */
+    interactive: {
+      type: Boolean,
+      value: true,
+    },
+    /**
      * @property {String} customStyle 自定义样式
      * @default ''
      */

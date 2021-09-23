@@ -1,6 +1,6 @@
 <view
  class="{{prefix}} {{prefix}}_{{size}} {{isFilter && 'ad_tag_filter'}} {{prefix}}_{{theme}} {{prefix}}_{{intent}} {{round && 'ad_tag_round'}} {{disabled && 'ad_tag_disabled'}} {{banner && 'ad_tag_banner'}} {{removed && 'ad_tag_removed'}}"
- hover-class="{{!disabled && 'ad_tag_hover'}}"
+ hover-class="{{!disabled && interactive && 'ad_tag_hover'}}"
  hover-start-time="{{20}}"
  hover-stay-time="{{70}}"
  style="{{customStyle}}"
