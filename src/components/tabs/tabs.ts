@@ -109,6 +109,13 @@ const componentOptions = ADComponent({
       value: '',
     },
     /**
+     * 底部横条的自定义样式
+     */
+    tabBarStyle: {
+      type: String,
+      value: '',
+    },
+    /**
      * @property {String} customStyle 自定义样式
      * @default ''
      */
