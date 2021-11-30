@@ -130,6 +130,11 @@ const componentOptions = ADComponent({
    * @default
    */
 
+  /**
+   * @property {Function} bind:onClickItem 点击子项时候的回调，是要使用场景为当点击的时候触发某些效果，比如点击的时候滚动到页面的固定位置
+   * @default
+   */
+
   data: {
     tabBarWidth: 0,
     tabBarPoi: 0,
@@ -170,7 +175,7 @@ const componentOptions = ADComponent({
           this.setData({
             left: res.left,
           })
-        }
+        },
       )
     },
     changeTabBar(transition: boolean) {
@@ -192,7 +197,7 @@ const componentOptions = ADComponent({
               })
             }
           })
-        }
+        },
       )
     },
     clickItem(e: any) {
@@ -200,6 +205,7 @@ const componentOptions = ADComponent({
       if (!disabled && !this.properties.disabled) {
         this.shouldDataUpate('value', 'activeItem', value)
         this.triggerEvent('onChange', { value })
+        this.triggerEvent('onClick', { value })
       }
     },
   },
