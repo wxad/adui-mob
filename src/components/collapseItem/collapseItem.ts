@@ -51,6 +51,13 @@ const componentOptions = ADComponent({
       value: '',
     },
     /**
+     * @property {Number} packUpHeight 收起状态下内容区域的高度，一般在单独使用 collapseItem 组件的情况下想要自定义收起时的高度
+     */
+    packUpHeight: {
+      type: Number,
+      value: 0,
+    },
+    /**
      * @property {Boolean} noBorder 是否没有边框
      * @default false
      */
@@ -139,6 +146,12 @@ const componentOptions = ADComponent({
     },
   },
   lifetimes: {
+    attached() {
+      const { packUpHeight } = this.properties
+      this.setData({
+        contentHeight: packUpHeight,
+      })
+    },
     ready() {
       this.initParent('../collapse/collapse')
     },
