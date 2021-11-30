@@ -136,11 +136,12 @@ const componentOptions = ADComponent({
       })
     },
     active(active: boolean) {
+      const { packUpHeight } = this.properties
       if (active) {
         this.changeContentHeight()
       } else {
         this.setData({
-          contentHeight: 0,
+          contentHeight: packUpHeight,
         })
       }
     },
