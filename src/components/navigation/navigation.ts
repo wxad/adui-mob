@@ -67,6 +67,22 @@ const componentOptions = ADComponent({
       value: false,
     },
     /**
+     * @property {String} leftStyle 头部左边的自定义样式
+     * @default ''
+     */
+    leftStyle: {
+      type: String,
+      value: '',
+    },
+    /**
+     * @property {String} centerStyle 头部中间的自定义样式
+     * @default ''
+     */
+    centerStyle: {
+      type: String,
+      value: '',
+    },
+    /**
      * @property {String} customStyle 外部传入的自定义样式
      * @default ''
      */

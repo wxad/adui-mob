@@ -5,7 +5,11 @@
 	 style="padding-top: {{statusBarHeight}}px;visibility: hidden;"
 	/>
 	<view class="{{prefix}}_inner {{isFixed && 'ad_navigation_inner_fixed'}}" style="padding-top: {{statusBarHeight}}px; color: {{color}};background: {{background}};{{displayStyle}};{{innerPaddingRight}};{{innerWidth}};">
-		<view class="{{prefix}}_left" bind:tap="close">
+		<view
+		 class="{{prefix}}_left"
+		 bind:tap="close"
+		 style="{{leftStyle}}"
+		>
 			<view
 			 wx:if="{{icon}}"
 			 class="{{prefix}}_left_icon {{prefix}}_icon_{{icon}}"
@@ -13,7 +17,7 @@
 			/>
 			<slot wx:else name="leftElement" />
 		</view>
-		<view class="{{prefix}}_center">
+		<view class="{{prefix}}_center" style="{{centerStyle}}">
 			<view wx:if="{{title}}" class="{{prefix}}_center">{{title}}</view>
 			<slot wx:else name="centerElement" />
 		</view>
