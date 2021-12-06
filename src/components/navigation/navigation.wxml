@@ -13,7 +13,7 @@
 			<view
 			 wx:if="{{icon}}"
 			 class="{{prefix}}_left_icon {{prefix}}_icon_{{icon}}"
-			 style="color: {{iconColor ? iconColor : ''}}"
+			 style="color:{{iconColor ? iconColor : ''}}"
 			/>
 			<slot wx:else name="leftElement" />
 		</view>
