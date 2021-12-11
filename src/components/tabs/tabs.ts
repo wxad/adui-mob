@@ -92,10 +92,6 @@ const componentOptions = ADComponent({
       type: Array,
       value: [],
     },
-    scale: {
-      type: Number,
-      value: 1,
-    },
     /**
      * @property {String} itemCustomStyle 自定义选项样式
      * @default ''
@@ -154,9 +150,6 @@ const componentOptions = ADComponent({
       this.propUpdate(true, 'value', 'activeItem', defaultValue)
     },
     activeItem() {
-      this.changeTabBar(true)
-    },
-    scale() {
       this.changeTabBar(true)
     },
   },
