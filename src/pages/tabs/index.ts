@@ -21,6 +21,7 @@ Page({
     ],
     activeItem: 0,
     show: false,
+    scale: 0.6,
   },
   onLoad() {
   },
@@ -29,6 +30,12 @@ Page({
   showTabs() {
     this.setData({
       show: !this.data.show,
+    })
+  },
+
+  addScale() {
+    this.setData({
+      scale: this.data.scale + 0.1,
     })
   },
 

@@ -156,6 +156,9 @@ const componentOptions = ADComponent({
     activeItem() {
       this.changeTabBar(true)
     },
+    scale() {
+      this.changeTabBar(true)
+    },
   },
   lifetimes: {
     attached() {
