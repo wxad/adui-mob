@@ -157,7 +157,6 @@ const componentOptions = ADComponent({
     attached() {
       const { tabItems } = this.properties
       this.initState('defaultValue', 'value', 'activeItem', tabItems[0].value)
-      this.initMainNode()
     },
     ready() {},
     moved() {},
@@ -178,11 +177,17 @@ const componentOptions = ADComponent({
         },
       )
     },
-    changeTabBar(transition: boolean) {
+    async changeTabBar(transition: boolean) {
       const { theme } = this.properties
       if (theme === 'light') {
         return
       }
+      // 获取主节点的位置信息，进行 tabbar 的位置的计算
+      const tabLeft = await this.getNode(`.${this.properties.prefix}`, false).then(
+        (res: WechatMiniprogram.BoundingClientRectCallbackResult) => {
+          return res.left
+        },
+      )
       this.getNode(`.${this.properties.prefix}_title`, true).then(
         (res: Array<WechatMiniprogram.BoundingClientRectCallbackResult>) => {
           const { activeItem } = this.data
@@ -191,6 +196,7 @@ const componentOptions = ADComponent({
               const itemPoi: number = item.left
               const itemWidth: number = item.width
               this.setData({
+                left: tabLeft,
                 tabBarPoi: itemPoi,
                 tabBarWidth: itemWidth,
                 transition,
