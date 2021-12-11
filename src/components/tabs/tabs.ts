@@ -92,6 +92,10 @@ const componentOptions = ADComponent({
       type: Array,
       value: [],
     },
+    scale: {
+      type: Number,
+      value: 1,
+    },
     /**
      * @property {String} itemCustomStyle 自定义选项样式
      * @default ''
