@@ -20,6 +20,18 @@ $prefix: 'ad_tabs';
       flex: 1;
     }
   }
+
+  &_scroll {
+    background-color: #ffffff;
+
+    .#{$prefix} {
+      background-color: transparent;
+
+      &_item {
+        flex: none;
+      }
+    }
+  }
   
   &_bar {
     position: absolute;

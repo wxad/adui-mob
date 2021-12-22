@@ -6,6 +6,11 @@ import ADComponent from '../common/adComponent'
  * @tutorial http://ad-mob.woa.com/src-components-tabs-tabs
  */
 
+interface ITab {
+  value: any
+  title: string
+}
+
 const componentOptions = ADComponent({
   behaviors: [],
   externalClasses: ['adui-class'],
@@ -42,6 +47,14 @@ const componentOptions = ADComponent({
     theme: {
       type: String,
       value: 'standard',
+    },
+    /**
+     * @property {Boolean}} scrollable 是否可以滚动，可滚动模式下不会通栏
+     * @default false
+     */
+    scrollable: {
+      type: Boolean,
+      value: false,
     },
     /**
      * @property {String} tabBarColor 底部横条的颜色
@@ -141,6 +154,7 @@ const componentOptions = ADComponent({
     activeItem: null,
     left: 0,
     transition: false,
+    transformX: 0,
   },
   observers: {
     value(value: any) {
@@ -150,7 +164,11 @@ const componentOptions = ADComponent({
       this.propUpdate(true, 'value', 'activeItem', defaultValue)
     },
     activeItem() {
+      const { scrollable } = this.properties
       this.changeTabBar(true)
+      if (scrollable) {
+        this.scrollTabs()
+      }
     },
   },
   lifetimes: {
@@ -158,9 +176,6 @@ const componentOptions = ADComponent({
       const { tabItems } = this.properties
       this.initState('defaultValue', 'value', 'activeItem', tabItems[0].value)
     },
-    ready() {},
-    moved() {},
-    detached() {},
   },
   methods: {
     initMainNode() {
@@ -205,6 +220,27 @@ const componentOptions = ADComponent({
           })
         },
       )
+    },
+    async scrollTabs() {
+      const { prefix, tabItems } = this.properties
+      const { activeItem } = this.data
+      const that = this
+      const currentIndex = tabItems.findIndex((item: ITab) => item.value === activeItem)
+      const tabItemList = await this.getNode(`.${prefix}_item`, true).then((res: Array<WechatMiniprogram.BoundingClientRectCallbackResult>) => res)
+      if (currentIndex > 0) {
+        const currentRect = tabItemList[currentIndex]
+        this.getNode(`.${prefix}_scroll`, false).then((res: WechatMiniprogram.BoundingClientRectCallbackResult) => {
+          if (!res) return console.log('找不到元素')
+          const scrollWidth = res.width
+          let transformX = tabItemList.slice(0, currentIndex).reduce((prev: any, curr: any) => prev + curr.width, 0)
+          transformX += (currentRect.width - scrollWidth) / 2
+          that.setData({
+            transformX,
+          })
+        }).catch((err: any) => {
+          console.log(err)
+        })
+      }
     },
     clickItem(e: any) {
       const { value, disabled } = e.currentTarget.dataset
