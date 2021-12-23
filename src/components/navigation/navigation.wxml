@@ -15,7 +15,7 @@
 			 class="{{prefix}}_left_icon {{prefix}}_icon_{{icon}}"
 			 style="color:{{iconColor ? iconColor : ''}}"
 			/>
-			<slot wx:else name="leftElement" />
+			<slot name="leftElement" />
 		</view>
 		<view class="{{prefix}}_center" style="{{centerStyle}}">
 			<view wx:if="{{title}}" class="{{prefix}}_center">{{title}}</view>
