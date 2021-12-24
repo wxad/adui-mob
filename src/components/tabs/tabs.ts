@@ -106,6 +106,14 @@ const componentOptions = ADComponent({
       value: [],
     },
     /**
+     * @property {Boolean} noTitle 是否隐藏标题，一般用在完全自定义子项的时候
+     * @default false
+     */
+    noTitle: {
+      type: Boolean,
+      value: false,
+    },
+    /**
      * @property {String} itemCustomStyle 自定义选项样式
      * @default ''
      */

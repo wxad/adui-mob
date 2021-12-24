@@ -59,7 +59,7 @@
 				 class="{{prefix}}_title"
 				 data-value="{{item.value}}"
 				 data-disabled="{{item.disabled}}"
-				>{{item.title}}
+				>{{noTitle ? '' : item.title}}
 					<slot name="tabItem{{index}}" />
 				</view>
 			</view>
