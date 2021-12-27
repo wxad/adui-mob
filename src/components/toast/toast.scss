@@ -11,7 +11,7 @@ $prefix: 'ad_toast';
   @include font-large;
   text-align: center;
   color: #fff;
-  background-color: theme(--gray-800, $--gray-800);
+  background-color: theme(--transparent-gray-800, $--transparent-gray-800);
   border-radius: 4px;
 
   &_outer {
