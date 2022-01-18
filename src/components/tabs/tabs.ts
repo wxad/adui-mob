@@ -249,9 +249,11 @@ const componentOptions = ADComponent({
           const scrollWidth = res.width
           let transformX = tabItemList.slice(0, currentIndex).reduce((prev: any, curr: any) => prev + curr.width, 0)
           transformX += (currentRect.width - scrollWidth) / 2
-          that.setData({
-            transformX,
-          })
+          setTimeout(() => {
+            that.setData({
+              transformX,
+            })
+          }, 250)
         }).catch((err: any) => {
           console.log(err)
         })
