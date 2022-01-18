@@ -101,13 +101,18 @@ const componentOptions = ADComponent({
   },
 
   /**
-   * @property {Function} bind:onChange 值变化的回调
-   * @default
+   * @function
+   * @name bind:onChange
+   * @param {Object} event {event: {detail: {value: number | Array<number>}}}
+   * @description 值变化时的回调
+   * @default () => {}
    */
 
   /**
-   * @property {Function} bind:onDragStart 开始滑动时的回调
-   * @default
+   * @function
+   * @name bind:onDragStart
+   * @description 开始滑动时的回调
+   * @default () => {}
    */
 
   data: {

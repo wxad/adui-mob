@@ -214,28 +214,43 @@ const componentOptions = ADComponent({
   },
 
   /**
-   * @property {Function} bind:onChange 值变化的回调
-   * @default
+   * @function
+   * @name bind:onChange
+   * @param {Object} event {event: {detail: {value: string, cursor: number, keyCode: number }}}
+   * @description 值变化时的回调
+   * @default () => {}
    */
 
   /**
-   * @property {Function} bind:onFocus focus 时的回调
-   * @default
+   * @function
+   * @name bind:onFocus
+   * @param {Object} event {event: {detail: {value: string, height: number}}}
+   * @description focus 时的回调
+   * @default () => {}
    */
 
   /**
-   * @property {Function} bind:onBlur blur 时的回调
-   * @default
+   * @function
+   * @name bind:onBlur
+   * @param {Object} event {event: {detail: {value, encryptedValue, encryptError}}}
+   * @description blur 时的回调
+   * @default () => {}
    */
 
   /**
-   * @property {Function} bind:onConfirm confirm 时的回调
-   * @default
+   * @function
+   * @name bind:onConfirm
+   * @param {Object} event {event: {detail: {value: string}}}
+   * @description confirm 时的回调
+   * @default () => {}
    */
 
   /**
-   * @property {Function} bind:onKeyboardHeightChange 键盘高度变化时的回调
-   * @default
+   * @function
+   * @name bind:onKeyboardHeightChange
+   * @param {Object} event {event: {detail: {height: number, duration: number}}}
+   * @description 键盘高度变化时的回调
+   * @default () => {}
    */
 
   relations: {},

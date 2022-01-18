@@ -156,13 +156,19 @@ const componentOptions = ADComponent({
   },
 
   /**
-   * @property {Function} bind:onLoad 加载完毕的回调
-   * @default
+   * @function
+   * @name bind:onLoad
+   * @param {Object} event {event: {detail: {height: number, width: number}}}
+   * @description 加载完毕的回调
+   * @default () => {}
    */
 
   /**
-   * @property {Function} bind:onError 加载出错的回调
-   * @default
+   * @function
+   * @name bind:onError
+   * @param {Object} event {event: {detail: {errMsg}}}
+   * @description 加载出错的回调
+   * @default () => {}
    */
 
   relations: {},

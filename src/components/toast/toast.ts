@@ -90,6 +90,20 @@ const componentOptions = ADComponent({
       value: '',
     },
   },
+
+  /**
+   * @function
+   * @name bind:onOpen
+   * @description 展示时的回调
+   * @default () => {}
+   */
+
+  /**
+   * @function
+   * @name bind:onClose
+   * @description 隐藏时的回调
+   * @default () => {}
+   */
   relations: {},
   observers: {
     visible(visible: boolean) {

@@ -59,7 +59,15 @@ const componentOptions = ADComponent({
       value: '',
     },
   },
-  // end
+
+  /**
+   * @function
+   * @name bind:onChange
+   * @param {Object} event {event: {detail: {checked: boolean}}}
+   * @description 选中态变化时的回调，一般在 checkbox 单独使用是调用
+   * @default () => {}
+   */
+
   data: {
     active: false,
     parentDisabled: false,
@@ -114,6 +122,7 @@ const componentOptions = ADComponent({
       const { value } = this.properties
       if (!disabled && !parentDisabled && this.parent) {
         this.parent.clickItem(value)
+        this.triggerEvent('onChange', { checked: !this.data.active })
       }
     },
   },

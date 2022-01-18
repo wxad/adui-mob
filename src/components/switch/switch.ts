@@ -62,8 +62,11 @@ const componentOptions = ADComponent({
   },
 
   /**
-   * @property {Function} bind:onChange 状态变化的回调
-   * @default
+   * @function
+   * @name bind:onChange
+   * @param {Object} event {event: {detail: {value: boolean}}}
+   * @description 状态变化的回调
+   * @default () => {}
    */
 
   data: {

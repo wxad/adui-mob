@@ -161,8 +161,35 @@ const componentOptions = ADComponent({
   },
 
   /**
-   * @property {Function} bind:onChange 值变化的回调
-   * @default
+   * @function
+   * @name bind:onChange
+   * @param {Object} event {event: {detail: {value: string}}}
+   * @description 值变化时的回调
+   * @default () => {}
+   */
+
+  /**
+   * @function
+   * @name bind:onError
+   * @param {Object} event {event: {detail: {value: string}}}
+   * @description 出错时的回调
+   * @default () => {}
+   */
+
+  /**
+   * @function
+   * @name bind:onBlur
+   * @param {Object} event {event: {detail: {value, encryptedValue, encryptError}}}
+   * @description blur 时的回调
+   * @default () => {}
+   */
+
+  /**
+   * @function
+   * @name bind:onFocus
+   * @param {Object} event {event: {detail: {value: string, height: number}}}
+   * @description focus 时的回调
+   * @default () => {}
    */
 
   /**
@@ -171,13 +198,11 @@ const componentOptions = ADComponent({
    */
 
   /**
-   * @property {Function} bind:onBlur blur 时的回调
-   * @default
-   */
-
-  /**
-   * @property {Function} bind:onConfirm focus 时的回调
-   * @default
+   * @function
+   * @name bind:onConfirm
+   * @param {Object} event {event: {detail: {value: string}}}
+   * @description confirm 时的回调
+   * @default () => {}
    */
 
   relations: {},
@@ -275,11 +300,20 @@ const componentOptions = ADComponent({
       const { value } = event.detail
       this.emitChange(value)
     },
+    inputConfirm(event: WechatMiniprogram.InputConfirm) {
+      const { value } = event.detail
+      const result = this.format(value)
+      this.triggerEvent('onConfirm', { ...event, value: result })
+    },
     inputFocus(event: WechatMiniprogram.InputEvent) {
-      this.triggerEvent('onFocus', { event })
+      const { value } = event.detail
+      const result = this.format(value)
+      this.triggerEvent('onFocus', { ...event, value: result })
     },
     inputBlur(event: WechatMiniprogram.InputEvent) {
-      this.triggerEvent('onBlur', { event })
+      const { value } = event.detail
+      const result = this.format(value)
+      this.triggerEvent('onBlur', { ...event, value: result })
     },
   },
 })

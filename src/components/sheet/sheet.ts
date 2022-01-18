@@ -181,8 +181,10 @@ const componentOptions = ADComponent({
   },
 
   /**
-   * @property {Function} bind:onClose 关闭的回调
-   * @default
+   * @function
+   * @name bind:onClose
+   * @description 关闭的回调
+   * @default () => {}
    */
 
   relations: {},

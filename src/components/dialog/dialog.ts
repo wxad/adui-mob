@@ -150,13 +150,17 @@ const componentOptions = ADComponent({
   },
 
   /**
-   * @property {Function} bind:onConfirm 点击确定的回调
-   * @default
+   * @function
+   * @name bind:onConfirm
+   * @description 点击确定的回调
+   * @default () => {}
    */
 
   /**
-   * @property {Function} bind:onCancel 点击取消的回调
-   * @default
+   * @function
+   * @name bind:onCancel
+   * @description 点击取消的回调
+   * @default () => {}
    */
 
   data: {

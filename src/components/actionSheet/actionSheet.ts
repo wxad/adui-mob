@@ -74,20 +74,29 @@ const componentOptions = ADComponent({
       value: '',
     },
   },
+
   /**
-   * @property {Function} bind:onChange 值变化的回调
-   * @default
+   * @function
+   * @name bind:onChange
+   * @param {Object} event {event: {detail: {value: any}}}
+   * @description 值变化时的回调
+   * @default () => {}
    */
 
   /**
-   * @property {Function} bind:onClose 关闭的回调
-   * @default
+   * @function
+   * @name bind:onClose
+   * @description 关闭的回调
+   * @default () => {}
    */
 
   /**
-   * @property {Function} bind:onCancel 点击取消的回调
-   * @default
+   * @function
+   * @name bind:onCancel
+   * @description 点击取消的回调
+   * @default () => {}
    */
+
   relations: {
     '../actionSheetItem/actionSheetItem': {
       type: 'descendant',

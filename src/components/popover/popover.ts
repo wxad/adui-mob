@@ -101,13 +101,17 @@ const componentOptions = ADComponent({
   },
 
   /**
-   * @property {Function} bind:onOpen 展示时的回调
-   * @default
+   * @function
+   * @name bind:onOpen
+   * @description 展示时的回调
+   * @default () => {}
    */
 
   /**
-   * @property {Function} bind:onClose 隐藏时的回调
-   * @default
+   * @function
+   * @name bind:onClose
+   * @description 隐藏时的回调
+   * @default () => {}
    */
 
   observers: {

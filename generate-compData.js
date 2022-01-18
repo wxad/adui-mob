@@ -31,6 +31,17 @@ const generateVscodeData = (data) => {
           componentAttrItem.type = [...attrItem.types]
           componentAttrItem.description = generateDesc(attrItem.description)
           break
+        case 'function':
+          componentAttrItem.type = ['() => {}']
+        case 'name':
+          componentAttrItem.name = attrItem.string
+          break
+        case 'param':
+          componentAttrItem.type = generateDesc(attrItem.description)
+            ? [`(${generateDesc(attrItem.description)}) => {}`]
+            : ['() => {}']
+        case 'description':
+          componentAttrItem.description = attrItem.string
         case 'default':
           componentAttrItem.defaultValue = attrItem.string
           break
@@ -44,7 +55,7 @@ const generateVscodeData = (data) => {
           })
           break
         default:
-          componentAttrItem[item.type] = attrItem.string
+           // componentAttrItem[item.type] = attrItem.string
           break
       }
     })
@@ -67,6 +78,17 @@ const generatePropData = (data, fileName) => {
           componentAttrItem.type = attrItem.types.join(',')
           componentAttrItem.description = generateDesc(attrItem.description)
           break
+        case 'name':
+          componentAttrItem.name = attrItem.string
+          break
+        case 'function':
+          componentAttrItem.type = ['() => {}']
+        case 'param':
+          componentAttrItem.type = generateDesc(attrItem.description)
+            ? [`(${generateDesc(attrItem.description)}) => {}`]
+            : ['() => {}']
+        case 'description':
+          componentAttrItem.description = attrItem.string
         case 'default':
           componentAttrItem.value = attrItem.string
           break
@@ -74,7 +96,7 @@ const generatePropData = (data, fileName) => {
           componentAttrItem.description = `${componentAttrItem.description}，${attrItem.string}`
           break
         default:
-          componentAttrItem[item.type] = attrItem.string
+          // componentAttrItem[item.type] = attrItem.string
           break
       }
     })

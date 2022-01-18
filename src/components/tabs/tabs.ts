@@ -49,7 +49,7 @@ const componentOptions = ADComponent({
       value: 'standard',
     },
     /**
-     * @property {Boolean}} scrollable 是否可以滚动，可滚动模式下不会通栏
+     * @property {Boolean} scrollable 是否可以滚动，可滚动模式下不会通栏
      * @default false
      */
     scrollable: {
@@ -130,7 +130,8 @@ const componentOptions = ADComponent({
       value: '',
     },
     /**
-     * 底部横条的自定义样式
+     * @property {String} tabBarStyle 底部横条自定义样式
+     * @default ''
      */
     tabBarStyle: {
       type: String,
@@ -147,13 +148,19 @@ const componentOptions = ADComponent({
   },
 
   /**
-   * @property {Function} bind:onChange 值变化的回调
-   * @default
+   * @function
+   * @name bind:onChange
+   * @param {Object} event {event: {detail: {value: any}}}
+   * @description 值变化时的回调
+   * @default () => {}
    */
 
   /**
-   * @property {Function} bind:onClickItem 点击子项时候的回调，是要使用场景为当点击的时候触发某些效果，比如点击的时候滚动到页面的固定位置
-   * @default
+   * @function
+   * @name bind:onClick
+   * @param {Object} event {event: {detail: {value: any}}}
+   * @description 点击子项时候的回调，主要使用场景为当点击的时候触发某些效果，比如点击的时候滚动到页面的固定位置
+   * @default () => {}
    */
 
   data: {

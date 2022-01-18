@@ -79,8 +79,11 @@ const componentOptions = ADComponent({
   },
 
   /**
-   * @property {Function} bind:onChange 值变化的回调
-   * @default
+   * @function
+   * @name bind:onChange
+   * @param {Object} event {event: {detail: {value: any | Array<any>}}}
+   * @description 值变化时的回调
+   * @default () => {}
    */
 
   data: {
