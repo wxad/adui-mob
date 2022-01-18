@@ -94,7 +94,6 @@ function ADComponent(options: WechatMiniprogram.Component.TrivialOption): any {
           [all ? 'selectAll' : 'select'](selector)
           .boundingClientRect(
             (node: WechatMiniprogram.BoundingClientRectCallbackResult) => {
-              console.log('paki node', selector, node)
               if (all && Array.isArray(node) && node.length) {
                 Array.isArray(node) && node.length
                   ? resolve(node)
