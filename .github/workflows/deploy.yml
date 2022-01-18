@@ -9,10 +9,9 @@ jobs:
       uses: actions/checkout@master
 
     - name: install
-      run: 
-        npm install node-sass
-        npm rebuild node-sass
-        npm install --unsafe-perm
+    - run: npm install node-sass
+    - run: npm rebuild node-sass
+    - run: npm install --unsafe-perm
 
     - name: build
       run: npm run build && npm run docz:build
