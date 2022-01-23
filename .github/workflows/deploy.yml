@@ -7,11 +7,14 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@master
-
-    - name: install node-sass
-      run: npm install node-sass
-    - name: rebuild node-sass
-      run: npm rebuild node-sass
+    - name: node-version
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+#     - name: install node-sass
+#       run: npm install node-sass
+#     - name: rebuild node-sass
+#       run: npm rebuild node-sass
     - name: install all package
       run: npm install --unsafe-perm
 
