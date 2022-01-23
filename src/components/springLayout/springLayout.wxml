@@ -1,4 +1,22 @@
-<view class="{{prefix}}" style="min-height: {{minHeightInner}}; {{customStyle}}">
+<scroll-view
+ scroll-y="{{true}}"
+ class="{{prefix}}"
+ enable-flex
+ style="height: {{minHeightInner}}; {{customStyle}}"
+ wx:if="{{isScrollView}}"
+>
+	<view class="{{prefix}}_body">
+		<slot name="body" />
+	</view>
+	<view class="{{prefix}}_footer">
+		<slot name="footer" />
+	</view>
+</scroll-view>
+<view
+ wx:else
+ class="{{prefix}}"
+ style="min-height: {{minHeightInner}}; {{customStyle}}"
+>
 	<view class="{{prefix}}_body">
 		<slot name="body" />
 	</view>

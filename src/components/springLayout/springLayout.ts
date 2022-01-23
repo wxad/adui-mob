@@ -2,9 +2,9 @@ import ADComponent from '../common/adComponent'
 import { getNavigationHeight } from '../common/utils'
 
 /**
- * @name ad-layout
+ * @name ad-spring-layout
  * @description 弹性布局组件，
- * @tutorial 
+ * @tutorial
  */
 
 const componentOptions = ADComponent({
@@ -32,6 +32,14 @@ const componentOptions = ADComponent({
      * @default false
      */
     minusNavHeight: {
+      type: Boolean,
+      value: false,
+    },
+    /**
+     * @property {Boolean} isScrollView 组件的外层是否是 scroll-view 组件，主要使用场景是当父组件禁用了滚动，这个时候内部组件需要使用 scroll-view 才能滚动，常见用于 ad-sheet 中
+     * @default false
+     */
+    isScrollView: {
       type: Boolean,
       value: false,
     },
