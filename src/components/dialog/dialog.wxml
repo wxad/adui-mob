@@ -21,16 +21,18 @@
 			</view>
 			<view class="{{prefix}}_footer" wx:if="{{!noButtons && buttonList.length === 0}}">
 				<view
-				 class="{{prefix}}_button {{prefix}}_cancel {{cancelClass}}"
+				 class="{{prefix}}_button {{prefix}}_cancel"
 				 data-index="{{0}}"
 				 wx:if="{{type !== 'inform'}}"
 				 bind:tap="click"
+         style="{{cancelStyle}}"
 				>{{cancelTitle}}
 				</view>
 				<view
-				 class="{{prefix}}_button {{prefix}}_confirm {{confirmClass}}"
+				 class="{{prefix}}_button {{prefix}}_confirm"
 				 data-index="{{1}}"
 				 bind:tap="click"
+         style="{{confirmStyle}}"
 				>{{confirmTitle}}
 				</view>
 			</view>
