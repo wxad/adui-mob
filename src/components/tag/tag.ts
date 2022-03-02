@@ -35,7 +35,7 @@ const componentOptions = ADComponent({
       value: 'light',
     },
     /**
-     * @property {String} theme 类型，不同类型的按钮对应不同的颜色
+     * @property {String} intent 类型，不同类型的按钮对应不同的颜色
      * @default primary
      * @enum success | primary | warning | danger | normal
      */
