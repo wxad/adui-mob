@@ -6,6 +6,8 @@
 	 scroll-x="{{true}}"
 	 scroll-left="{{transformX}}"
 	 class="{{prefix}}_scroll"
+   enhanced="{{true}}"
+   show-scrollbar="{{false}}"
 	>
 		<view class="{{prefix}}">
 			<view
