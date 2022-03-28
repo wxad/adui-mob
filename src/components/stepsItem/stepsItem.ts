@@ -18,7 +18,7 @@ const componentOptions = ADComponent({
       value: 'ad_steps_item',
     },
     /**
-     * @property {Number} value 唯一标识
+     * @property {Number} value 每个步骤的唯一标识，必填
      * @default 0
      */
     value: {
@@ -42,10 +42,18 @@ const componentOptions = ADComponent({
       value: '',
     },
     /**
-     * @property {String} icon icon 名称
+     * @property {String} icon 步骤的 icon，没有指定的话默认是一个原点
      * @default ''
      */
     icon: {
+      type: String,
+      value: '',
+    },
+    /**
+     * @property {String} activeIcon 激活态的 icon，用于希望激活态与非激活态下 icon 不同的情况
+     * @default ''
+     */
+    activeIcon: {
       type: String,
       value: '',
     },
@@ -66,20 +74,68 @@ const componentOptions = ADComponent({
       value: '',
     },
     /**
-     * @property {String} normalColor 非选中态的颜色
+     * @property {String} normaIconlColor 非选中态 icon 的颜色
      * @default var(--transparent-gray-500, rgba(0, 0, 0, 0.16))
      */
-    normalColor: {
+    normaIconlColor: {
       type: String,
       value: 'var(--transparent-gray-500, rgba(0, 0, 0, 0.16))',
     },
     /**
-     * @property {String} activeColor 选中态的颜色
+     * @property {String} activeIconColor 选中态 icon 的颜色
      * @default var(--primary-color, #07C160)
      */
-    activeColor: {
+    activeIconColor: {
       type: String,
       value: '#07C160',
+    },
+    /**
+     * @property {String} normalTitleColor 非选中态的标题颜色
+     * @default 'rgba(0, 0, 0, 0.88)'
+     */
+    normalTitleColor: {
+      type: String,
+      value: 'rgba(0, 0, 0, 0.88)',
+    },
+    /**
+     * @property {String} activeTitleColor 选中态的标题颜色
+     * @default 'rgba(0, 0, 0, 0.88)'
+     */
+    activeTitleColor: {
+      type: String,
+      value: 'rgba(0, 0, 0, 0.88)',
+    },
+    /**
+     * @property {String} titleStyle 自定义标题样式
+     * @default ''
+     */
+    titleStyle: {
+      type: String,
+      value: '',
+    },
+    /**
+     * @property {String} normalDescColor 非选中态描述的颜色
+     * @default 'rgba(0, 0, 0, 0.36)'
+     */
+    normalDescColor: {
+      type: String,
+      value: 'rgba(0, 0, 0, 0.36)',
+    },
+    /**
+     * @property {String} activeDescColor 选中态描述的颜色
+     * @default 'rgba(0, 0, 0, 0.36)'
+     */
+    activeDescColor: {
+      type: String,
+      value: 'rgba(0, 0, 0, 0.36)',
+    },
+    /**
+     * @property {String} descStyle 自定义描述样式
+     * @default ''
+     */
+    descStyle: {
+      type: String,
+      value: '',
     },
     /**
      * @property {String} customStyle 自定义样式

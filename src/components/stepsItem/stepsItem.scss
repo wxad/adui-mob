@@ -41,8 +41,13 @@ $prefix: 'ad_steps_item';
       min-height: 15px;
     }
 
+    .#{$prefix}_header_pointer {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
     .#{$prefix}_header_step {
-      margin: 0 0 4px 0;
+      margin: 4px 0;
     }
 
     .#{$prefix}_body {
