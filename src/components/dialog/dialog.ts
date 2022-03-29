@@ -50,13 +50,12 @@ const componentOptions = ADComponent({
       value: '取消',
     },
     /**
-     * @property {String} cancelClass 取消按钮的 class，可以进行样式的修改
+     * @property {String} cancelStyle 取消按钮的自定义样式
      * @default ''
      */
-    cancelClass: {
+    cancelStyle: {
       type: String,
       value: '',
-      desc: '取消按钮的 class，可以进行样式的修改',
     },
     /**
      * @property {String} confirmTitle 确定按钮文案
@@ -67,10 +66,10 @@ const componentOptions = ADComponent({
       value: '确定',
     },
     /**
-     * @property {String} confirmClass 确定按钮的class，可以进行样式的修改
+     * @property {String} confirmStyle 确定按钮的自定义样式
      * @default ''
      */
-    confirmClass: {
+    confirmStyle: {
       type: String,
       value: '',
     },

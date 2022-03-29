@@ -6,12 +6,14 @@
 	 scroll-x="{{true}}"
 	 scroll-left="{{transformX}}"
 	 class="{{prefix}}_scroll"
+   enhanced="{{true}}"
+   show-scrollbar="{{false}}"
 	>
 		<view class="{{prefix}}">
 			<view
 			 wx:if="{{theme !== 'light'}}"
 			 class="{{prefix}}_bar"
-			 style="width: {{tabBarWidth}}px; background-color: {{tabBarColor}}; left:{{tabBarPoi - left}}px; {{transition && 'transition: left .2s ease-in-out'}}; {{tabBarStyle}}"
+			 style="width: {{tabBarWidth}}px; background-color: {{tabBarColor}}; transform: translateX({{tabBarPoi - left}}px); {{transition && 'transition: transform .2s ease-in-out'}}; {{tabBarStyle}}"
 			/>
 			<view class="{{prefix}}_list">
 				<view
@@ -43,7 +45,7 @@
 		<view
 		 wx:if="{{theme !== 'light'}}"
 		 class="{{prefix}}_bar"
-		 style="width: {{tabBarWidth}}px; background-color: {{tabBarColor}}; left:{{tabBarPoi - left}}px; {{transition && 'transition: left .2s ease-in-out'}}; {{tabBarStyle}}"
+		 style="width: {{tabBarWidth}}px; background-color: {{tabBarColor}}; transform: translateX({{tabBarPoi - left}}px); {{transition && 'transition: transform .2s ease-in-out'}}; {{tabBarStyle}}"
 		/>
 		<view class="{{prefix}}_list">
 			<view

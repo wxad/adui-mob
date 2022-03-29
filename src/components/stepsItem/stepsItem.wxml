@@ -4,25 +4,25 @@
 		<view
 		 wx:if="{{stepNumber === '' && icon === ''}}"
 		 class="{{prefix}}_header_pointer"
-		 style="background-color: {{active ? activeColor : ''}}"
+		 style="background-color: {{active ? activeIconColor : ''}}"
 		/>
 		<view class="{{prefix}}_header_step" wx:if="{{stepNumber === '' && icon !== ''}}">
 			<ad-icon
-			 icon="{{icon}}"
-			 class="{{prefix}}_header_step"
-			 color="{{active ? activeColor : normalColor}}"
+			 icon="{{active ? (activeIcon ? activeIcon : icon) : icon}}"
+			 class="{{prefix}}_header_icon"
+			 color="{{active ? activeIconColor : normaIconlColor}}"
 			/>
 			<slot name="icon" />
 		</view>
 		<view class="{{prefix}}_header_step" wx:if="{{stepNumber !== '' && icon === ''}}">
-			<ad-badge contentStyle="background-color: {{active ? activeColor : normalColor}}" >{{stepNumber}}</ad-badge>
-			<slot name="badge"></slot>
+			<ad-badge contentStyle="background-color: {{active ? activeIconColor : normaIconlColor}}">{{stepNumber}}</ad-badge>
+			<slot name="badge" />
 		</view>
 		<view class="{{prefix}}_header_right {{isLast && 'ad_steps_item_header_right_hidden'}}" />
 	</view>
 	<view class="{{prefix}}_body">
-		<view class="{{prefix}}_title">{{title}}</view>
-		<view class="{{prefix}}_desc">{{desc}}
+		<view class="{{prefix}}_title" style="color: {{!active ? normalTitleColor : activeTitleColor}}; {{titleStyle}}">{{title}}</view>
+		<view class="{{prefix}}_desc" style="color: {{!active ? normalDescColor : activeDescColor}}; {{descStyle}}">{{desc}}
 			<slot name="desc" />
 		</view>
 	</view>
