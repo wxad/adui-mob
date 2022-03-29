@@ -7,9 +7,7 @@ import ADComponent from '../common/adComponent'
  */
 
 // 将 '' 转化为 0
-const formatZero = (num: string | number) => {
-  return Number(num === '' ? 0 : num)
-}
+const formatZero = (num: string | number) => Number(num === '' ? 0 : num)
 
 // 使用除法代替浮点运算
 const add = (num1: number | string, num2: number | string) => {
@@ -45,12 +43,28 @@ const componentOptions = ADComponent({
       value: 0,
     },
     /**
+     * @property {Number} valueToMin 是否将值取值为最小值，只在点击减号按钮的情况下生效
+     * @default false
+     */
+    valueToMin: {
+      type: Boolean,
+      value: false,
+    },
+    /**
      * @property {Number} max 最大值
      * @default Number.MAX_SAFE_INTEGER
      */
     max: {
       type: Number,
       value: Number.MAX_SAFE_INTEGER,
+    },
+    /**
+     * @property {Number} valueToMax 是否将值取值为最大值，只在点击加号按钮的情况下生效
+     * @default false
+     */
+    valueToMax: {
+      type: Boolean,
+      value: false,
     },
     /**
      * @property {Number} step 步长
@@ -251,7 +265,9 @@ const componentOptions = ADComponent({
 
     // 判断是否处于 disabled 状态
     judgeDisabled(type: string) {
-      const { disabled, minusDisabled, addDisabled, min, max } = this.properties
+      const {
+        disabled, minusDisabled, addDisabled, min, max,
+      } = this.properties
       const { inputValue } = this.data
       if (type === 'add') {
         return disabled || addDisabled || inputValue >= max
@@ -269,13 +285,24 @@ const componentOptions = ADComponent({
 
     change() {
       const { type } = this
+      const {
+        valueToMax, max, valueToMin, min,
+      } = this.properties
       if (this.judgeDisabled(type)) {
         return
       }
       const { step } = this.properties
       const { inputValue } = this.data
       const diff = type === 'add' ? step : -step
-      const result = add(inputValue, diff)
+      let result = add(inputValue, diff)
+      // 启用当值超过最大值时取最大值
+      if (result >= max && valueToMax) {
+        result = max
+      }
+      // 启用当值小于最小值时取最小值
+      if (result <= min && valueToMin) {
+        result = min
+      }
       this.emitChange(result)
     },
 
