@@ -2,11 +2,11 @@
 	<view class="{{prefix}}_header">
 		<view class="{{prefix}}_header_left {{isFirst && 'ad_steps_item_header_left_hidden'}}" />
 		<view
-		 wx:if="{{stepNumber === '' && icon === ''}}"
+		 wx:if="{{stepNumber === '' && icon === '' && activeIcon === ''}}"
 		 class="{{prefix}}_header_pointer"
 		 style="background-color: {{active ? activeIconColor : ''}}"
 		/>
-		<view class="{{prefix}}_header_step" wx:if="{{stepNumber === '' && icon !== ''}}">
+		<view class="{{prefix}}_header_step" wx:if="{{stepNumber === '' && (icon !== '' || activeIcon !== '')}}">
 			<ad-icon
 			 icon="{{active ? (activeIcon ? activeIcon : icon) : icon}}"
 			 class="{{prefix}}_header_icon"
@@ -14,7 +14,7 @@
 			/>
 			<slot name="icon" />
 		</view>
-		<view class="{{prefix}}_header_step" wx:if="{{stepNumber !== '' && icon === ''}}">
+		<view class="{{prefix}}_header_step" wx:if="{{stepNumber !== '' && icon === '' && activeIcon === ''}}">
 			<ad-badge contentStyle="background-color: {{active ? activeIconColor : normaIconlColor}}">{{stepNumber}}</ad-badge>
 			<slot name="badge" />
 		</view>
