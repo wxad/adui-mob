@@ -32,6 +32,7 @@ const componentOptions = ADComponent({
      */
     value: {
       type: Number,
+      optionalTypes: [String],
       value: '',
     },
     /**
