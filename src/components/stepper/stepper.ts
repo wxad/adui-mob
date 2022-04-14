@@ -320,7 +320,7 @@ const componentOptions = ADComponent({
       if (typeof value === 'number') {
         return value
       }
-      const result = value === '' ? '' : Number(this.filter(value))
+      const result = value === '' ? '' : this.filter(value)
       return result
     },
     inputChange(event: WechatMiniprogram.InputEvent) {
