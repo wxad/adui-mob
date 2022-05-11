@@ -13,7 +13,11 @@
  customStyle="z-index: var(--z-index-dialog, 1080); {{customStyle}}"
  custom-class="{{prefix}} {{prefix}}_{{position}} {{round && 'ad_sheet_round'}}"
 >
-	<view class="{{prefix}}_inner" catch:touchmove="noop" style="{{innerStyle}}">
+	<view
+	 class="{{prefix}}_inner"
+	 catch:touchmove="{{catchTouchmove ? 'noop' : ''}}"
+	 style="{{innerStyle}}"
+	>
 		<view class="{{prefix}}_header">
 			<slot name="header" />
 			<view
@@ -35,7 +39,7 @@
 						<view class="{{prefix}}_title" wx:if="{{title !== ''}}">{{title}}</view>
 					</view>
 					<view class="{{prefix}}_desc" wx:if="{{desc !== ''}}">{{desc}}</view>
-					<slot name="desc"></slot>
+					<slot name="desc" />
 				</view>
 				<view class="{{prefix}}_icon" bind:tap="close">
 					<ad-icon
