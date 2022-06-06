@@ -17,9 +17,10 @@
 			<view class="{{prefix}}_title" wx:if="{{title !== ''}}">{{title}}</view>
 			<slot name="title" />
 			<view class="{{prefix}}_desc" wx:if="{{desc !== ''}}">{{desc}}</view>
-			<slot class="desc" />
+			<slot name="desc" />
 			<slot/>
 		</view>
+		<view wx:else style="display: none"><slot/></view>
 	</view>
 </view>
 

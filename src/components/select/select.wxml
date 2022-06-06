@@ -4,7 +4,7 @@
 			<view
 			 class="{{prefix}}_header_item header-item-class {{selectedItem === item.key && showItem && 'ad_select_header_item_active'}} {{ (disabled || item.disabled) && 'ad_select_header_item_disabled'}}"
 			 wx:for="{{selectItems}}"
-			 wx:key="{{item.key}}"
+			 wx:key="key"
 			 data-key="{{item.key}}"
 			 data-disabled="{{disabled || item.disabled}}"
 			 bind:tap="choseItem"

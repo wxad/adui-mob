@@ -332,8 +332,8 @@ const componentOptions = ADComponent({
   data: {
     // isFirst: true,
     // isLast: true,
-    noTopBorder: false,
-    noBottomBorder: false,
+    noTopBorderInner: false,
+    noBottomBorderInner: false,
   },
   relations: {
     '../cellGroup/cellGroup': {
@@ -345,12 +345,12 @@ const componentOptions = ADComponent({
       const { noTopBorder, noBottomBorder } = this.properties
       if (noTopBorder) {
         this.setData({
-          noTopBorder,
+          noTopBorderInner: noTopBorder,
         })
       }
       if (noBottomBorder) {
         this.setData({
-          noBottomBorder,
+          noBottomBorderInner: noBottomBorder,
         })
       }
     },
@@ -377,7 +377,7 @@ const componentOptions = ADComponent({
         return
       }
       this.setData({
-        noTopBorder,
+        noTopBorderInner: noTopBorder,
       })
     },
     removeBottomBorder(noBottomBorder: boolean) {
@@ -385,7 +385,7 @@ const componentOptions = ADComponent({
         return
       }
       this.setData({
-        noBottomBorder,
+        noBottomBorderInner: noBottomBorder,
       })
     },
   },
