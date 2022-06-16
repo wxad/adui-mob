@@ -83,8 +83,14 @@ const componentOptions = ADComponent({
     },
   },
   methods: {
+    // 特殊字符转义
+    encode(keyword: string) {
+      const reg = /[\[\(\$\^\.\]\*\\\?\+\{\}\\|\)]/gi
+      return keyword.replace(reg, (key) => `\\${key}`)
+    },
     getIndexes(text: string, target: string) {
-      const regex = new RegExp(target, 'gi')
+      const keywordTransformed = this.encode(target)
+      const regex = new RegExp(keywordTransformed, 'gi')
       let result
       const indexes = []
       do {
@@ -97,12 +103,10 @@ const componentOptions = ADComponent({
     },
     init() {
       const { text, target } = this.properties
-      const textTransform = text.split('').map((item: string) => {
-        return {
-          text: item,
-          highlight: false,
-        }
-      })
+      const textTransform = text.split('').map((item: string) => ({
+        text: item,
+        highlight: false,
+      }))
       if (text !== '' && target !== '') {
         const indexes = this.getIndexes(text, target)
         if (indexes.length !== 0) {
