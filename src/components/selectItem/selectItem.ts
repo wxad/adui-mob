@@ -107,7 +107,15 @@ const componentOptions = ADComponent({
   relations: {
     '../select/select': {
       type: 'ancestor',
-      linked() {},
+      linked() {
+        this.initParent('../select/select')
+      },
+      linkChanged() {
+        this.initParent('../select/select')
+      },
+      unlinked() {
+        this.initParent('../select/select')
+      },
     },
   },
   observers: {
@@ -159,13 +167,12 @@ const componentOptions = ADComponent({
   },
   lifetimes: {
     attached() {
-      this.initParent('../select/select')
       const { options } = this.properties
       this.initState(
         'defaultValue',
         'value',
         'activeItem',
-        options.length !== 0 ? options[0].value : undefined
+        options.length !== 0 ? options[0].value : undefined,
       )
       this.initState('defaultVisible', 'visible', 'show')
     },
