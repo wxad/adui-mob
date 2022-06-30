@@ -157,9 +157,9 @@ const componentOptions = ADComponent({
 
   relations: {},
   observers: {
-    focuse(focuse: boolean) {
+    focus(focus: boolean) {
       this.setData({
-        inputFocus: focuse,
+        inputFocus: focus,
       })
     },
     value(value: string) {
@@ -174,7 +174,6 @@ const componentOptions = ADComponent({
   },
   methods: {
     clear() {
-      console.log('paki click')
       this.setData({
         inputValue: '',
         inputFocus: false,
