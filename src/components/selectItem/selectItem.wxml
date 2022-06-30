@@ -14,6 +14,7 @@
 				<ad-radio-group value="{{activeItem}}">
 					<ad-cell
 					 wx:for="{{options}}"
+					 wx:key="value"
 					 title="{{item.title}}"
 					 data-value="{{item.value}}"
 					 data-title="{{item.title}}"

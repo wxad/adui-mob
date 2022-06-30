@@ -155,6 +155,14 @@ const componentOptions = ADComponent({
       value: true,
     },
     /**
+     * @property {Boolean} catchTouchmove 是否阻止滑动事件穿透组件
+     * @default true
+     */
+    catchTouchmove: {
+      type: Boolean,
+      value: true,
+    },
+    /**
      * @property {String} headerStyle 头部的自定义样式
      * @default ''
      */

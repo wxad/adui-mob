@@ -3,7 +3,7 @@
 	 class="{{prefix}}_content {{showPopContent && 'ad_popover_content_show'}} {{hasMask && 'ad_popover_has_mask'}}"
 	 style="{{position}} {{popStyle}}"
 	>
-		<view class="{{prefix}}_content_inner" style="background-color: {{backgroundColor}};">
+		<view class="{{prefix}}_content_inner" style="background-color: {{backgroundColor}}; {{popInnerStyle}}">
 			<slot name="pop" />
 			<view wx:if="{{text !== ''}}" class="{{prefix}}_text">{{text}}</view>
 		</view>

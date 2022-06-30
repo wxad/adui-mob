@@ -1,6 +1,6 @@
 {
   "name": "adui-mob",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "简明、高效，基于 adui 设计语言的小程序组件库",
   "main": "index.js",
   "miniprogram": "dist",

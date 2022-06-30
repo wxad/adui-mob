@@ -83,6 +83,14 @@ const componentOptions = ADComponent({
       value: '',
     },
     /**
+    * @property {String} popInnerStyle 自定义弹出层内层的样式
+    * @default ''
+    */
+    popInnerStyle: {
+      type: String,
+      value: '',
+    },
+    /**
      * @property {String} arrowStyle 自定箭头的样式
      * @default ''
      */

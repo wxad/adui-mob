@@ -157,9 +157,9 @@ const componentOptions = ADComponent({
 
   relations: {},
   observers: {
-    focuse(focuse: boolean) {
+    focus(focus: boolean) {
       this.setData({
-        inputFocus: focuse,
+        inputFocus: focus,
       })
     },
     value(value: string) {
