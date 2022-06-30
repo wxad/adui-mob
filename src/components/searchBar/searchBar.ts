@@ -174,12 +174,11 @@ const componentOptions = ADComponent({
   },
   methods: {
     clear() {
-      console.log('paki click')
       this.setData({
         inputValue: '',
         inputFocus: false,
       })
-      this.triggerEvent('onChange', { value: '' })
+      this.triggerEvent('onClear')
     },
     onChange(event: WechatMiniprogram.Input) {
       const { value } = event.detail
@@ -192,7 +191,6 @@ const componentOptions = ADComponent({
       this.triggerEvent('onFocus', { ...event })
     },
     onBlur(event: WechatMiniprogram.Input) {
-      console.log('paki blur')
       this.setData({
         inputFocus: false,
       })
