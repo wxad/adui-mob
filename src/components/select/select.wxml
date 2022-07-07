@@ -19,7 +19,7 @@
 			</view>
 		</view>
 		<slot name="header" />
-		<ad-divider style="opacity: {{(showItem && !noShadow) ? 1 : 0}};"/>
+		<ad-divider style="visibility: {{(showItem && !noShadow) ? 'unset' : 'hidden'}};"/>
 	</view>
 	<view class="{{prefix}}_body {{showContent && 'ad_dropdown_body_show'}}">
 		<view class="{{prefix}}_body_inner">
