@@ -1,4 +1,5 @@
 import ADComponent from '../common/adComponent'
+import { IDialogProp } from './dialogFunc'
 
 /**
  * @name ad-dialog
@@ -146,6 +147,14 @@ const componentOptions = ADComponent({
       type: String,
       value: '',
     },
+    onCancel: {
+      type: Object,
+      value: null,
+    },
+    onConfirm: {
+      type: Object,
+      value: null,
+    },
   },
 
   /**
@@ -182,14 +191,27 @@ const componentOptions = ADComponent({
   methods: {
     click(event: WechatMiniprogram.BaseEvent) {
       const { index, value } = event.currentTarget.dataset
+      const { onCancel, onConfirm } = this.data
       this.shouldDataUpate('visible', 'finalVisible', false)
       if (value !== undefined) {
         this.triggerEvent('onConfirm', { value })
+        if (onConfirm) {
+          onConfirm.cb()
+        }
       } else if (Number(index) === 0) {
         this.triggerEvent('onCancel')
+        if (onCancel) {
+          onConfirm.cb()
+        }
       } else if (Number(index) === 1) {
         this.triggerEvent('onConfirm')
+        if (onConfirm) {
+          onConfirm.cb()
+        }
       }
+    },
+    set(options: IDialogProp) {
+      this.setData({ finalVisible: true, ...options })
     },
     noop() {},
   },
