@@ -43,6 +43,14 @@ const componentOptions = ADComponent({
       value: '',
     },
     /**
+     * @property {String} content 文案
+     * @default ''
+     */
+    content: {
+      type: String,
+      value: '',
+    },
+    /**
      * @property {String} cancelTitle 取消按钮文案
      * @default 取消
      */

@@ -15,6 +15,7 @@
 			<view class="{{prefix}}_body">
 				<view class="{{prefix}}_title">{{title}}</view>
 				<view class="{{prefix}}_main">
+					{{content}}
 					<slot/>
 				</view>
 				<slot name="main" />

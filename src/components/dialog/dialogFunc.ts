@@ -1,6 +1,7 @@
 export interface IDialogProp {
   selector?: string
   title?: string
+  content?: string
   cancelTitle?: string
   cancelStyle?: string
   confirmTitle?: string
