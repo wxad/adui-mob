@@ -1,16 +1,29 @@
 const { src, dest, series, watch, parallel, task } = require('gulp')
+const fs = require('fs')
+const fsExtra = require('fs-extra')
 const generateData = require('./generate-compData')
 const del = require('del')
 const eslint = require('gulp-eslint')
 const logger = require('gulp-logger')
 const change = require('gulp-changed')
+const streamCombiner = require('stream-combiner')
+const pxtounits = require('postcss-px2units')
 // 防止出现错误的时候进程结束
 const plumber = require('gulp-plumber')
 const dox = require('gulp-dox')
 
 // ts 编译的插件
 const ts = require('gulp-typescript')
-const tsProject = ts.createProject('tsconfig.json')
+const tsProject = ts.createProject('tsconfig.json', { declaration: true })
+
+// px tp rpx 插件配置
+const pxtounitsOption = {
+  divisor: 1,
+  multiple: 2,
+  decimalPlaces: 2,
+  comment: 'no',
+  targetUnits: 'rpx'
+}
 
 // 用于 sass 处理的插件
 const rename = require('gulp-rename')
@@ -45,11 +58,26 @@ const handleSVG = require('./generate-icon-background.js')
 
 handleSVG()
 
+const destPaths = (paths) => {
+  return streamCombiner(paths.map(function (path) {
+      return dest(path);
+  }));
+}
+
 // 在编译前清空 dist 文件夹
-function clean() {
-  return (async () => {
-    await del.bind(null, ['dist'])
-  })()
+async function clean() {
+  await await fs.rmdirSync('./dist', {recursive: true, force: true}, (err) => {
+    if (err) throw err;
+    console.log('delete dist complete!');
+  })
+  await await fs.rmdirSync('./dist-rpx', {recursive: true, force: true}, (err) => {
+    if (err) throw err;
+    console.log('delete dist-rpx complete!');
+  })
+  await await fs.rmdirSync('./commentData', {recursive: true, force: true}, (err) => {
+    if (err) throw err;
+    console.log('delete commentData complete!');
+  })
 }
 
 // 编译 style，进行 scss 的转化
@@ -69,6 +97,8 @@ function buildStyle() {
     .pipe(change('dist'))
     .pipe(logger({ showChange: true }))
     .pipe(dest('dist'))
+    .pipe(postcsss([autoprefixer(), pxtounits(pxtounitsOption)]))
+    .pipe(dest('dist-rpx'))
 }
 
 // 编译 ts 文件
@@ -77,8 +107,9 @@ function buildTs() {
     .pipe(change('dist', { extension: '.js' }))
     .pipe(plumber())
     .pipe(tsProject())
-    .js.pipe(logger({ showChange: true }))
+    .pipe(logger({ showChange: true }))
     .pipe(dest('dist'))
+    .pipe(dest('dist-rpx'))
 }
 
 // 生成
@@ -89,6 +120,10 @@ function generateCommentData(cb) {
     .pipe(plumber())
     .pipe(dest('commentData'))
     .on('end', () => {
+      fs.rmdirSync('./commentData/components/icon-rpx', {recursive: true, force: true}, (err) => {
+        if (err) throw err;
+        console.log('delete icon-rpx comment complete!');
+      })
       generateData()
     })
 }
@@ -109,6 +144,7 @@ function buildJs() {
     .pipe(change('dist'))
     .pipe(logger({ showChange: true }))
     .pipe(dest('dist'))
+    .pipe(dest('dist-rpx'))
 }
 
 // 编译其余文件
@@ -118,6 +154,7 @@ function buildExtra() {
     .pipe(change('dist'))
     .pipe(logger({ showChange: true }))
     .pipe(dest('dist'))
+    .pipe(dest('dist-rpx'))
 }
 
 // 编译图片文件
@@ -126,6 +163,7 @@ function buildImage() {
     .pipe(change('dist'))
     .pipe(logger({ showChange: true }))
     .pipe(dest('dist'))
+    .pipe(dest('dist-rpx'))
 }
 
 // 监控代码的改动
@@ -142,6 +180,32 @@ function watchChange() {
   )
 }
 
+ async function changeIconDirName() {
+  await fs.rename('./dist-rpx/components/icon-rpx', './dist-rpx/components/icon', (err) => {
+    if (err) throw err;
+    console.log('Rename icon complete!');
+  })
+ }
+
+ async function deleIconDir() {
+  await fs.rmdirSync('./dist-rpx/components/icon', {recursive: true, force: true}, (err) => {
+    if (err) throw err;
+    console.log('delete icon complete!');
+  })
+  await fs.rmdirSync('./dist/components/icon-rpx', {recursive: true, force: true}, (err) => {
+    if (err) throw err;
+    console.log('delete icon-rpx complete!');
+  })
+ }
+
+ async function changeComponentName() {
+  await fs.renameSync('./dist-rpx/components', './dist-rpx/components-rpx', (err) => {
+    if (err) throw err;
+    console.log('Rename complete!');
+  })
+  await fsExtra.copy('./dist-rpx/components-rpx', './dist/components-rpx')
+ }
+
 exports.buildStyle = buildStyle
 exports.build = series(
   clean,
@@ -151,8 +215,24 @@ exports.build = series(
     buildExtra,
     buildStyle,
     buildImage,
-    generateCommentData
-  )
+  ),
+  deleIconDir,
+  changeIconDirName,
+  generateCommentData,
+)
+exports.publish = series(
+  clean,
+  parallel(
+    buildJs,
+    buildTs,
+    buildExtra,
+    buildStyle,
+    buildImage,
+  ),
+  deleIconDir,
+  changeIconDirName,
+  generateCommentData,
+  changeComponentName
 )
 exports.default = series(
   clean,
@@ -162,7 +242,9 @@ exports.default = series(
     buildExtra,
     buildStyle,
     buildImage,
-    generateCommentData
   ),
+  deleIconDir,
+  changeIconDirName,
+  generateCommentData,
   watchChange
 )

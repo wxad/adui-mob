@@ -100,7 +100,7 @@
 	<ad-input
 	 align="left"
 	 type="number"
-	 customStyle="padding: 8px 7px; height: 38px; box-shadow: inset 0px 0px 0px 0.5px rgba(0, 0, 0, 0.16); border-radius: 4px;"
+	 customStyle="padding: 16rpx 14rpx; height: 76rpx; box-shadow: inset 0px 0px 0px 1rpx rgba(0, 0, 0, 0.16); border-radius: 8rpx;"
 	/>
 </ad-dialog>
 <ad-dialog
@@ -113,7 +113,7 @@
 	<view style="margin-bottom: 16px">
 		辅助说明文字辅助说明文字辅助说明文字辅助说明文字辅助说明文字
 	</view>
-	<ad-input align="left" customStyle="padding: 8px 7px; height: 38px; box-shadow: inset 0px 0px 0px 0.5px rgba(0, 0, 0, 0.16); border-radius: 4px;" />
+	<ad-input align="left" customStyle="padding: 16rpx 14rpx; height: 76rpx; box-shadow: inset 0px 0px 0px 1rpx rgba(0, 0, 0, 0.16); border-radius: 8rpx;" />
 </ad-dialog>
 <ad-dialog
  visible="{{showDialog5}}"
@@ -128,9 +128,9 @@
 	<ad-picture
 	 src="https://wxa.wxs.qq.com/images/paki/adui-for-mobile/coffe.png"
 	 slot="main"
-	 style="margin-bottom: 20px;"
+	 style="margin-bottom: 40rpx;"
 	 round="{{false}}"
-	 customStyle="width: 100%; height: 192px;"
+	 customStyle="width: 100%; height: 384rpx;"
 	/>
 </ad-dialog>
 

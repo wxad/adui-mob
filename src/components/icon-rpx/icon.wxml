@@ -1,0 +1,15 @@
+<wxs module="genarateIcon">
+	function generateBg (iconData) {
+	if (iconData) {
+	var colorFinal = 'black'
+	var backgroundImage = 'mask-image: url("' + iconData.join(colorFinal) +'"); -webkit-mask-image: url("' + iconData.join(colorFinal) + '"); -moz-mask-image: url("' + iconData.join(colorFinal) + '");'
+	return backgroundImage
+	}
+	}
+	module.exports.formate = generateBg
+</wxs>
+<view class="{{prefix}}_outer ad_class" style="{{'width: ' + size * 2 + 'rpx;' + 'height: ' + size * 2 + 'rpx;'}} color: {{color}}; {{customStyle}}">
+	<view class="{{prefix}}" style="{{genarateIcon.formate(iconData[icon])}}">
+		<slot name="badge" />
+	</view>
+</view>

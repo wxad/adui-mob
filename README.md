@@ -18,7 +18,7 @@ npm install
 
 npm run dev
 ```
-整个项目使用 gulp 编译，编译完后将 dist 目录导入开发者开发者工具中，即可看到 demo
+整个项目使用 gulp 编译，编译完后将 dist 目录导入开发者开发者工具中，即可看到 demo。rpx 版本的导入 dist-rpx 目录。
 
 ---
 ## 使用
@@ -29,6 +29,21 @@ npm install adui-mob
 adui-mob 目前已经发布到 npm 上了，可以直接使用 npm 包的方式，具体在小程序中如何使用 npm 包，可以参考小程序官方的[教程](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html)
 
 ---
+
+## px 与 rpx 尺寸
+组件目前支持 px 和 rpx 两种单位，npm 包里面会包含两个文件夹，一个是 components 和 components-rpx，分别对应 px 和 rpx 单位，可根据项目需要进行引用
+
+---
+
+## 样式重置
+
+组件的元素盒模型都是用的 `border-box`，之前的做法是在组件里面引入重置代码，目前这部分代码已经移除，建议在项目中的 app.wxss 进行重置
+
+```
+page,view, button, scroll-view, input, text {
+  box-sizing: border-box;
+}
+```
 
 ## 配套工具
 

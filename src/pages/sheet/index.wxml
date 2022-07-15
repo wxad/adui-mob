@@ -245,24 +245,24 @@
 			 intent="{{chosenIndusty === index ? 'primary' : 'normal'}}"
 			 class="tag"
 			 round="{{false}}"
-			 customStyle="width: calc((100vw - 60px) / 3); padding: 8px 6px;"
+			 customStyle="width: calc((100vw - 120rpx) / 3); padding: 16rpx 12rpx;"
 			 bind:tap="choseTag"
 			 data-tag="{{index}}"
 			>{{item}}
 			</ad-tag>
 		</view>
 	</scroll-view>
-	<view class="button" style="display: flex; padding-top: 8px; justify-content: flex-end;">
+	<view class="button" style="display: flex; padding-top: 16rpx; justify-content: flex-end;">
 		<ad-button
 		 theme="light"
 		 intent="normal"
-		 customStyle="width: 95px; height: 48px; margin-right: 12px;"
+		 customStyle="width: 190rpx; height: 96rpx; margin-right: 24rpx;"
 		 bind:tap="close"
 		 data-num="{{6}}"
 		>清空
 		</ad-button>
 		<ad-button
-		 customStyle="width: 95px; height: 48px;"
+		 customStyle="width: 190rpx; height: 96rpx;"
 		 bind:tap="close"
 		 data-num="{{6}}"
 		>应用

@@ -5,6 +5,8 @@
     "module": "CommonJS",
     "target": "ES5",
     "allowJs": true,
+    "declaration": true,
+    "declarationDir": "dist",
     "experimentalDecorators": true,
     "noImplicitThis": true,
     "noImplicitReturns": true,
@@ -20,8 +22,7 @@
     "strictPropertyInitialization": true,
     "allowSyntheticDefaultImports": true, // 兼容 commonjs 模块，检测导入的模块是否是 ES6 模块，如果不是，则查找模块中是否有 exports.default 导出
     "typeRoots": [
-      "./types",
-      "./node_modules"
+      "./src/components",
     ],
     "lib": [
       "es5",

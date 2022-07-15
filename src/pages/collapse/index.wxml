@@ -16,7 +16,7 @@
 					<ad-cell
 					 wx:for="{{item.content}}"
 					 title="{{item}}"
-					 innerStyle="color: var(--transparent-gray-800); font-size: 14px; line-height: 24px;"
+					 innerStyle="color: var(--transparent-gray-800); font-size: 28rpx; line-height: 48rpx;"
 					/>
 				</ad-cell-group>
 			</ad-collapse-item>
@@ -38,7 +38,7 @@
 					<ad-cell
 					 wx:for="{{item.content}}"
 					 title="{{item}}"
-					 innerStyle="color: var(--transparent-gray-800); font-size: 14px; line-height: 24px;"
+					 innerStyle="color: var(--transparent-gray-800); font-size: 28rpx; line-height: 48rpx;"
 					/>
 				</ad-cell-group>
 			</ad-collapse-item>
@@ -57,7 +57,7 @@
 				<ad-cell
 				 wx:for="{{lists[0].content}}"
 				 title="{{item}}"
-				 innerStyle="color: var(--transparent-gray-800); font-size: 14px; line-height: 24px;"
+				 innerStyle="color: var(--transparent-gray-800); font-size: 28rpx; line-height: 48rpx;"
 				/>
 			</ad-cell-group>
 		</ad-collapse-item>
