@@ -69,7 +69,7 @@ const componentOptions = ADComponent({
       value: false,
     },
     /**
-     * @property {Boolean} customStyle 是否撑满，指定这个值之后按钮会撑满其所在的父元素
+     * @property {Boolean} loading 是否撑满，指定这个值之后按钮会撑满其所在的父元素
      * @default false
      */
     loading: {
