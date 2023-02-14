@@ -22,15 +22,13 @@ const fileFilter = [
   'stepsItem',
   'tabbarItem',
   '开始使用',
-  'changelog',
 ]
 
 export const data = {
   name: 'hhhhh',
 }
 
-const chanegFirstLetter = (word) =>
-  `${word.charAt(0).toLowerCase()}${word.slice(1)}`
+const chanegFirstLetter = (word) => `${word.charAt(0).toLowerCase()}${word.slice(1)}`
 
 export const MainContainer = ({ children, ...rest }) => {
   const currentDoc = useCurrentDoc()
