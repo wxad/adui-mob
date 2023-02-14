@@ -53,6 +53,44 @@ page,view, button, scroll-view, input, text {
 - [gulp-ad-icon-shaking](https://www.npmjs.com/package/gulp-ad-icon-shaking)，这个插件提供了 icon 的 shaking 功能
 - [gulp-adui-component](https://www.npmjs.com/package/gulp-adui-component-shaking)，这个插件提供了组价按需打包的功能
 
+## 内部控制和外部控制
+**adui-mob**中包含状态的组件基本上都有**内部控制**和**外部控制**两种设计，可以根据组件是否同时有`defaultValue`和`value`这两个Prop来区分。
+`defaultValue`只在第一次渲染时生效，之后的状态由组件自身控制，而`value`只能通过外部的设置来改变组价的状态。
+
+这样设计的好处是如果你只是需要设置一个初始值，并且只想要关心这个值的改变情况，比如 `<ad-switch defaultChecked onChange={xxx} />`，这样你就不需要单独地设置一个 data 保证组件 UI 状态的完整； 如果你想要存储这个值，那么你需要在变化时将这个值回传给组件：`<ad-switch checked={xxx} onChange={xxx} />`。
+
+## 主题色和内置变量
+adui-mob 和 adui 沿用同一套色系和主题色，同样使用的是 css 变量的方式来实现的，因此，如果你想改变整个组件库的主题色和灰色色系，可以在 `app.wxss` 文件中使用变量进行覆盖，具体如下：
+```css
+page {
+  --primary-color: #07c160;
+  --ad-green: #07c160;
+  --ad-blue: #2b7bd6;
+  --ad-orange: #EDA20C;
+  --ad-red: #d9514c;
+  --gray-50: #fafafa;
+  --gray-100: #f2f2f2;
+  --gray-200: #ebebeb;
+  --gray-300: #e6e6e6;
+  --gray-400: #e0e0e0;
+  --gray-500: #d6d6d6;
+  --gray-600: #c7c7c7;
+  --gray-700: #a3a3a3;
+  --gray-800: #6b6b6b;
+  --gray-900: #1f1f1f;
+  --transparent-gray-50: rgba(0, 0, 0, 0.02);
+  --transparent-gray-100: rgba(0, 0, 0, 0.06);
+  --transparent-gray-200: rgba(0, 0, 0, 0.08);
+  --transparent-gray-300: rgba(0, 0, 0, 0.1);
+  --transparent-gray-400: rgba(0, 0, 0, 0.12);
+  --transparent-gray-500: rgba(0, 0, 0, 0.16);
+  --transparent-gray-600: rgba(0, 0, 0, 0.22);
+  --transparent-gray-700: rgba(0, 0, 0, 0.36);
+  --transparent-gray-800: rgba(0, 0, 0, 0.58);
+  --transparent-gray-900: rgba(0, 0, 0, 0.88);
+  }
+```
+
 ## 注意事项
 
 由于这个组件库是跟着业务一步步迭代出来的，所以在早期的时候部分组件是用开发者直接创建的，后期建设的时候发现这部分组件的名字不符合整个组件库
