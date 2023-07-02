@@ -17,17 +17,13 @@
       "right",
       "bottom",
       "left",
-
       "display",
-      
       "margin",
       "padding",
       "width",
       "height",
-
       "font-size",
       "line-height",
-
       "background-color",
       "background",
       "border",
@@ -42,7 +38,7 @@
       {
         "ignorePseudoClasses": [
           "global",
-          "local",
+          "local"
         ]
       }
     ],

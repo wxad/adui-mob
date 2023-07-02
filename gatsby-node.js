@@ -1,3 +1,5 @@
+const path = require('path')
+
 exports.onCreateWebpackConfig = ({
   stage,
   rules,
@@ -8,7 +10,11 @@ exports.onCreateWebpackConfig = ({
   actions.setWebpackConfig({
     watch: true,
     watchOptions: {
-      ignored: ['src/component/**/*.ts', 'dist'],
+      ignored: [
+        path.resolve(__dirname, './src/examples/'),
+        path.relative(__dirname, './src/component/'),
+        path.relative(__dirname, 'dist'),
+      ],
     },
   })
 }

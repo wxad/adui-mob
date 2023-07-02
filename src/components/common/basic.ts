@@ -7,7 +7,9 @@ const basic = Behavior({
           .boundingClientRect(
             (node: WechatMiniprogram.BoundingClientRectCallbackResult) => {
               if (all && Array.isArray(node) && node.length) {
-                Array.isArray(node) && node.length ? resolve(node) : reject(node)
+                Array.isArray(node) && node.length
+                  ? resolve(node)
+                  : reject(node)
               } else {
                 node ? resolve(node) : reject(node)
               }
@@ -19,7 +21,7 @@ const basic = Behavior({
     getFields(
       selector: string,
       all: boolean,
-      fieldsOption: WechatMiniprogram.Fields
+      fieldsOption: WechatMiniprogram.Fields,
     ) {
       return new Promise((resolve) => {
         this.createSelectorQuery()

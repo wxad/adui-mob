@@ -2,4 +2,4 @@ dist/*
 src/common/icon-backgrounds.js
 gulpfile.js
 src/components/common/icon/icon-backgrounds.js
-src/pages/icon/iconType.js
+src/examples/icon/iconType.js

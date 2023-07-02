@@ -47,229 +47,229 @@
                 {
                     "id": -1,
                     "name": "home",
-                    "pathName": "pages/home/index",
+                    "pathName": "examples/home/index",
                     "query": ""
                 },
                 {
                     "id": -1,
                     "name": "font",
-                    "pathName": "pages/font/index",
+                    "pathName": "examples/font/index",
                     "query": ""
                 },
                 {
                     "id": -1,
                     "name": "color",
-                    "pathName": "pages/color/index",
+                    "pathName": "examples/color/index",
                     "query": ""
                 },
                 {
                     "id": -1,
                     "name": "style",
-                    "pathName": "pages/style/index",
+                    "pathName": "examples/style/index",
                     "query": ""
                 },
                 {
                     "id": -1,
                     "name": "icon",
-                    "pathName": "pages/icon/index",
+                    "pathName": "examples/icon/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "layout",
-                    "pathName": "pages/layout/index",
+                    "pathName": "examples/layout/index",
                     "query": ""
                 },
                 {
                     "id": -1,
                     "name": "navigation",
-                    "pathName": "pages/navigation/index",
+                    "pathName": "examples/navigation/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "tabs",
-                    "pathName": "pages/tabs/index",
+                    "pathName": "examples/tabs/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "tabbar",
-                    "pathName": "pages/tabbar/index",
+                    "pathName": "examples/tabbar/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "avatar",
-                    "pathName": "pages/avatar/index",
+                    "pathName": "examples/avatar/index",
                     "query": ""
                 },
                 {
                     "id": -1,
                     "name": "picture",
-                    "pathName": "pages/picture/index",
+                    "pathName": "examples/picture/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "uploadImage",
-                    "pathName": "pages/uploadImage/index",
+                    "pathName": "examples/uploadImage/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "button",
-                    "pathName": "pages/button/index",
+                    "pathName": "examples/button/index",
                     "query": ""
                 },
                 {
                     "id": -1,
                     "name": "floatingButton",
-                    "pathName": "pages/floatingButton/index",
+                    "pathName": "examples/floatingButton/index",
                     "query": ""
                 },
                 {
                     "id": -1,
                     "name": "radio",
-                    "pathName": "pages/radio/index",
+                    "pathName": "examples/radio/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "checkbox",
-                    "pathName": "pages/checkbox/index",
+                    "pathName": "examples/checkbox/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "tag",
-                    "pathName": "pages/tag/index",
+                    "pathName": "examples/tag/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "badge",
-                    "pathName": "pages/badge/index",
+                    "pathName": "examples/badge/index",
                     "query": ""
                 },
                 {
                     "id": -1,
                     "name": "switch",
-                    "pathName": "pages/switch/index",
+                    "pathName": "examples/switch/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "steps",
-                    "pathName": "pages/steps/index",
+                    "pathName": "examples/steps/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "input",
-                    "pathName": "pages/input/index",
+                    "pathName": "examples/input/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "cell",
-                    "pathName": "pages/cell/index",
+                    "pathName": "examples/cell/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "card",
-                    "pathName": "pages/card/index",
+                    "pathName": "examples/card/index",
                     "query": ""
                 },
                 {
                     "id": -1,
                     "name": "stepper",
-                    "pathName": "pages/stepper/index",
+                    "pathName": "examples/stepper/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "searchBar",
-                    "pathName": "pages/searchBar/index",
+                    "pathName": "examples/searchBar/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "collapse",
-                    "pathName": "pages/collapse/index",
+                    "pathName": "examples/collapse/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "dialog",
-                    "pathName": "pages/dialog/index",
+                    "pathName": "examples/dialog/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "sheet",
-                    "pathName": "pages/sheet/index",
+                    "pathName": "examples/sheet/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "actionSheet",
-                    "pathName": "pages/actionSheet/index",
+                    "pathName": "examples/actionSheet/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "select",
-                    "pathName": "pages/select/index",
+                    "pathName": "examples/select/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "popover",
-                    "pathName": "pages/popover/index",
+                    "pathName": "examples/popover/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "message",
-                    "pathName": "pages/message/index",
+                    "pathName": "examples/message/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "spinner",
-                    "pathName": "pages/spinner/index",
+                    "pathName": "examples/spinner/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "loadMore",
-                    "pathName": "pages/loadMore/index",
+                    "pathName": "examples/loadMore/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "emptyState",
-                    "pathName": "pages/emptyState/index",
+                    "pathName": "examples/emptyState/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "slider",
-                    "pathName": "pages/slider/index",
+                    "pathName": "examples/slider/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "dropdown",
-                    "pathName": "pages/dropdown/index",
+                    "pathName": "examples/dropdown/index",
                     "scene": null
                 },
                 {
                     "id": -1,
                     "name": "overlay",
-                    "pathName": "pages/overlay/index",
+                    "pathName": "examples/overlay/index",
                     "scene": null
                 }
             ]

@@ -38,7 +38,7 @@ function ADComponent(options: WechatMiniprogram.Component.TrivialOption): any {
       defaultPropName: any,
       propName: any,
       dataName: string,
-      initValue?: any
+      initValue?: any,
     ) {
       if (this.properties[propName] !== null) {
         this.setData({
@@ -59,7 +59,7 @@ function ADComponent(options: WechatMiniprogram.Component.TrivialOption): any {
       isDefaultProp: boolean,
       propName: string,
       dataName: string,
-      updateData: any
+      updateData: any,
     ) {
       if (!isDefaultProp) {
         if (updateData !== null && updateData !== this.data[dataName]) {
@@ -70,9 +70,9 @@ function ADComponent(options: WechatMiniprogram.Component.TrivialOption): any {
       }
       if (isDefaultProp) {
         if (
-          this.properties[propName] === null &&
-          updateData !== null &&
-          updateData !== this.data[dataName]
+          this.properties[propName] === null
+          && updateData !== null
+          && updateData !== this.data[dataName]
         ) {
           this.setData({
             [dataName]: updateData,
@@ -101,7 +101,7 @@ function ADComponent(options: WechatMiniprogram.Component.TrivialOption): any {
               } else {
                 node ? resolve(node) : reject(node)
               }
-            }
+            },
           )
           .exec()
       })

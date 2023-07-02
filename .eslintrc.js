@@ -45,7 +45,7 @@ const eslintrc = {
     "import/extensions": [
       "error",
       {
-        "js": "never",
+        "js": "always",
         "ts": "never",
       }
    ]
